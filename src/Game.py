@@ -70,190 +70,18 @@ class Game:
                     if ship.location is not None:
                         if ship.team == 1:
                             rand = random.choice(p2_ships)
-                            print("Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(rand.unit_type)+".")
+                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(rand.unit_type)+".")
                             self.attack(ship, rand)
                         elif ship.team == 2:
                             rand = random.choice(p1_ships)
-                            print("Combat at "+str(ship.location)+" between Player 1's "+str(rand.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
+                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(rand.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
                             self.attack(ship, rand)
-
-        
-
-    def sort_by_attack_grade(self,set_of_units):
-        for i in range(len(set_of_units)):  
-            for j in range(0, len(set_of_units)-(i+1)):  
-                if (ord(set_of_units[j].attack_grade) > ord(set_of_units[j + 1].attack_grade)):  
-                    temp = set_of_units[j]  
-                    set_of_units[j]= set_of_units[j + 1]  
-                    set_of_units[j + 1]= temp  
-        return set_of_units 
-
-    def attack(self, p1_ship, p2_ship):
-        if p1_ship.shorthand == 'Dc' and p2_ship.shorthand == 'Dc':
-            p1_ship.location = None
-            p2_ship.location = None
-            print("Two Decoys Destroyed Each other")
-        elif p1_ship.shorthand == 'Dc':
-            p1_ship.location = None
-            print("Player " + str(p2_ship.team) + "'s "+str(p2_ship.unit_type)+" wins!")
-        elif p2_ship.shorthand == 'Dc':
-            p2_ship.location = None
-            print("Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" wins!")
-        else:
-            rand = random.randint(1,6)
-            hit_threshold = ((p1_ship.strength + self.players[0].attack_tech) - (p2_ship.defense  + self.players[1].defense_tech)) - rand
-
-            if rand == 1 or hit_threshold >= 0:
-                if p2_ship.armor == 1:
-                    p2_ship.location = None
-                    print("Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" wins!")
-                else:
-                    p2_ship.armor -= 1
-                    print("Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
-
-            else:
-                print("Missed Shot!")
-
-    def check_for_planet(self, colony_ship):
-        for planet in self.planets:
-            if planet.location == colony_ship.location and not planet.has_a_colony:
-                colony_ship.location = None
-                planet.player = colony_ship.team   
-                planet.has_a_colony = True 
-                planet.colony = Colony(colony_ship.team, planet.location,[],False)
-                self.players[colony_ship.team -1].colonies.append(Colony(colony_ship.team, planet.location,[],False))
-            for player in self.players:
-                if planet.location == player.start_pos and planet.player == player.player_num:
-                    for _ in range(4):
-                        planet.colony.shipyards.append(ShipYard(player.player_num, player.start_pos))
-                        player.colonies[0].shipyards.append(ShipYard(player.player_num, player.start_pos))
-                        
-
-
-    def money_from_colonies(self):
-        for planet in self.planets:
-            if planet.has_a_colony:
-                if planet.player == 1:
-                    self.players[0].money += planet.colony.armor
-                elif planet.player == 2:
-                    self.players[1].money += planet.colony.armor        
-
-
-    def maintenence(self):
-        for player in self.players:
-            for unit in player.units:
-                if unit.shorthand != 'CS' and unit.shorthand != 'Dc':
-                    maintenence = unit.hull_size/3
-                    if player.money - maintenence < 0:
-                        unit.location = None
-                        print("Cannot sustain Player "+ str(unit.team) +"'s "+str(unit.unit_type))
-                    else:
-                        player.money -= maintenence
-
-    def complete_turn(self):
-        self.num_turns += 1
-        for player in self.players:
-            for unit in player.units:
-                if unit.unit_type == 'Colony Ship':
-                    self.check_for_planet(unit)
-                    unit.move()
-                else:
-                    for i in range(unit.speed + self.players[unit.team - 1].speed_tech):
-                        unit.move()
-        # self.plot_game_state()
-
-        for p1_ship in self.players[0].units:
-            for p2_ship in self.players[1].units:
-                if p1_ship.location == p2_ship.location:
-                    if p1_ship.shorthand == 'Dc' and p2_ship.shorthand == 'Dc':
-                        p1_ship.location = None
-                        p2_ship.location = None
-                        pass
-                    elif p1_ship.shorthand == 'Dc':
-                        p1_ship.location = None
-                        pass
-                    elif p2_ship.shorthand == 'Dc':
-                        p2_ship.location = None
-                        pass
-                    else:
-                        self.locate_combat(p1_ship,p2_ship)
-
-        for p1_ship in self.players[0].units:
-            for planet in self.planets:
-                if p1_ship.location == planet.location and planet.has_a_colony and planet.player != 1:
-                    colony_in_combat = planet.colony
-                    if p1_ship.shorthand == 'Dc':
-                        p1_ship.location = None
-                        pass
-                    else:
-                        for colony in self.players[planet.colony.team -1].colonies:
-                            if colony.location == planet.location:
-                                colony_in_combat = colony
-                        if colony_in_combat.base != False:
-                            if ord(p1_ship.attack_grade) < ord(colony_in_combat.base.attack_grade):
-                                self.attack(p1_ship, colony_in_combat.base)
-                            elif ord(p1_ship.attack_grade) > ord(colony_in_combat.base.attack_grade):
-                                self.attack(colony_in_combat.base, p1_ship)
-                        else:
-                            if colony.armor == 1:
-                                planet.reset()
-                                for colony in self.players[0].colonies:
-                                    if colony.location == planet.location:
-                                        colony.shipyards = []
-                            else:
-                                self.attack(p1_ship,colony_in_combat)
-
-        for p2_ship in self.players[1].units:
-            for planet in self.planets:
-                if p2_ship.location == planet.location and planet.has_a_colony and planet.player != 2:
-                    colony_in_combat = planet.colony
-                    if p2_ship.shorthand == 'Dc':
-                        p2_ship.location = None
-                        pass
-                    else:
-                        for colony in self.players[planet.colony.team -1].colonies:
-                            if colony.location == planet.location:
-                                colony_in_combat = colony
-                        if colony_in_combat.base != False:
-                            if ord(p2_ship.attack_grade) < ord(colony_in_combat.base.attack_grade):
-                                self.attack(p2_ship, colony_in_combat.base)
-                            elif ord(p2_ship.attack_grade) > ord(colony_in_combat.base.attack_grade):
-                                self.attack(colony_in_combat.base, p2_ship)
-                        else:
-                            if colony.armor == 1:
-                                planet.reset()
-                                for colony in self.players[0].colonies:
-                                    if colony.location == planet.location:
-                                        colony.shipyards = []
-                            else:
-                                self.attack(p2_ship,colony_in_combat)
-
-        self.maintenence()
-        self.money_from_colonies()
-        self.save_goal_check()
-        
-    def save_goal_check(self):
-        for player in self.players:
-            if player.money > player.save_goal:
-                player.how_to_spend()
-                player.save_goal = random.randint(6,70)
-
-    def complete_movement_phase(self):
-        self.num_turns += 1
-        for player in self.players:
-            for unit in player.units:
-                if unit.unit_type == 'Colony Ship':
-                    self.check_for_planet(unit)
-                    unit.move()
-                else:
-                    for i in range(unit.speed + self.players[unit.team - 1].speed_tech):
-                        unit.move()
 
     def colony_combat(self):
         for player in self.players:
             for ship in player.units:
                 for planet in self.planets:
-                    if ship.location == planet.location and planet.has_a_colony and planet.player != 1:
+                    if ship.location == planet.location and planet.has_a_colony and planet.player != ship.team:
                         colony_in_combat = planet.colony
                         if ship.shorthand == 'Dc':
                             ship.location = None
@@ -276,19 +104,129 @@ class Game:
                                 else:
                                     self.attack(ship,colony_in_combat)
 
+    def sort_by_attack_grade(self,set_of_units):
+        for i in range(len(set_of_units)):  
+            for j in range(0, len(set_of_units)-(i+1)):  
+                if (ord(set_of_units[j].attack_grade) > ord(set_of_units[j + 1].attack_grade)):  
+                    temp = set_of_units[j]  
+                    set_of_units[j]= set_of_units[j + 1]  
+                    set_of_units[j + 1]= temp  
+        return set_of_units 
+
+    def attack(self, p1_ship, p2_ship):
+        if p1_ship.shorthand == 'Dc' and p2_ship.shorthand == 'Dc':
+            p1_ship.location = None
+            p2_ship.location = None
+            print("\n   Player 1's Decoy and Player 2's Decoy destroyed each other")
+        elif p1_ship.shorthand == 'Dc':
+            p1_ship.location = None
+            print("\n   Player " + str(p2_ship.team) + "'s "+str(p2_ship.unit_type)+" destroyed Player " + str(p1_ship.team) + "'s " +str(p1_ship.unit_type))
+        elif p2_ship.shorthand == 'Dc':
+            p2_ship.location = None
+            print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
+        else:
+            rand = random.randint(1,6)
+            hit_threshold = ((p1_ship.strength + self.players[0].attack_tech) - (p2_ship.defense  + self.players[1].defense_tech)) - rand
+
+            if rand == 1 or hit_threshold >= 0:
+                if p2_ship.armor == 1:
+                    p2_ship.location = None
+                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
+                else:
+                    p2_ship.armor -= 1
+                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
+
+            else:
+                print("\n   Player "+str(p1_ship.team)+"'s "+ str(p1_ship.unit_type)+" missed Player "+str(p2_ship.team)+"'s " + str(p2_ship.unit_type))
+
+
+    def check_for_planet(self, colony_ship):
+        for planet in self.planets:
+            if planet.location == colony_ship.location and not planet.has_a_colony:
+                colony_ship.location = None
+                planet.player = colony_ship.team   
+                planet.has_a_colony = True 
+                planet.colony = Colony(colony_ship.team, planet.location,[],False)
+                self.players[colony_ship.team -1].colonies.append(Colony(colony_ship.team, planet.location,[],False))
+            for player in self.players:
+                if planet.location == player.start_pos and planet.player == player.player_num:
+                    for _ in range(4):
+                        planet.colony.shipyards.append(ShipYard(player.player_num, player.start_pos))
+                        player.colonies[0].shipyards.append(ShipYard(player.player_num, player.start_pos))
+                        
+    def money_from_colonies(self):
+        player_1_income = 0
+        player_2_income = 0
+        for planet in self.planets:
+            if planet.has_a_colony:
+                if planet.player == 1:
+                    self.players[0].money += planet.colony.armor
+                    player_1_income += planet.colony.armor
+                elif planet.player == 2:
+                    self.players[1].money += planet.colony.armor
+                    player_2_income += planet.colony.armor 
+        print("\n       Player 1 earned "+str(player_1_income)+" CP's from thier "+str(len([colony for colony in self.players[0].colonies if colony.location is not None]))+" colonies")
+        print("\n       Player 2 earned "+str(player_2_income)+" CP's from thier "+str(len([colony for colony in self.players[1].colonies if colony.location is not None]))+" colonies")
+
+    def maintenence(self):
+        for player in self.players:
+            for unit in player.units:
+                if unit.shorthand != 'CS' and unit.shorthand != 'Dc' and unit.location is not None:
+                    maintenence = unit.hull_size
+                    if player.money - maintenence < 0:
+                        unit.location = None
+                        print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
+                    else:
+                        player.money -= maintenence
+
+   
+    def save_goal_check(self):
+        for player in self.players:
+            if player.money > player.save_goal:
+                player.how_to_spend()
+                player.save_goal = random.randint(6,70)
+            else:
+                print("\n       Player "+str(self.players.index(player) + 1)+" didn't buy anything this turn")
+
+    def complete_movement_phase(self):
+        self.num_turns += 1
+        print("\n TURN " + str(self.num_turns) + "  MOVEMENT PHASE")
+        for player in self.players:
+            for i in range(len(player.movement_calcs('movements'))):
+                print("\n Player "+str(self.players.index(player) + 1)+" - Move " + str(i+1))
+                for unit in player.units:
+                    if unit.unit_type == 'Colony Ship':
+                        self.check_for_planet(unit)
+                        unit.move()
+                    else:
+                        old_loc = unit.location
+                        for i in range(player.movement_calcs('movements')[i]):
+                            unit.move()
+                        if unit.location is not None and unit.location != old_loc:
+                            print("\n   Unit "+str(player.units.index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
+        print("\n ------------- End of Movement Phase--------------")
+    
     def complete_combat_phase(self):
+        print("\n TURN " + str(self.num_turns) + "  COMBAT PHASE")
         for p1_ship in self.players[0].units:
             for p2_ship in self.players[1].units:
                 if p1_ship.location == p2_ship.location:
                         self.locate_combat(p1_ship,p2_ship)
+        self.colony_combat()
+        print("\n ------------- End of Combat Phase--------------")
         
-        
+    
 
 
     def complete_economic_phase(self):
+        print("\n TURN " + str(self.num_turns) + "  ECONOMIC PHASE")
+        print("\n   Income From Colonies:")
         self.money_from_colonies()
+        print("\n   Maintenence:")
         self.maintenence()
+        print("\n   New ships and Tech upgrades:")
         self.save_goal_check()
+        print("\n ------------- End of Economic Phase--------------")
 	# def plot_game_state(self):
     #     game_data = []
        
@@ -328,16 +266,9 @@ class Game:
 
     #     self.render_game(game_data)
 
-    
-
-    def run_to_completion(self):
-        while True:
-            self.complete_movement_phase()
-            self.complete_combat_phase()
-            self.complete_economic_phase()
+    def check_for_game_over(self):
             p1_check = [self.players[0].units[i].location for i in range(len(self.players[0].units)) if self.players[0].units[i].location is not None]
             p2_check = [self.players[1].units[i].location for i in range(len(self.players[1].units)) if self.players[1].units[i].location is not None]
-            print(p1_check,p2_check)
             if self.num_turns >= 100:
                 if len(p1_check) > len(p2_check):
                     self.winner = "Player 1"
@@ -345,10 +276,19 @@ class Game:
                     self.winner = "Player 2"
                 else:
                     self.winner = "Tie"
-                break
-            if len(p1_check) == 0:
+                return False
+            elif len(p1_check) == 0:
                 self.winner = "Player 2"
-                break
-            if len(p2_check) == 0:
+                return False
+            elif len(p2_check) == 0:
                 self.winner = "Player 1"
-                break
+                return False
+            else:
+                return True
+
+    def run_to_completion(self):
+        while self.check_for_game_over():
+            self.complete_movement_phase()
+            self.complete_combat_phase()
+            self.complete_economic_phase()
+        print("\n Game Over: "+self.winner+" wins!")
