@@ -1,4 +1,4 @@
-from Planet import Planet
+from planet import Planet
 import random
 class Board:
     def __init__(self,size):

@@ -1,7 +1,7 @@
-from Player import Player
+from player import Player
 from board import Board
 import random
-from Units.Colony import Colony
+from Units.colony import Colony
 
 class Game:
     def __init__(self):

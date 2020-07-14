@@ -1,16 +1,16 @@
 import random
-from Units.Scout import Scout
-from Units.Base import Base
-from Units.Battlecruiser import Battlecruiser
-from Units.Battleship import Battleship
-from Units.ColonyShip import ColonyShip
-from Units.Cruiser import Cruiser
-from Units.Decoy import Decoy
-from Units.Destroyer import Destroyer
-from Units.Dreadnaught import Dreadnaught
-from Units.ShipYard import ShipYard
-from Units.Colony import Colony
-from Planet import Planet
+from Units.scout import Scout
+from Units.base import Base
+from Units.battlecruiser import Battlecruiser
+from Units.battleship import Battleship
+from Units.colony_ship import ColonyShip
+from Units.cruiser import Cruiser
+from Units.decoy import Decoy
+from Units.destroyer import Destroyer
+from Units.dreadnaught import Dreadnaught
+from Units.ship_yard import ShipYard
+from Units.colony import Colony
+from planet import Planet
 
 class Player:
     def __init__(self, player_num, start_pos, game_data):
@@ -33,7 +33,7 @@ class Player:
 
 
     def generate_fleet(self):
-        player_units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],[]),ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),
+        player_units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],None),ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),
                         Scout(self.player_num,self.start_pos),Scout(self.player_num,self.start_pos),
                         Scout(self.player_num,self.start_pos)]
         possible_units = ['Decoy', 'Scout', 'Colony']

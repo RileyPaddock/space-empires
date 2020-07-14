@@ -1,4 +1,4 @@
-from Units.Unit import Unit
+from Units.unit import Unit
 
 class Cruiser(Unit):
     def __init__(self, team, location):
