@@ -1,4 +1,3 @@
-from Game import Game
+from src.Game import game
 
-game = Game()
-game.run_to_completion()
+g = Game

@@ -9,11 +9,14 @@ from Units.Decoy import Decoy
 from Units.Destroyer import Destroyer
 from Units.Dreadnaught import Dreadnaught
 from Units.ShipYard import ShipYard
+from Units.Colony import Colony
+from Planet import Planet
 
 class Player:
-    def __init__(self, player_num, start_pos):
+    def __init__(self, player_num, start_pos, game_data):
         self.player_num = player_num
         self.start_pos = start_pos
+        self.game_data = game_data
         self.money = 20
         self.attack_tech = 0
         self.defense_tech = 0
@@ -21,9 +24,8 @@ class Player:
         self.ship_yard_tech = 1
         self.ship_size_tech = 1
         self.shipyard_capacity = 0.5 + 0.5*self.ship_yard_tech
-        self.colonies = []
         self.save_goal = random.randint(6,70)
-        self.units = self.generate_fleet()
+        self.generate_fleet()
         
         
 
@@ -31,7 +33,7 @@ class Player:
 
 
     def generate_fleet(self):
-        player_units = [ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),
+        player_units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],[]),ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),
                         Scout(self.player_num,self.start_pos),Scout(self.player_num,self.start_pos),
                         Scout(self.player_num,self.start_pos)]
         possible_units = ['Decoy', 'Scout', 'Colony']
@@ -47,11 +49,13 @@ class Player:
             else:
                 rand = random.randint(0,2)
 
-        return player_units
+        for unit in player_units:
+            self.game_data[unit.location].append(unit)
 
     def locate_colony_with_shipyard(self):
         colonies_with_shipyard = []
-        for colony in self.colonies:
+        colonies = [colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None]
+        for colony in colonies:
             if len(colony.shipyards) > 0 :
                 colonies_with_shipyard.append(colony)
         return colonies_with_shipyard
@@ -71,15 +75,15 @@ class Player:
     def get_new_ships(self):
         rand_unit = random.choice(self.get_rand_unit())
         if rand_unit == 'Shipyard':
-            rand_colony = random.choice(self.colonies)
+            rand_colony = random.choice([colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None])
             while rand_colony.location is None:
-                rand_colony = random.choice(self.colonies)
+                rand_colony = random.choice([colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None])
             rand_colony.shipyards.append(ShipYard(self.player_num, rand_colony.location))
             self.money -= ShipYard(self.player_num, rand_colony.location).price
         elif rand_unit == 'Base':
-            rand_colony = random.choice(self.colonies)
+            rand_colony = random.choice([colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None])
             while rand_colony.location is None:
-                rand_colony = random.choice(self.colonies)
+                rand_colony = random.choice([colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None])
             if not rand_colony.base:
                 rand_colony.base = Base(self.player_num, rand_colony.location)
                 self.money -= Base(self.player_num, rand_colony.location).price
@@ -89,12 +93,12 @@ class Player:
                 if rand_shipyard.location is not None:
                     break
             shipyard_level = self.shipyard_capacity
-            for colony in self.colonies:
+            for colony in [colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None]:
                 for shipyard in colony.shipyards:
                     if shipyard.location == rand_shipyard.location:
                         shipyard_level+=self.shipyard_capacity
             if self.create_unit(rand_unit,rand_shipyard.location).hull_size <= shipyard_level:
-                self.units.append(self.create_unit(rand_unit,rand_shipyard.location))
+                self.game_data[rand_shipyard.location].append(self.create_unit(rand_unit,rand_shipyard.location))
                 self.money -= self.create_unit(rand_unit,rand_shipyard.location).price
 
     def create_unit(self, unit_type, location):

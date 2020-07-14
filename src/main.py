@@ -1,5 +1,4 @@
 from Game import Game
+g = Game()
+g.run_to_completion()
 
-game = Game()
-game.run_to_completion()
-print(game.winner)

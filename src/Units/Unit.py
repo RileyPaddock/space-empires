@@ -1,10 +1,8 @@
 import random
-
 class Unit:
     def __init__(self,team, location):
         self.team = team
         self.location = location
-        
     
     def move(self):
         if self.location is not None:
