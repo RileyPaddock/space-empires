@@ -1,3 +1,4 @@
+from player.player import Player
 import random
 from Units.scout import Scout
 from Units.base import Base
@@ -12,11 +13,9 @@ from Units.ship_yard import ShipYard
 from Units.colony import Colony
 from planet import Planet
 
-class Player:
+class RandomPlayer(Player):
     def __init__(self, player_num, start_pos, game_data):
-        self.player_num = player_num
-        self.start_pos = start_pos
-        self.game_data = game_data
+        super().__init__(player_num, start_pos, game_data)
         self.money = 20
         self.attack_tech = 0
         self.defense_tech = 0
@@ -26,12 +25,7 @@ class Player:
         self.shipyard_capacity = 0.5 + 0.5*self.ship_yard_tech
         self.save_goal = random.randint(6,70)
         self.generate_fleet()
-        
-        
-
-
-
-
+    
     def generate_fleet(self):
         player_units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],None),ColonyShip(self.player_num,self.start_pos),ColonyShip(self.player_num,self.start_pos),
                         Scout(self.player_num,self.start_pos),Scout(self.player_num,self.start_pos),
@@ -52,13 +46,10 @@ class Player:
         for unit in player_units:
             self.game_data[unit.location].append(unit)
 
-    def locate_colony_with_shipyard(self):
-        colonies_with_shipyard = []
-        colonies = [colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None]
-        for colony in colonies:
-            if len(colony.shipyards) > 0 :
-                colonies_with_shipyard.append(colony)
-        return colonies_with_shipyard
+    def spend(self):
+        if self.money > self.save_goal:
+                self.how_to_spend()
+                self.save_goal = random.randint(6,70)
 
     def how_to_spend(self):
         while self.money >= 15:
@@ -86,6 +77,10 @@ class Player:
                 rand_colony = random.choice([colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None])
             if not rand_colony.base:
                 rand_colony.base = Base(self.player_num, rand_colony.location)
+                for coord in self.game_data:
+                    for colony in self.game_data[coord]:
+                        if colony.location == rand_colony.location and colony.unit_type == "Colony":
+                            colony.base = Base(self.player_num, rand_colony.location)
                 self.money -= Base(self.player_num, rand_colony.location).price
         else:
             while True:
@@ -100,28 +95,7 @@ class Player:
             if self.create_unit(rand_unit,rand_shipyard.location).hull_size <= shipyard_level:
                 self.game_data[rand_shipyard.location].append(self.create_unit(rand_unit,rand_shipyard.location))
                 self.money -= self.create_unit(rand_unit,rand_shipyard.location).price
-
-    def create_unit(self, unit_type, location):
-        print("\n       Player "+str(self.player_num)+" bought a new " + str(unit_type)+". It spawned at "+str(location))
-        if unit_type == 'Scout':
-            return Scout(self.player_num, location)
-        elif unit_type == 'Destroyer':
-            return Destroyer(self.player_num, location)
-        elif unit_type == 'Cruiser':
-            return Cruiser(self.player_num, location)
-        elif unit_type == 'Battlecruiser':
-            return Battlecruiser(self.player_num, location)
-        elif unit_type == 'Battleship':
-            return Battleship(self.player_num, location)
-        elif unit_type == 'Dreadnaught':
-            return Dreadnaught(self.player_num, location)
-        elif unit_type == 'Colony':
-            return ColonyShip(self.player_num, location)
-        elif unit_type == 'Decoy':
-            return Decoy(self.player_num, location)
-        
-
-
+    
     def tech_upgrade(self, upgrade_choice):
         attack_price = ((self.attack_tech + 2) * 10)
         defense_price = ((self.defense_tech + 2) * 10)
@@ -155,8 +129,7 @@ class Player:
             self.money -= ship_size_price
             self.ship_size_tech += 1
             print("\n       Player "+str(self.player_num)+" upgraded thier ship size technology and can now build ships of hull size " + str(self.ship_size_tech)) 
-
-
+    
     def movement_calcs(self, output):
         if output == 'price':
             if self.movement_tech < 4:
@@ -176,6 +149,51 @@ class Player:
                 return (2,2,3)
             elif self.movement_tech == 6:
                 return (2,3,3)
-            
 
-        
+
+    def movement(self):
+        for i in range(len(self.movement_calcs('movements'))):
+            print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
+            for coord in self.game_data:
+                for unit in self.game_data[coord]:
+                    if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
+                        if unit.unit_type == 'Colony Ship':
+                            self.move(unit)
+                        else:
+                            old_loc = unit.location
+                            for i in range(self.movement_calcs('movements')[i]):
+                                self.move(unit)
+                            if unit.location is not None and unit.location != old_loc:
+                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
+                            elif unit.location is not None:
+                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
+
+    def move(self, unit):
+        if unit.location[0] == 0 and unit.location[1] == 0:
+            N = random.choice([1, 3, 5])
+        elif unit.location[0] == 4 and unit.location[1] == 0:
+            N = random.choice([2, 3, 5])
+        elif unit.location[0] == 0 and unit.location[1] == 4:
+            N = random.choice([1, 4, 5]) 
+        elif unit.location[0] == 4 and unit.location[1] == 4:
+            N = random.choice([2, 4, 5])
+        elif unit.location[0] == 4:
+            N = random.choice([2, 3, 4, 5])
+        elif unit.location[0] == 0:
+            N = random.choice([1, 3, 4, 5])
+        elif unit.location[1] == 4:
+            N = random.choice([1, 2, 4, 5])
+        elif unit.location[1] == 0:
+            N = random.choice([1, 2, 3, 5])
+        else: 
+            N = random.randint(1, 5)
+        if N == 1:
+            unit.location = (unit.location[0] + 1, unit.location[1])
+        elif N == 2:
+            unit.location = (unit.location[0] - 1, unit.location[1])
+        elif N == 3:
+            unit.location = (unit.location[0], unit.location[1] + 1)
+        elif N == 4:
+            unit.location = (unit.location[0], unit.location[1] - 1)
+        elif N == 5:
+            unit.location = unit.location
