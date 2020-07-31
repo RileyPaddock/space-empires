@@ -1,4 +1,5 @@
 from game import Game
 g = Game()
-g.run_to_completion()
+g.complete_movement_phase()
+g.complete_combat_phase()
 

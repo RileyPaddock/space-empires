@@ -1,18 +1,19 @@
-from player.player import Player
-from player.random_player import RandomPlayer
-from player.dumb_player import DumbPlayer
+from players.random_player import RandomPlayer
+from players.dumb_player import DumbPlayer
+from players.combat_testing_player import CombatTestPlayer
 from board import Board
-import random
-from Units.colony import Colony
+from combat_engine import CombatEngine
+from units.colony import Colony
 
 class Game:
-    def __init__(self):
+    def __init__(self,logging = True):
+        self.logging = logging
         self.num_turns = 0
         self.winner = None 
         self.board = Board([5,5])
-        self.players = [DumbPlayer(1,(2,0), self.board.game_data), DumbPlayer(2,(2,4), self.board.game_data)]
+        self.players = [CombatTestPlayer(1,(2,0), self.board.game_data,self.logging), CombatTestPlayer(2,(2,4), self.board.game_data,self.logging)]
         
-    def correct_board(self):
+    def update_board(self):
         for player in self.players:
             temp = player.game_data
             player.game_data = {}
@@ -23,108 +24,56 @@ class Game:
                 for unit in temp[elem]:
                     if unit.location is not None:
                         player.game_data[unit.location].append(unit)
-    
-    
 
-    def locate_combat(self,p1_ship,p2_ship):
-        p1_ships = []
-        p2_ships = []
+            for coord in player.game_data:
+                for planet in player.game_data[coord]:
+                    if planet.unit_type == 'Planet' and planet.has_a_colony:
+                        if planet.colony.location == None:
+                            planet.reset()
+    
+    
+    def check_for_and_initiate_combat(self):
+        p1_units = []
+        p2_units = []
+        self.update_board()
         for player in self.players:
-            for unit in player.game_data[p1_ship.location]:
-                if unit.unit_type != "Planet":
-                    if unit.team == 1:
-                        p1_ships.append(unit)
-                    elif unit.team == 2:
-                        p2_ships.append(unit)
-        order_of_combat = self.sort_by_attack_grade(p1_ships + p2_ships)
-        while len([p1_ship.location for p1_ship in p1_ships if p1_ship.location is not None]) > 0 and len([p2_ship.location for p2_ship in p2_ships if p2_ship.location is not None]) > 0:
-            for ship in order_of_combat:
-                if ship.unit_type == 'Colony Ship':
-                    ship.location = None
-                    self.correct_board()
-                else:
-                    if ship.location is not None:
-                        if ship.team == 1:
-                            rand = random.choice(p2_ships)
-                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(rand.unit_type)+".")
-                            self.attack(ship, rand)
-                        elif ship.team == 2:
-                            rand = random.choice(p1_ships)
-                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(rand.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
-                            self.attack(ship, rand)
-
-    def colony_combat(self):
-        planets = [planet  for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == "Planet"]
-        p1_colonies = [colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.team == 1]
-        p2_colonies = [colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.team == 2]
-        colonies = [p1_colonies, p2_colonies]
+            for coord in player.game_data:
+                for unit in player.game_data[coord]:
+                    if unit.unit_type != "Planet" and unit.unit_type != "Colony":
+                        if unit.team == 1 and unit not in p1_units:
+                            p1_units.append(unit)
+                        elif unit.team == 2 and unit not in p2_units:
+                            p2_units.append(unit)
+        for p1_ship in p1_units:
+            for p2_ship in p2_units:
+                if p1_ship.location == p2_ship.location and p1_ship.location is not None:
+                        p1_ships = []
+                        p2_ships = []
+                        #Get all the ships at the location of combat
+                        self.update_board()
+                        for player in self.players:
+                            for unit in player.game_data[p1_ship.location]:
+                                if unit.unit_type != "Planet":
+                                    if unit.team == 1 and unit not in p1_ships:
+                                        p1_ships.append(unit)
+                                    elif unit.team == 2 and unit not in p2_ships:
+                                        p2_ships.append(unit)
+        #sort all units at location of combat by attack grade
+                        ships_in_combat = p1_ships + p2_ships
+                        combat = CombatEngine(ships_in_combat,False)
+                        combat.resolve_combat(p1_type = self.players[0].player_type,p2_type = self.players[1].player_type)
+                        self.update_board()
+                    
+    def check_for_and_initiate_colony_combat(self):
+        planets = [planet  for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == "Planet" and planet.has_a_colony]
         for planet in planets:
-            if planet.has_a_colony:
-                for ship in self.board.game_data[planet.location]:
-                    if ship.unit_type != "Planet" and ship.team != planet.player and planet.has_a_colony:
-                        colony_in_combat = planet.colony
-                        if ship.shorthand == 'Dc':
-                            ship.location = None
-                            self.correct_board()
-                            pass
-                        else:
-                            for player_colonies in colonies:
-                                for colony in player_colonies:
-                                    if colony.location == planet.location:
-                                        colony_in_combat = colony
-                            if colony_in_combat.base != False:
-                                if ord(ship.attack_grade) < ord(colony_in_combat.base.attack_grade):
-                                    self.attack(ship, colony_in_combat.base)
-                                elif ord(ship.attack_grade) > ord(colony_in_combat.base.attack_grade):
-                                    self.attack(colony_in_combat.base, ship)
-                            else:
-                                if colony.armor == 1:
-                                    for colony in self.board.game_data[planet.location]:
-                                        if colony.unit_type == "Colony":
-                                            colony.shipyards = []
-                                    planet.reset()
-                                else:
-                                    self.attack(ship,colony_in_combat)
+            units = [unit for unit in self.players[0].game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
+            if len(units) > 0:
+                combat = CombatEngine(units,False)
+                combat.find_enemy_ships_at_colonies(planet.player)
+                self.update_board()
 
-
-    def sort_by_attack_grade(self,set_of_units):
-        for i in range(len(set_of_units)):  
-            for j in range(0, len(set_of_units)-(i+1)):  
-                if (ord(set_of_units[j].attack_grade) > ord(set_of_units[j + 1].attack_grade)):  
-                    temp = set_of_units[j]  
-                    set_of_units[j]= set_of_units[j + 1]  
-                    set_of_units[j + 1]= temp  
-        return set_of_units 
-
-    def attack(self, p1_ship, p2_ship):
-        if p1_ship.shorthand == 'Dc' and p2_ship.shorthand == 'Dc':
-            p1_ship.location = None
-            p2_ship.location = None
-            self.correct_board()
-            print("\n   Player 1's Decoy and Player 2's Decoy destroyed each other")
-        elif p1_ship.shorthand == 'Dc':
-            p1_ship.location = None
-            self.correct_board()
-            print("\n   Player " + str(p2_ship.team) + "'s "+str(p2_ship.unit_type)+" destroyed Player " + str(p1_ship.team) + "'s " +str(p1_ship.unit_type))
-        elif p2_ship.shorthand == 'Dc':
-            p2_ship.location = None
-            self.correct_board()
-            print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
-        else:
-            rand = random.randint(1,6)
-            hit_threshold = ((p1_ship.strength + self.players[0].attack_tech) - (p2_ship.defense  + self.players[1].defense_tech)) - rand
-
-            if rand == 1 or hit_threshold >= 0:
-                if p2_ship.armor == 1:
-                    p2_ship.location = None
-                    self.correct_board()
-                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
-                else:
-                    p2_ship.armor -= 1
-                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
-
-            else:
-                print("\n   Player "+str(p1_ship.team)+"'s "+ str(p1_ship.unit_type)+" missed Player "+str(p2_ship.team)+"'s " + str(p2_ship.unit_type))
+    
 
 
     def check_for_planet(self, colony_ship):
@@ -134,26 +83,31 @@ class Game:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
                             colony_ship.location = None
-                            self.correct_board()
+                            self.update_board()
                             unit.player = colony_ship.team   
                             unit.has_a_colony = True 
-                            unit.colony = Colony(colony_ship.team, unit.location,[],False)
-                            self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,[],False))
+                            attack_tech = self.players[colony_ship.team -1].attack_tech
+                            defense_tech = self.players[colony_ship.team -1].defense_tech
+                            unit.colony = Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False)
+                            self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False))
 
                 
                         
-    def money_from_colonies(self):
+    def distribute_player_income(self):
         player_income = [0 for player in self.players]
-        for player in self.players:
-            for coord in player.game_data:
-                for unit in player.game_data[coord]:
-                    if unit.unit_type == "Colony" and unit.team == player.player_num:
-                        self.players[unit.team - 1].money += unit.armor
-                        player_income[unit.team - 1] += unit.armor
-        print("\n       Player 1 earned "+str(player_income[0])+" CP's from thier "+str(len([colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None and colony.team == 1]))+" colonies")
-        print("\n       Player 2 earned "+str(player_income[1])+" CP's from thier "+str(len([colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None and colony.team == 2]))+" colonies")
+        player_colonies = [0 for player in self.players]
+        self.update_board()
+        for coord in self.players[0].game_data:
+            for unit in self.players[0].game_data[coord]:
+                if unit.unit_type == "Colony":
+                    self.players[unit.team - 1].money += unit.armor
+                    player_income[unit.team - 1] += unit.armor
+                    player_colonies[unit.team -1] += 1
+        if self.logging:
+            print("\n       Player 1 earned "+str(player_income[0])+" CP's from thier "+str(player_colonies[0])+" colonies")
+            print("\n       Player 2 earned "+str(player_income[1])+" CP's from thier "+str(player_colonies[1])+" colonies")
 
-    def maintenence(self):
+    def collect_player_maintenence_costs(self):
         for player in self.players:
             for coord in player.game_data:
                 for unit in player.game_data[coord]:
@@ -162,26 +116,29 @@ class Game:
                         
                         if self.players[unit.team - 1].money - maintenence < 0:
                             unit.location = None
-                            self.correct_board()
-                            print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
+                            self.update_board()
+                            if self.logging:
+                                print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
                         else:
                             self.players[unit.team - 1].money -= maintenence
-                            print("\n       Player "+str(unit.team)+" sustained thier "+str(unit.unit_type)+" for " +str(unit.hull_size))
+                            if self.logging:
+                                print("\n       Player "+str(unit.team)+" sustained thier "+str(unit.unit_type)+" for " +str(unit.hull_size))
 
    
-    def player_spend(self):
+    def spend_player_money(self):
         for player in self.players:
             start_money = player.money
             player.spend()
             if player.money == start_money:
-                print("\n       Player "+str(player.player_num)+" didn't buy anything this turn")
+                if self.logging:
+                    print("\n       Player "+str(player.player_num)+" didn't buy anything this turn")
 
     def complete_movement_phase(self):
         self.num_turns += 1
         print("\n TURN " + str(self.num_turns) + "  MOVEMENT PHASE")
         for player in self.players:
-            player.movement()
-            self.correct_board()
+            player.move_player_units()
+            self.update_board()
         for coord in self.board.game_data:
             for unit in self.board.game_data[coord]:
                 if unit.unit_type == "Colony Ship":
@@ -191,20 +148,8 @@ class Game:
     
     def complete_combat_phase(self):
         print("\n TURN " + str(self.num_turns) + "  COMBAT PHASE")
-        p1_units = []
-        p2_units = []
-        for coord in self.board.game_data:
-            for unit in self.board.game_data[coord]:
-                if unit.unit_type != "Planet" and unit.unit_type != "Colony":
-                    if unit.team == 1:
-                        p1_units.append(unit)
-                    elif unit.team == 2:
-                        p2_units.append(unit)
-        for p1_ship in p1_units:
-            for p2_ship in p2_units:
-                if p1_ship.location == p2_ship.location and p1_ship.location is not None:
-                        self.locate_combat(p1_ship,p2_ship)
-        self.colony_combat()
+        self.check_for_and_initiate_combat()
+        self.check_for_and_initiate_colony_combat()
         print("\n ------------- End of Combat Phase--------------")
         
     
@@ -212,15 +157,18 @@ class Game:
 
     def complete_economic_phase(self):
         print("\n TURN " + str(self.num_turns) + "  ECONOMIC PHASE")
-        print("\n   Income From Colonies:")
-        self.money_from_colonies()
-        self.correct_board()
-        print("\n   Maintenence:")
-        self.maintenence()
-        self.correct_board()
-        print("\n   New ships and Tech upgrades:")
-        self.player_spend()
-        self.correct_board()
+        if self.logging:
+            print("\n   Income From Colonies:")
+        self.distribute_player_income()
+        self.update_board()
+        if self.logging:
+            print("\n   Maintenence:")
+        self.collect_player_maintenence_costs()
+        self.update_board()
+        if self.logging:
+            print("\n   New ships and Tech upgrades:")
+        self.spend_player_money()
+        self.update_board()
         print("\n ------------- End of Economic Phase--------------")
 	# def plot_game_state(self):
     #     game_data = []
@@ -262,24 +210,24 @@ class Game:
     #     self.render_game(game_data)
 
     def check_for_game_over(self):
-            p1_check = [unit for coord in self.board.game_data for unit in self.board.game_data[coord] if unit.unit_type != "Planet" and unit.unit_type != "Colony" and unit.team == 1 and unit.location is not None]
-            p2_check = [unit for coord in self.board.game_data for unit in self.board.game_data[coord] if unit.unit_type != "Planet" and unit.unit_type != "Colony" and unit.team == 2 and unit.location is not None]
-            if self.num_turns >= 100:
-                if len(p1_check) > len(p2_check):
-                    self.winner = "Player 1"
-                elif len(p1_check) < len(p2_check):
-                    self.winner = "Player 2"
-                else:
-                    self.winner = "Tie"
-                return False
-            elif len(p1_check) == 0:
-                self.winner = "Player 2"
-                return False
-            elif len(p2_check) == 0:
+        p1_check = [unit for coord in self.players[0].game_data for unit in self.players[0].game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 1]
+        p2_check = [unit for coord in self.players[1].game_data for unit in self.players[1].game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 2]
+        if self.num_turns >= 100:
+            if len(p1_check) > len(p2_check):
                 self.winner = "Player 1"
-                return False
+            elif len(p1_check) < len(p2_check):
+                self.winner = "Player 2"
             else:
-                return True
+                self.winner = "Tie"
+            return False
+        elif len(p1_check) == 0:
+            self.winner = "Player 2"
+            return False
+        elif len(p2_check) == 0:
+            self.winner = "Player 1"
+            return False
+        else:
+            return True
 
     def run_to_completion(self):
         while self.check_for_game_over():

@@ -1,0 +1,255 @@
+STARTING CONDITIONS
+ 
+Players 1 and 2
+    are CombatTestingPlayers
+    start with 20 CPs
+    have an initial fleet of 3 scouts and 3 colony ships
+ 
+---
+ 
+TURN 1
+ 
+MOVEMENT PHASE
+ 
+Player 1, Movement 1
+    Scouts 1,2,3: (2,0) --> (2,1)
+    Colony Ships 1,2: (2,0) --> (2,1)
+ 
+Player 2, Movement 1
+    Scouts 1,2,3: (2,4) --> (2,3)
+    Colony Ships 1,2: (2,4) --> (2,3)
+ 
+Player 1, Movement 2
+    Scouts 1,2,3: (2,1) --> (2,2)
+    Colony Ships 4,5: (2,1) --> (2,2)
+ 
+Player 2, Movement 2
+    Scouts 1,2,3: (2,3) --> (2,2)
+    Colony Ships 1,2: (2,3) --> (2,2)
+ 
+Player 1, Movement 3
+    Scouts 1,2,3: Did not move
+    Colony Ships 4,5: Did not move
+
+Player 2, Movement 3
+    Scouts 1,2,3: Did not move
+    Colony Ships 4,5: Did not move
+ 
+Player 1, Final Locations:
+    Scout 1: (2,2)
+    Scout 2: (2,2)
+    Scout 3: (2,2)
+    Colony Ship 4: (2,2)
+    Colony Ship 5: (2,2)
+ 
+Player 2, Final Locations:
+    Scout 1: (2,2)
+    Scout 2: (2,2)
+    Scout 3: (2,2)
+    Colony Ship 4: (2,2)
+    Colony Ship 5: (2,2)
+ 
+COMBAT PHASE
+ 
+Remaining ships: (list in the table below)
+ 
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+       7        |    1   |         Colony Ship    |    1    |
+       8        |    1   |         Colony Ship    |    1    |
+       9        |    2   |         Colony Ship    |    1    |
+       10       |    2   |         Colony Ship    |    1    |
+
+Attack 1
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Colony Ship
+
+   Hit Threshold: 2
+
+   Dice Roll: 1
+
+   Hit or Miss: Hit
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+       8        |    1   |      Colony Ship       |    1    |
+       9        |    2   |      Colony Ship       |    1    |
+
+Attack 2
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Colony Ship
+
+   Hit Threshold: 1
+
+   Dice Roll: 2
+
+   Hit or Miss: Hit
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+       8        |    1   |      Colony Ship       |    1    |
+
+Attack 3
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 0
+
+   Dice Roll: 3
+
+   Hit or Miss: Hit
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    1   |      Colony Ship       |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+
+Attack 4
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Colony Ship
+
+   Hit Threshold: -1
+
+   Dice Roll: 4
+
+   Hit or Miss: Miss
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    1   |      Colony Ship       |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+
+Attack 5
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: -2
+
+   Dice Roll: 5
+
+   Hit or Miss: Miss
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    1   |      Colony Ship       |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+
+Attack 6
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: -3
+
+   Dice Roll: 6
+
+   Hit or Miss: Miss
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    1   |      Colony Ship       |    1    |
+       7        |    1   |      Colony Ship       |    1    |
+
+Attack 7
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 2
+
+   Dice Roll: 1
+
+   Hit or Miss: Hit
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    1   |      Colony Ship       |    1    |
+       6        |    1   |      Colony Ship       |    1    |
+
+Attack 8
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Colony Ship
+
+   Hit Threshold: 1
+
+   Dice Roll: 2
+
+   Hit or Miss: Hit
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    1   |      Colony Ship       |    1    |
+
+Attack 9
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 0
+
+   Dice Roll: 3
+
+   Hit or Miss: Hit
