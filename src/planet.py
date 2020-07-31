@@ -12,3 +12,5 @@ class Planet:
         self.has_a_colony = False
         self.colony = None
         self.shipyards = []
+
+        #test
