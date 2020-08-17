@@ -10,7 +10,7 @@ class CombatTestPlayer(Player):
     def __init__(self, player_num, start_pos, game_data,logging):
         super().__init__(player_num, start_pos, game_data,logging)
         self.player_type = 'combat'
-        self.money = 50
+        self.money = 20
         self.attack_tech = 0
         self.defense_tech = 0
         self.movement_tech = 1
@@ -27,23 +27,26 @@ class CombatTestPlayer(Player):
             self.game_data[unit.location].append(unit)
     
     def spend(self):
-        #while ship size tech is less than 3 upgrade that once ship size is 3 alternate between building scouts and cruisers
-        while self.money > 15:
+        while self.money >= self.create_unit(self.ship_choice,self.start_pos, logging = False).price:
             if self.ship_size_tech<2:
                 ship_size_price = ((self.ship_size_tech + 1)*5)
                 if self.money > ship_size_price:
                     self.ship_size_tech+=1
                     self.money -= ship_size_price
-                    print("\n       Player "+str(self.player_num)+" upgraded thier ship size technology and can now build ships of hull size " + str(self.ship_size_tech)) 
+                    if self.logging:
+                        print("\n       Player "+str(self.player_num)+" upgraded thier ship size technology and can now build ships of hull size " + str(self.ship_size_tech)) 
             else:
                 rand_colony = random.choice(self.locate_colonies_with_shipyard())
                 if self.money >= self.create_unit(self.ship_choice,rand_colony.location,logging = False).price:
                     self.game_data[rand_colony.location].append(self.create_unit(self.ship_choice,rand_colony.location))
                     self.money -= self.create_unit(self.ship_choice,rand_colony.location,logging = False).price
+                    
                     if self.create_unit(self.ship_choice,rand_colony.location,logging = False).unit_type == 'Scout':
                         self.ship_choice = 'Destroyer'
                     elif self.create_unit(self.ship_choice,rand_colony.location,logging = False).unit_type == 'Destroyer':
                         self.ship_choice = 'Scout'
+        if self.logging:
+            print("\n   Player "+str(self.player_num)+" Money: "+str(self.money))
 
 
 

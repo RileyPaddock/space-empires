@@ -1,13 +1,13 @@
 import random
 class CombatEngine():
-    def __init__(self, units_in_combat,logging):
+    def __init__(self, units_in_combat,combat_turn,logging):
         self.units = self.sort_by_attack_grade(units_in_combat)
         self.logging = logging
         self.location = self.units[0].location
         self.p1_ships = [p1_ship for p1_ship in self.units if p1_ship.team == 1]
         self.p2_ships = [p2_ship for p2_ship in self.units if p2_ship.team == 2]
-        self.not_random = [1,2,3,4,5,6]
-        self.combat_turn = 0
+        self.not_random = [6,5,4,3,2,1]
+        self.combat_turn = combat_turn
         self.combat_state()
 
     
@@ -33,12 +33,14 @@ class CombatEngine():
         return set_of_units 
 
     def combat_state(self):
-        print("\nATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |")
-        print("---------------------------------------------------------")
+        if self.logging:
+            print("\nATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |")
+            print("---------------------------------------------------------")
         unit_num = 1
         for unit in self.units:
             if unit.unit_type != 'Colony Ship' and unit.unit_type != 'Decoy':
-                print("       "+str(unit_num)+"        |    "+str(unit.team)+"   |         "+str(unit.unit_type)+"          |    "+str(unit.armor)+"    |")
+                if self.logging:
+                    print("       "+str(unit_num)+"        |    "+str(unit.team)+"   |         "+str(unit.unit_type)+"          |    "+str(unit.armor)+"    |")
                 unit_num+=1
 
     def resolve_combat(self,p1_type,p2_type):
@@ -94,14 +96,16 @@ class CombatEngine():
         else:
             rand = self.not_random[self.combat_turn%len(self.not_random)]
             hit_threshold = ((p1_ship.strength + p1_ship.attack_tech) - (p2_ship.defense  + p2_ship.defense_tech)) - rand
-            print("\nAttack "+str(self.combat_turn + 1)) 
-            print("\n   Attacker: Player "+str(p1_ship.team)+" "+str(p1_ship.unit_type))
-            print("\n   Defender: Player "+str(p2_ship.team)+" "+str(p2_ship.unit_type))
-            print("\n   Hit Threshold: "+str(hit_threshold + rand))
-            print("\n   Dice Roll: "+str(rand))
+            if self.logging:
+                print("\nAttack "+str(self.combat_turn + 1)) 
+                print("\n   Attacker: Player "+str(p1_ship.team)+" "+str(p1_ship.unit_type))
+                print("\n   Defender: Player "+str(p2_ship.team)+" "+str(p2_ship.unit_type))
+                print("\n   Hit Threshold: "+str(hit_threshold + rand))
+                print("\n   Dice Roll: "+str(rand))
             self.combat_turn += 1
             if rand == 1 or hit_threshold >= 0:
-                print("\n   Hit or Miss: Hit")
+                if self.logging:
+                    print("\n   Hit or Miss: Hit")
                 if p2_ship.armor == 1:
                     p2_ship.location = None
                     if self.logging:
@@ -112,8 +116,8 @@ class CombatEngine():
                         print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
 
             else:
-                print("\n   Hit or Miss: Miss")
                 if self.logging:
+                    print("\n   Hit or Miss: Miss")
                     print("\n   Player "+str(p1_ship.team)+"'s "+ str(p1_ship.unit_type)+" missed Player "+str(p2_ship.team)+"'s " + str(p2_ship.unit_type))
     
     def find_enemy_ships_at_colonies(self,player):

@@ -1,0 +1,617 @@
+ TURN 1  MOVEMENT PHASE
+
+ Player 1 - Move 1
+
+   Unit 3 (Colony Ship) moves from (2, 0) to (2, 1)
+
+   Unit 4 (Colony Ship) moves from (2, 0) to (2, 1)
+
+   Unit 5 (Scout) moves from (2, 0) to (2, 1)
+
+   Unit 6 (Scout) moves from (2, 0) to (2, 1)
+
+   Unit 7 (Scout) moves from (2, 0) to (2, 1)
+
+ Player 1 - Move 2
+
+   Unit 3 (Colony Ship) moves from (2, 1) to (2, 2)
+
+   Unit 4 (Colony Ship) moves from (2, 1) to (2, 2)
+
+   Unit 5 (Scout) moves from (2, 1) to (2, 2)
+
+   Unit 6 (Scout) moves from (2, 1) to (2, 2)
+
+   Unit 7 (Scout) moves from (2, 1) to (2, 2)
+
+ Player 1 - Move 3
+
+   Unit 3 (Colony Ship) did not move from (2, 2)
+
+   Unit 4 (Colony Ship) did not move from (2, 2)
+
+   Unit 5 (Scout) did not move from(2, 2)
+
+   Unit 6 (Scout) did not move from(2, 2)
+
+   Unit 7 (Scout) did not move from(2, 2)
+
+ Player 2 - Move 1
+
+   Unit 3 (Colony Ship) moves from (2, 4) to (2, 3)
+
+   Unit 4 (Colony Ship) moves from (2, 4) to (2, 3)
+
+   Unit 5 (Scout) moves from (2, 4) to (2, 3)
+
+   Unit 6 (Scout) moves from (2, 4) to (2, 3)
+
+   Unit 7 (Scout) moves from (2, 4) to (2, 3)
+
+ Player 2 - Move 2
+
+   Unit 3 (Colony Ship) moves from (2, 3) to (2, 2)
+
+   Unit 4 (Colony Ship) moves from (2, 3) to (2, 2)
+
+   Unit 5 (Scout) moves from (2, 3) to (2, 2)
+
+   Unit 6 (Scout) moves from (2, 3) to (2, 2)
+
+   Unit 7 (Scout) moves from (2, 3) to (2, 2)
+
+ Player 2 - Move 3
+
+   Unit 3 (Colony Ship) did not move from (2, 2)
+
+   Unit 4 (Colony Ship) did not move from (2, 2)
+
+   Unit 5 (Scout) did not move from(2, 2)
+
+   Unit 6 (Scout) did not move from(2, 2)
+
+   Unit 7 (Scout) did not move from(2, 2)
+
+ ------------- End of Movement Phase--------------
+
+ TURN 1  COMBAT PHASE
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 1
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 6
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 2
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 5
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 3
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 4
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    1   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+       6        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 4
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 3
+
+   Hit or Miss: Hit
+
+   Player 2's Scout destroyed Player 1's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+       5        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 5
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 2
+
+   Hit or Miss: Hit
+
+   Player 1's Scout destroyed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+       4        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 6
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 1
+
+   Hit or Miss: Hit 
+
+   Player 1's Scout destroyed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 7
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 6
+
+   Hit or Miss: Miss
+
+   Player 2's Scout missed Player 1's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 8
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 5
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 9
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 4
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 10
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 3
+
+   Hit or Miss: Hit
+
+   Player 2's Scout destroyed Player 1's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+       2        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 11
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 2
+
+   Hit or Miss: Hit
+
+   Player 1's Scout destroyed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Scout          |    1    |
+
+ ------------- End of Combat Phase--------------
+
+ TURN 1  ECONOMIC PHASE
+
+   Income From Colonies:
+
+       Player 1 earned 3 CP's from thier 1 colonies
+
+       Player 2 earned 3 CP's from thier 1 colonies
+
+   Maintenence:
+
+       Player 1 sustained thier Scout for 1
+
+   New ships and Tech upgrades:
+
+       Player 1 upgraded thier ship size technology and can now build ships of hull size 2
+
+       Player 1 bought a new Destroyer. It spawned at (2, 0)
+
+   Player 1 Money: 3
+
+       Player 2 upgraded thier ship size technology and can now build ships of hull size 2
+
+       Player 2 bought a new Destroyer. It spawned at (2, 4)
+
+   Player 2 Money: 4
+
+ ------------- End of Economic Phase--------------
+
+ TURN 2  MOVEMENT PHASE
+
+ Player 1 - Move 1
+
+   Unit 3 (Destroyer) moves from (2, 0) to (2, 1)
+
+   Unit 0 (Scout) did not move from(2, 2)
+
+ Player 1 - Move 2
+
+   Unit 3 (Destroyer) moves from (2, 1) to (2, 2)
+
+   Unit 0 (Scout) did not move from(2, 2)
+
+ Player 1 - Move 3
+
+   Unit 3 (Destroyer) did not move from(2, 2)
+
+   Unit 0 (Scout) did not move from(2, 2)
+
+ Player 2 - Move 1
+
+   Unit 3 (Destroyer) moves from (2, 4) to (2, 3)
+
+ Player 2 - Move 2
+
+   Unit 3 (Destroyer) moves from (2, 3) to (2, 2)
+
+ Player 2 - Move 3
+
+   Unit 3 (Destroyer) did not move from(2, 2)
+
+ ------------- End of Movement Phase--------------
+
+ TURN 2  COMBAT PHASE
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    2   |         Destroyer          |    1    |
+       3        |    1   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Destroyer and Player 2's Destroyer.
+
+Attack 12
+
+   Attacker: Player 1 Destroyer
+
+   Defender: Player 2 Destroyer
+
+   Hit Threshold: 4
+
+   Dice Roll: 1
+
+   Hit or Miss: Hit
+
+   Player 1's Destroyer destroyed Player 2's Destroyer
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+
+ ------------- End of Combat Phase--------------
+
+ TURN 2  ECONOMIC PHASE
+
+   Income From Colonies:
+
+       Player 1 earned 3 CP's from thier 1 colonies
+
+       Player 2 earned 3 CP's from thier 1 colonies
+
+   Maintenence:
+
+       Player 1 sustained thier Destroyer for 1
+
+       Player 1 sustained thier Scout for 1
+
+   New ships and Tech upgrades:
+
+   Player 1 Money: 4
+
+       Player 1 didn't buy anything this turn
+
+       Player 2 bought a new Scout. It spawned at (2, 4)
+
+   Player 2 Money: 1
+
+ ------------- End of Economic Phase--------------
+
+ TURN 3  MOVEMENT PHASE
+
+ Player 1 - Move 1
+
+   Unit 0 (Destroyer) did not move from(2, 2)
+
+   Unit 1 (Scout) did not move from(2, 2)
+
+ Player 1 - Move 2
+
+   Unit 0 (Destroyer) did not move from(2, 2)
+
+   Unit 1 (Scout) did not move from(2, 2)
+
+ Player 1 - Move 3
+
+   Unit 0 (Destroyer) did not move from(2, 2)
+
+   Unit 1 (Scout) did not move from(2, 2)
+
+ Player 2 - Move 1
+
+   Unit 3 (Scout) moves from (2, 4) to (2, 3)
+
+ Player 2 - Move 2
+
+   Unit 3 (Scout) moves from (2, 3) to (2, 2)
+
+ Player 2 - Move 3
+
+   Unit 3 (Scout) did not move from(2, 2)
+
+ ------------- End of Movement Phase--------------
+
+ TURN 3  COMBAT PHASE
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Destroyer and Player 2's Scout.
+
+Attack 13
+
+   Attacker: Player 1 Destroyer
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 4
+
+   Dice Roll: 6
+
+   Hit or Miss: Miss
+
+   Player 1's Destroyer missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 14
+
+   Attacker: Player 1 Scout
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 5
+
+   Hit or Miss: Miss
+
+   Player 1's Scout missed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Scout and Player 2's Scout.
+
+Attack 15
+
+   Attacker: Player 2 Scout
+
+   Defender: Player 1 Scout
+
+   Hit Threshold: 3
+
+   Dice Roll: 4
+
+   Hit or Miss: Miss
+
+   Player 2's Scout missed Player 1's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+       3        |    2   |         Scout          |    1    |
+
+ Combat at (2, 2) between Player 1's Destroyer and Player 2's Scout.
+
+Attack 16
+
+   Attacker: Player 1 Destroyer
+
+   Defender: Player 2 Scout
+
+   Hit Threshold: 4
+
+   Dice Roll: 3
+
+   Hit or Miss: Hit
+
+   Player 1's Destroyer destroyed Player 2's Scout
+
+ATTACKING ORDER | PLAYER |        SHIP        | HEALTH  |
+---------------------------------------------------------
+       1        |    1   |         Destroyer          |    1    |
+       2        |    1   |         Scout          |    1    |
+
+ ------------- End of Combat Phase--------------
+
+ TURN 3  ECONOMIC PHASE
+
+   Income From Colonies:
+
+       Player 1 earned 3 CP's from thier 1 colonies
+
+       Player 2 earned 3 CP's from thier 1 colonies
+
+   Maintenence:
+
+       Player 1 sustained thier Destroyer for 1
+
+       Player 1 sustained thier Scout for 1
+
+   New ships and Tech upgrades:
+
+   Player 1 Money: 5
+
+       Player 1 didn't buy anything this turn
+
+   Player 2 Money: 4
+
+       Player 2 didn't buy anything this turn
+
+ ------------- End of Economic Phase--------------
+
+ Game Over: Player 1 wins!
