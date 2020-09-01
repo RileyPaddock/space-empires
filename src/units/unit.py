@@ -1,8 +1,9 @@
 import random
 class Unit:
-    def __init__(self,team, location):
+    def __init__(self,team, location, age = 0):
         self.team = team
         self.location = location
+        self.age = age
 
     def move(self,direction):
         if direction == 'up':

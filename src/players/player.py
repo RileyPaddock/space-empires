@@ -45,7 +45,7 @@ class Player:
 
     
 
-    def create_unit(self, unit_type, location,logging = True):
+    def create_unit(self, unit_type, location, logging = False):
         if logging:
             print("\n       Player "+str(self.player_num)+" bought a new " + str(unit_type)+". It spawned at "+str(location))
         if unit_type == 'Scout':

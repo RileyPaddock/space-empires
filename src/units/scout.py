@@ -1,8 +1,8 @@
 from units.unit import Unit
 
 class Scout(Unit):
-  def __init__(self, team, location, attack_tech, defense_tech):
-        super().__init__(team, location)
+  def __init__(self, team, location, attack_tech, defense_tech,age = 0):
+        super().__init__(team, location, age)
         self.attack_tech = attack_tech
         self.defense_tech = defense_tech
         self.unit_type = 'Scout'

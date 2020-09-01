@@ -1,12 +1,12 @@
 import random
 class CombatEngine():
-    def __init__(self, units_in_combat,combat_turn,logging):
+    def __init__(self, units_in_combat,combat_turn,logging, rolls):
         self.units = self.sort_by_attack_grade(units_in_combat)
         self.logging = logging
         self.location = self.units[0].location
         self.p1_ships = [p1_ship for p1_ship in self.units if p1_ship.team == 1]
         self.p2_ships = [p2_ship for p2_ship in self.units if p2_ship.team == 2]
-        self.not_random = [6,5,4,3,2,1]
+        self.not_random = rolls
         self.combat_turn = combat_turn
         self.combat_state()
 
@@ -30,7 +30,14 @@ class CombatEngine():
                     temp = set_of_units[j]  
                     set_of_units[j]= set_of_units[j + 1]  
                     set_of_units[j + 1]= temp  
-        return set_of_units 
+        for i in range(len(set_of_units)):  
+            for j in range(0, len(set_of_units)-(i+1)): 
+                if set_of_units[j].unit_type == set_of_units[j+1].unit_type: 
+                    if (set_of_units[j].age < set_of_units[j + 1].age):  
+                        temp = set_of_units[j]  
+                        set_of_units[j]= set_of_units[j + 1]  
+                        set_of_units[j + 1]= temp  
+        return set_of_units  
 
     def combat_state(self):
         if self.logging:
@@ -45,17 +52,18 @@ class CombatEngine():
 
     def resolve_combat(self,p1_type,p2_type):
         for ship in self.units:
-                if ship.location is not None:
-                    if ship.unit_type == 'Colony Ship':
-                        ship.location = None
-                        self.update_units()
+            ship.age += 1
+            if ship.location is not None:
+                if ship.unit_type == 'Colony Ship':
+                    ship.location = None
+                    self.update_units()
         while len(self.p1_ships) > 0 and len(self.p2_ships) > 0:
             for ship in self.units:
                 if ship.location is not None:
                     if ship.team == 1 and len(self.p2_ships)>0:
                         
                         if p1_type == 'combat':
-                            enemy_ship = self.p2_ships[len(self.p2_ships)-1]
+                            enemy_ship = self.p2_ships[0]
                         else:
                             enemy_ship = random.choice(self.p2_ships)
                         if self.logging:
@@ -66,7 +74,7 @@ class CombatEngine():
                     elif ship.team == 2 and len(self.p1_ships)>0:
             
                         if p2_type == 'combat':
-                            enemy_ship = self.p1_ships[len(self.p1_ships)-1]
+                            enemy_ship = self.p1_ships[0]
                         else:
                             enemy_ship = random.choice(self.p1_ships)
                             while enemy_ship.location is None:
@@ -76,7 +84,7 @@ class CombatEngine():
                         self.attack(ship, enemy_ship)
                         self.update_units()
                         self.combat_state()
-                        break
+                    
 
 
     def attack(self, p1_ship, p2_ship):

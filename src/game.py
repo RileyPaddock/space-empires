@@ -8,6 +8,7 @@ from units.colony import Colony
 class Game:
     def __init__(self,logging = True):
         self.logging = logging
+        self.rolls = [6,5,4,3,2,1]
         self.num_turns = 0
         self.winner = None 
         self.board = Board([5,5])
@@ -61,7 +62,7 @@ class Game:
                                         p2_ships.append(unit)
         #sort all units at location of combat by attack grade
                         ships_in_combat = p1_ships + p2_ships
-                        combat = CombatEngine(ships_in_combat,self.combat_turn, True)
+                        combat = CombatEngine(ships_in_combat,self.combat_turn, self.logging, self.rolls)
                         combat.resolve_combat(p1_type = self.players[0].player_type,p2_type = self.players[1].player_type)
                         self.update_board()
                         self.combat_turn = combat.combat_turn
@@ -71,7 +72,7 @@ class Game:
         for planet in planets:
             units = [unit for unit in self.players[0].game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
             if len(units) > 0:
-                combat = CombatEngine(units,self.combat_turn, True)
+                combat = CombatEngine(units,self.combat_turn, self.logging, self.rolls)
                 combat.find_enemy_ships_at_colonies(planet.player)
                 self.update_board()
                 self.combat_turn = combat.combat_turn
@@ -103,8 +104,12 @@ class Game:
         for coord in self.players[0].game_data:
             for unit in self.players[0].game_data[coord]:
                 if unit.unit_type == "Colony":
-                    self.players[unit.team - 1].money += unit.armor
-                    player_income[unit.team - 1] += unit.armor
+                    if unit.location == self.players[unit.team - 1].start_pos:
+                         self.players[unit.team - 1].money += 20
+                         player_income[unit.team - 1] += 20
+                    else:
+                        self.players[unit.team - 1].money += unit.armor
+                        player_income[unit.team - 1] += unit.armor
                     player_colonies[unit.team -1] += 1
         if self.logging:
             print("\n       Player 1 earned "+str(player_income[0])+" CP's from thier "+str(player_colonies[0])+" colonies")
