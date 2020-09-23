@@ -13,3 +13,4 @@ class Base(Unit):
         self.shorthand = 'B'
         self.armor = 3
         self.hull_size = 3
+

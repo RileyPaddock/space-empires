@@ -9,7 +9,7 @@ class DumbPlayer(Player):
         super().__init__(player_num, start_pos, game_data,logging)
         self.player_type = "dumb"
         self.num_turns = 0
-        self.money = 20
+        self.money = 0
         self.attack_tech = 0
         self.defense_tech = 0
         self.movement_tech = 1
@@ -56,7 +56,7 @@ class DumbPlayer(Player):
                 return 40
 
     def move_player_units(self):
-        for i in range(len(self.get_movement_phases())):
+        for i in range(len(self.movement_calcs('movements'))):
             if self.logging:
                 print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
             for coord in self.game_data:
@@ -66,7 +66,7 @@ class DumbPlayer(Player):
                             self.move_unit(unit)
                         else:
                             old_loc = unit.location
-                            for i in range(self.get_movement_phases()[i]):
+                            for i in range(self.movement_calcs('movements')[i]):
                                 self.move_unit(unit)
                             if unit.location is not None and unit.location != old_loc and self.logging:
                                 print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))

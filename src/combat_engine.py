@@ -17,8 +17,6 @@ class CombatEngine():
         for unit in temp:
             if unit.location is not None:
                 self.units.append(unit)
-        self.p1_ships = []
-        self.p2_ships = []
         self.p1_ships = [p1_ship for p1_ship in self.units if p1_ship.team == 1]
         self.p2_ships = [p2_ship for p2_ship in self.units if p2_ship.team == 2]
 

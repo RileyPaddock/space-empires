@@ -1,3 +1,4 @@
+import random
 from players.random_player import RandomPlayer
 from players.dumb_player import DumbPlayer
 from players.combat_testing_player import CombatTestPlayer
@@ -6,14 +7,30 @@ from combat_engine import CombatEngine
 from units.colony import Colony
 
 class Game:
-    def __init__(self,logging = True):
+    def __init__(self,rolls, players, logging = True):
         self.logging = logging
-        self.rolls = [6,5,4,3,2,1]
+        if rolls == 'ascending':
+            self.rolls = [1,2,3,4,5,6]
+        elif rolls == 'descending':
+            self.rolls = [6,5,4,3,2,1]
+        else:
+            self.rolls = []
+            dice = [i for i in range(1,7)]
+            while len(self.rolls) < 6:
+                roll = random.choice(dice)
+                self.rolls.append(roll)
+                dice.remove(roll)
+
         self.num_turns = 0
         self.winner = None 
         self.board = Board([5,5])
         self.combat_turn = 0
-        self.players = [CombatTestPlayer(1,(2,0), self.board.game_data,self.logging), CombatTestPlayer(2,(2,4), self.board.game_data,self.logging)]
+        self.players = []
+        for i in range(len(players)):
+            if players[i] == 'Combat':
+                self.players.append(CombatTestPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board.game_data,self.logging))
+            elif players[i] == 'Dumb':
+                self.players.append(DumbPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board.game_data,self.logging))
         
     def update_board(self):
         for player in self.players:
@@ -86,14 +103,17 @@ class Game:
                 for unit in player.game_data[coord]:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
-                            colony_ship.location = None
-                            self.update_board()
-                            unit.player = colony_ship.team   
-                            unit.has_a_colony = True 
-                            attack_tech = self.players[colony_ship.team -1].attack_tech
-                            defense_tech = self.players[colony_ship.team -1].defense_tech
-                            unit.colony = Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False)
-                            self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False))
+                            print("Player "+str(colony_ship.team)+"'s Colony Ship encountered an empty Planet at "+str(colony_ship.location))
+                            colonize = input("Do you wish to Colonize:")
+                            if colonize == 'Y':
+                                colony_ship.location = None
+                                self.update_board()
+                                unit.player = colony_ship.team   
+                                unit.has_a_colony = True 
+                                attack_tech = self.players[colony_ship.team -1].attack_tech
+                                defense_tech = self.players[colony_ship.team -1].defense_tech
+                                unit.colony = Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False)
+                                self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False))
 
                 
                         

@@ -10,7 +10,7 @@ class CombatTestPlayer(Player):
     def __init__(self, player_num, start_pos, game_data,logging):
         super().__init__(player_num, start_pos, game_data,logging)
         self.player_type = 'combat'
-        self.money = 20
+        self.money = 0
         self.attack_tech = 0
         self.defense_tech = 0
         self.movement_tech = 1
@@ -27,7 +27,7 @@ class CombatTestPlayer(Player):
             self.game_data[unit.location].append(unit)
     
     def spend(self):
-        while self.money >= self.create_unit(self.ship_choice,self.start_pos, logging = False).price:
+        while self.money >= self.create_unit(self.ship_choice,self.start_pos).price:
             if self.ship_size_tech<2:
                 ship_size_price = ((self.ship_size_tech + 1)*5)
                 if self.money > ship_size_price:
@@ -37,13 +37,13 @@ class CombatTestPlayer(Player):
                         print("\n       Player "+str(self.player_num)+" upgraded thier ship size technology and can now build ships of hull size " + str(self.ship_size_tech)) 
             else:
                 rand_colony = random.choice(self.locate_colonies_with_shipyard())
-                if self.money >= self.create_unit(self.ship_choice,rand_colony.location,logging = False).price:
+                if self.money >= self.create_unit(self.ship_choice,rand_colony.location).price:
                     self.game_data[rand_colony.location].append(self.create_unit(self.ship_choice,rand_colony.location))
-                    self.money -= self.create_unit(self.ship_choice,rand_colony.location,logging = False).price
+                    self.money -= self.create_unit(self.ship_choice,rand_colony.location,logging = self.logging).price
                     
-                    if self.create_unit(self.ship_choice,rand_colony.location,logging = False).unit_type == 'Scout':
+                    if self.create_unit(self.ship_choice,rand_colony.location).unit_type == 'Scout':
                         self.ship_choice = 'Destroyer'
-                    elif self.create_unit(self.ship_choice,rand_colony.location,logging = False).unit_type == 'Destroyer':
+                    elif self.create_unit(self.ship_choice,rand_colony.location).unit_type == 'Destroyer':
                         self.ship_choice = 'Scout'
         if self.logging:
             print("\n   Player "+str(self.player_num)+" Money: "+str(self.money))
@@ -51,7 +51,7 @@ class CombatTestPlayer(Player):
 
 
     def move_player_units(self):
-        for i in range(len(self.get_movement_phases())):
+        for i in range(len(self.movement_calcs('movements'))):
             if self.logging:
                 print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
             for coord in self.game_data:
@@ -67,7 +67,7 @@ class CombatTestPlayer(Player):
                                     print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from "+str(old_loc))
                         else:
                             old_loc = unit.location
-                            for i in range(self.get_movement_phases()[i]):
+                            for i in range(self.movement_calcs('movements')[i]):
                                 self.move_unit(unit)
                             if unit.location is not None and unit.location != old_loc and self.logging:
                                 print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
@@ -84,22 +84,3 @@ class CombatTestPlayer(Player):
         elif unit.location[1]<2:
             unit.move('up')
     
-    def get_movement_phases(self):
-            if self.movement_tech == 1:
-                return (1,1,1)
-            elif self.movement_tech == 2:
-                return (1,1,2)
-            elif self.movement_tech == 3:
-                return (1,2,2)
-            elif self.movement_tech == 4:
-                return (2,2,2)
-            elif self.movement_tech == 5:
-                return (2,2,3)
-            elif self.movement_tech == 6:
-                return (2,3,3)
-
-    def get_movement_price(self):
-            if self.movement_tech < 4:
-                return (self.movement_tech + 1)*10
-            else:
-                return 40

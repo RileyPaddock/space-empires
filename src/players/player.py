@@ -13,7 +13,7 @@ from units.colony import Colony
 from planet import Planet
 
 class Player:
-    def __init__(self, player_num, start_pos, game_data,logging,num_units = 0):
+    def __init__(self, player_num, start_pos, game_data,logging, num_units = 0):
         self.player_num = player_num
         self.start_pos = start_pos
         self.game_data = game_data
