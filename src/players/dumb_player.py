@@ -5,8 +5,8 @@ from units.colony import Colony
 from planet import Planet
 
 class DumbPlayer(Player):
-    def __init__(self, player_num, start_pos, game_data,logging):
-        super().__init__(player_num, start_pos, game_data,logging)
+    def __init__(self, player_num, start_pos, board,logging):
+        super().__init__(player_num, start_pos, board,logging)
         self.player_type = "dumb"
         self.num_turns = 0
         self.money = 0
@@ -21,7 +21,7 @@ class DumbPlayer(Player):
     def generate_fleet(self):
         units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos,self.attack_tech, self.defense_tech, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],None),Scout(self.player_num, self.start_pos,self.attack_tech, self.defense_tech),Scout(self.player_num, self.start_pos,self.attack_tech, self.defense_tech),Scout(self.player_num, self.start_pos,self.attack_tech, self.defense_tech)]
         for unit in units:
-            self.game_data[unit.location].append(unit)
+            self.board.game_data[unit.location].append(unit)
     
     def spend(self):
         units = []
@@ -31,9 +31,9 @@ class DumbPlayer(Player):
                 print("\n       Player "+str(self.player_num)+" bought a new Scout. It spawned at "+str(self.start_pos))
             self.money -= 6
         for unit in units:
-            self.game_data[unit.location].append(unit)
+            self.board.game_data[unit.location].append(unit)
             if self.logging:
-                print(self.game_data[unit.location])
+                print(self.board.game_data[unit.location])
 
     def get_movement_phases(self):
             if self.movement_tech == 1:
@@ -59,8 +59,8 @@ class DumbPlayer(Player):
         for i in range(len(self.movement_calcs('movements'))):
             if self.logging:
                 print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
-            for coord in self.game_data:
-                for unit in self.game_data[coord]:
+            for coord in self.board.game_data:
+                for unit in self.board.game_data[coord]:
                     if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
                         if unit.unit_type == 'Colony Ship':
                             self.move_unit(unit)
@@ -69,10 +69,13 @@ class DumbPlayer(Player):
                             for i in range(self.movement_calcs('movements')[i]):
                                 self.move_unit(unit)
                             if unit.location is not None and unit.location != old_loc and self.logging:
-                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
+                                print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
                             elif unit.location is not None and self.logging:
-                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
+                                print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
 
     def move_unit(self, unit):
         if unit.location[0] != 4:
            unit.move('right')
+
+    def will_colonize(self):
+        return False

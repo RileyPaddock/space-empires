@@ -1,4 +1,5 @@
 import random
+from players.random_player import Player
 from players.random_player import RandomPlayer
 from players.dumb_player import DumbPlayer
 from players.combat_testing_player import CombatTestPlayer
@@ -28,36 +29,42 @@ class Game:
         self.players = []
         for i in range(len(players)):
             if players[i] == 'Combat':
-                self.players.append(CombatTestPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board.game_data,self.logging))
+                self.players.append(CombatTestPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
             elif players[i] == 'Dumb':
-                self.players.append(DumbPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board.game_data,self.logging))
+                self.players.append(DumbPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
         
-    def update_board(self):
-        for player in self.players:
-            temp = player.game_data
-            player.game_data = {}
-            for x in range(5):
-                for y in range(5):
-                    player.game_data[(x,y)] = []
-            for elem in temp:
-                for unit in temp[elem]:
-                    if unit.location is not None:
-                        player.game_data[unit.location].append(unit)
 
-            for coord in player.game_data:
-                for planet in player.game_data[coord]:
-                    if planet.unit_type == 'Planet' and planet.has_a_colony:
-                        if planet.colony.location == None:
-                            planet.reset()
+    def generate_state(self,phase,player):
+        state = {}
+        state['turn'] = self.num_turns
+        state['player'] = self.players.index(player)
+        state['winner'] = self.winner
+        state['players'] = [self.player_state(player) for player in self.players]
+        state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
+        return state
+
+    def player_state(self,player):
+        player_state = {}
+        player_state['cp'] = player.money
+        player_state['technology'] = {attr:value for attr, value in player.__dict__.items() if 'tech' in attr}
+        player_state['units'] = [self.unit_state(unit) for coord in player.board.game_data for unit in player.board.game_data[coord] if unit.unit_type != 'Planet' and unit.team == player.player_num]
+        return player_state
+
+    def unit_state(self,unit):
+        unit_state = {}
+        unit_state['location'] = unit.location
+        unit_state['type'] = unit.unit_type
+        unit_state['technology'] = {attr:value for attr, value in unit.__dict__.items() if 'tech' in attr}
+        return unit_state
     
     
     def check_for_and_initiate_combat(self):
         p1_units = []
         p2_units = []
-        self.update_board()
+        self.board.update_board()
         for player in self.players:
-            for coord in player.game_data:
-                for unit in player.game_data[coord]:
+            for coord in player.board.game_data:
+                for unit in player.board.game_data[coord]:
                     if unit.unit_type != "Planet" and unit.unit_type != "Colony":
                         if unit.team == 1 and unit not in p1_units:
                             p1_units.append(unit)
@@ -69,9 +76,9 @@ class Game:
                         p1_ships = []
                         p2_ships = []
                         #Get all the ships at the location of combat
-                        self.update_board()
+                        self.board.update_board()
                         for player in self.players:
-                            for unit in player.game_data[p1_ship.location]:
+                            for unit in player.board.game_data[p1_ship.location]:
                                 if unit.unit_type != "Planet":
                                     if unit.team == 1 and unit not in p1_ships:
                                         p1_ships.append(unit)
@@ -81,17 +88,17 @@ class Game:
                         ships_in_combat = p1_ships + p2_ships
                         combat = CombatEngine(ships_in_combat,self.combat_turn, self.logging, self.rolls)
                         combat.resolve_combat(p1_type = self.players[0].player_type,p2_type = self.players[1].player_type)
-                        self.update_board()
+                        self.board.update_board()
                         self.combat_turn = combat.combat_turn
                     
     def check_for_and_initiate_colony_combat(self):
         planets = [planet  for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == "Planet" and planet.has_a_colony]
         for planet in planets:
-            units = [unit for unit in self.players[0].game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
+            units = [unit for unit in self.players[0].board.game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
             if len(units) > 0:
                 combat = CombatEngine(units,self.combat_turn, self.logging, self.rolls)
                 combat.find_enemy_ships_at_colonies(planet.player)
-                self.update_board()
+                self.board.update_board()
                 self.combat_turn = combat.combat_turn
 
     
@@ -99,15 +106,13 @@ class Game:
 
     def check_for_planet(self, colony_ship):
         for player in self.players:
-            for coord in player.game_data:
-                for unit in player.game_data[coord]:
+            for coord in player.board.game_data:
+                for unit in player.board.game_data[coord]:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
-                            print("Player "+str(colony_ship.team)+"'s Colony Ship encountered an empty Planet at "+str(colony_ship.location))
-                            colonize = input("Do you wish to Colonize:")
-                            if colonize == 'Y':
+                            if self.players[colony_ship.team - 1].will_colonize():
                                 colony_ship.location = None
-                                self.update_board()
+                                self.board.update_board()
                                 unit.player = colony_ship.team   
                                 unit.has_a_colony = True 
                                 attack_tech = self.players[colony_ship.team -1].attack_tech
@@ -120,9 +125,9 @@ class Game:
     def distribute_player_income(self):
         player_income = [0 for player in self.players]
         player_colonies = [0 for player in self.players]
-        self.update_board()
-        for coord in self.players[0].game_data:
-            for unit in self.players[0].game_data[coord]:
+        self.board.update_board()
+        for coord in self.players[0].board.game_data:
+            for unit in self.players[0].board.game_data[coord]:
                 if unit.unit_type == "Colony":
                     if unit.location == self.players[unit.team - 1].start_pos:
                          self.players[unit.team - 1].money += 20
@@ -138,15 +143,15 @@ class Game:
     def collect_player_maintenence_costs(self):
         for player in self.players:
             maintainable_units = []
-            for coord in player.game_data:
-                for unit in player.game_data[coord]:
+            for coord in player.board.game_data:
+                for unit in player.board.game_data[coord]:
                     if unit.unit_type != "Planet" and unit.unit_type != "Colony" and  unit.unit_type != 'CS' and unit.shorthand != 'Dc' and unit.location is not None and unit.team==player.player_num:
                         maintainable_units.append(unit)
             maintainable_units = self.sort_by_hull_size(maintainable_units)
             for unit in maintainable_units:
                 if self.players[unit.team - 1].money - unit.hull_size < 0:
                     unit.location = None
-                    self.update_board()
+                    self.board.update_board()
                     if self.logging:
                         print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
                 else:
@@ -178,7 +183,7 @@ class Game:
             print("\n TURN " + str(self.num_turns) + "  MOVEMENT PHASE")
         for player in self.players:
             player.move_player_units()
-            self.update_board()
+            self.board.update_board()
         for coord in self.board.game_data:
             for unit in self.board.game_data[coord]:
                 if unit.unit_type == "Colony Ship":
@@ -203,15 +208,15 @@ class Game:
         if self.logging:
             print("\n   Income From Colonies:")
         self.distribute_player_income()
-        self.update_board()
+        self.board.update_board()
         if self.logging:
             print("\n   Maintenence:")
         self.collect_player_maintenence_costs()
-        self.update_board()
+        self.board.update_board()
         if self.logging:
             print("\n   New ships and Tech upgrades:")
         self.spend_player_money()
-        self.update_board()
+        self.board.update_board()
         if self.logging:
             print("\n ------------- End of Economic Phase--------------")
 	# def plot_game_state(self):
@@ -254,8 +259,8 @@ class Game:
     #     self.render_game(game_data)
 
     def check_for_game_over(self):
-        p1_check = [unit for coord in self.players[0].game_data for unit in self.players[0].game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 1]
-        p2_check = [unit for coord in self.players[1].game_data for unit in self.players[1].game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 2]
+        p1_check = [unit for coord in self.players[0].board.game_data for unit in self.players[0].board.game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 1]
+        p2_check = [unit for coord in self.players[1].board.game_data for unit in self.players[1].board.game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 2]
         if self.num_turns >= 100:
             if len(p1_check) > len(p2_check):
                 self.winner = "Player 1"

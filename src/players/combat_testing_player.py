@@ -7,8 +7,8 @@ from units.colony import Colony
 from planet import Planet
 
 class CombatTestPlayer(Player):
-    def __init__(self, player_num, start_pos, game_data,logging):
-        super().__init__(player_num, start_pos, game_data,logging)
+    def __init__(self, player_num, start_pos, board,logging):
+        super().__init__(player_num, start_pos, board,logging)
         self.player_type = 'combat'
         self.money = 0
         self.attack_tech = 0
@@ -24,7 +24,7 @@ class CombatTestPlayer(Player):
         units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos,self.attack_tech, self.defense_tech, [ShipYard(self.player_num, self.start_pos) for _ in range(4)],None),ColonyShip(self.player_num,self.start_pos,self.attack_tech,self.defense_tech),ColonyShip(self.player_num,self.start_pos,self.attack_tech,self.defense_tech),Scout(self.player_num,self.start_pos,self.defense_tech,self.attack_tech),Scout(self.player_num,self.start_pos,self.defense_tech,self.attack_tech),Scout(self.player_num,self.start_pos,self.defense_tech,self.attack_tech)]
         
         for unit in units:
-            self.game_data[unit.location].append(unit)
+            self.board.game_data[unit.location].append(unit)
     
     def spend(self):
         while self.money >= self.create_unit(self.ship_choice,self.start_pos).price:
@@ -38,7 +38,7 @@ class CombatTestPlayer(Player):
             else:
                 rand_colony = random.choice(self.locate_colonies_with_shipyard())
                 if self.money >= self.create_unit(self.ship_choice,rand_colony.location).price:
-                    self.game_data[rand_colony.location].append(self.create_unit(self.ship_choice,rand_colony.location))
+                    self.board.game_data[rand_colony.location].append(self.create_unit(self.ship_choice,rand_colony.location))
                     self.money -= self.create_unit(self.ship_choice,rand_colony.location,logging = self.logging).price
                     
                     if self.create_unit(self.ship_choice,rand_colony.location).unit_type == 'Scout':
@@ -54,25 +54,25 @@ class CombatTestPlayer(Player):
         for i in range(len(self.movement_calcs('movements'))):
             if self.logging:
                 print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
-            for coord in self.game_data:
-                for unit in self.game_data[coord]:
+            for coord in self.board.game_data:
+                for unit in self.board.game_data[coord]:
                     if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
                         if unit.unit_type == 'Colony Ship':
                             old_loc = unit.location
                             self.move_unit(unit)
                             if self.logging:
                                 if unit.location != old_loc:
-                                    print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
+                                    print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
                                 else:
-                                    print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from "+str(old_loc))
+                                    print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from "+str(old_loc))
                         else:
                             old_loc = unit.location
                             for i in range(self.movement_calcs('movements')[i]):
                                 self.move_unit(unit)
                             if unit.location is not None and unit.location != old_loc and self.logging:
-                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
+                                print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
                             elif unit.location is not None and self.logging:
-                                print("\n   Unit "+str(self.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
+                                print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
 
     def move_unit(self, unit):
         if unit.location[0]>2:
@@ -84,3 +84,5 @@ class CombatTestPlayer(Player):
         elif unit.location[1]<2:
             unit.move('up')
     
+    def will_colonize(self):
+        return False

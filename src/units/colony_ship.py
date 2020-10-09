@@ -1,6 +1,7 @@
 from units.unit import Unit
 
 class ColonyShip(Unit):
+    
     def __init__(self, team, location, attack_tech, defense_tech,age = 0):
         super().__init__(team, location, age)
         self.attack_tech = attack_tech
@@ -14,3 +15,4 @@ class ColonyShip(Unit):
         self.hull_size = 1
         self.defense = 0
         self.strength = 0
+

@@ -13,10 +13,10 @@ from units.colony import Colony
 from planet import Planet
 
 class Player:
-    def __init__(self, player_num, start_pos, game_data,logging, num_units = 0):
+    def __init__(self, player_num, start_pos, board,logging, num_units = 0,):
         self.player_num = player_num
         self.start_pos = start_pos
-        self.game_data = game_data
+        self.board = board
         self.logging = logging
         self.num_units = num_units
         self.money = 20
@@ -35,7 +35,7 @@ class Player:
 
     def locate_colonies_with_shipyard(self):
         colonies_with_shipyard = []
-        colonies = [colony for coord in self.game_data for colony in self.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None and colony.team == self.player_num]
+        colonies = [colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None and colony.team == self.player_num]
         for colony in colonies:
             if len(colony.shipyards) > 0 and colony.location is not None:
                 colonies_with_shipyard.append(colony)

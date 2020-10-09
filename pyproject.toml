@@ -6,7 +6,6 @@ authors = ["repl.it user <replituser@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-mixmaster = "^1.1"
 
 [tool.poetry.dev-dependencies]
 

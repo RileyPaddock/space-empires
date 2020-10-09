@@ -1,6 +1,7 @@
 from units.unit import Unit
 
 class Base(Unit):
+    
     def __init__(self, team, location, attack_tech, defense_tech,age = 0):
         super().__init__(team, location, age)
         self.attack_tech = attack_tech
@@ -13,4 +14,5 @@ class Base(Unit):
         self.shorthand = 'B'
         self.armor = 3
         self.hull_size = 3
+
 

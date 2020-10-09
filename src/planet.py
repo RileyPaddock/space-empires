@@ -5,7 +5,7 @@ class Planet:
         self.location = location
         self.has_a_colony = False
         self.colony = None
-        self.shipyards = []
+        # self.shipyards = []
 
     def reset(self):
         self.player = None
