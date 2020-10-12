@@ -10,6 +10,22 @@ class CombatEngine():
         self.combat_turn = combat_turn
         self.combat_state()
 
+    def generate_combat_array(self):
+        combat_dict = {}
+        attack_arr = {unit.location:[] for unit in self.units}
+        for unit in self.units:
+            combat_dict[unit.location] = {"location":unit.location,'order':[]}
+            attack_arr[unit.location].append(unit)
+        for combat_loc in attack_arr:
+            for unit in self.sort_by_attack_grade(attack_arr[combat_loc]):
+                combat_dict['order'].append({'player':unit.team,'unit':unit.unit_num})
+
+        combat_arr = []
+        for combat in combat_dict:
+            combat_arr.append(combat_dict[combat])
+        
+        return combat_arr
+
     
     def update_units(self):
         temp = self.units
