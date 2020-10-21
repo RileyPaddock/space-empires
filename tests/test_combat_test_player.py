@@ -1,7 +1,7 @@
 import sys
 sys.path.append('src')
 from game import Game
-g = Game(rolls = 'descending',players = ['Combat','Combat'], logging = False)
+g = Game(players = ['Combat','Combat'], logging = False)
 print("\nDescending Rolls")
 print("\n   Testing Turn 1 Economic Phase")
 g.complete_movement_phase()
@@ -58,7 +58,7 @@ print("\n       Passed")
 
 
 
-h = Game(rolls = 'ascending',players = ['Combat','Combat'], logging = False)
+h = Game(players = ['Combat','Combat'], logging = False)
 h.rolls = [1,2,3,4,5,6]
 print("\nAscending Rolls")
 print("\n   Testing Turn 1 Economic Phase")

@@ -6,7 +6,15 @@ class CombatEngine():
         self.location = self.units[0].location
         self.p1_ships = [p1_ship for p1_ship in self.units if p1_ship.team == 1]
         self.p2_ships = [p2_ship for p2_ship in self.units if p2_ship.team == 2]
-        self.not_random = rolls
+        self.not_random = []
+        if rolls == 'random':
+            dice = [i for i in range(1,7)]
+            while len(self.rolls) < 6:
+                roll = random.choice(dice)
+                self.not_random.append(roll)
+                dice.remove(roll)
+        else:
+            self.not_random = rolls
         self.combat_turn = combat_turn
         self.combat_state()
 
@@ -75,31 +83,33 @@ class CombatEngine():
             for ship in self.units:
                 if ship.location is not None:
                     if ship.team == 1 and len(self.p2_ships)>0:
-                        
-                        if p1_type == 'combat':
-                            enemy_ship = self.p2_ships[0]
-                        else:
-                            enemy_ship = random.choice(self.p2_ships)
-                        if self.logging:
-                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(enemy_ship.unit_type)+".")
-                        self.attack(ship, enemy_ship)
-                        self.update_units()
-                        self.combat_state()
+                        self.p2_attack(ship, p1_type, p2_type)
                     elif ship.team == 2 and len(self.p1_ships)>0:
-            
-                        if p2_type == 'combat':
-                            enemy_ship = self.p1_ships[0]
-                        else:
-                            enemy_ship = random.choice(self.p1_ships)
-                            while enemy_ship.location is None:
-                                enemy_ship = random.choice(self.p1_ships)
-                        if self.logging:
-                            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(enemy_ship.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
-                        self.attack(ship, enemy_ship)
-                        self.update_units()
-                        self.combat_state()
+                        self.p1_attack(ship, p1_type, p2_type)
                     
-
+    def p2_attack(self, ship, p1_type, p2_type):
+        if p1_type == 'combat':
+            enemy_ship = self.p2_ships[0]
+        else:
+            enemy_ship = random.choice(self.p2_ships)
+        if self.logging:
+            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(enemy_ship.unit_type)+".")
+        self.attack(ship, enemy_ship)
+        self.update_units()
+        self.combat_state()
+    
+    def p1_attack(self, ship, p1_type, p2_type):
+        if p2_type == 'combat':
+            enemy_ship = self.p1_ships[0]
+        else:
+            enemy_ship = random.choice(self.p1_ships)
+            while enemy_ship.location is None:
+                enemy_ship = random.choice(self.p1_ships)
+        if self.logging:
+            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(enemy_ship.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
+        self.attack(ship, enemy_ship)
+        self.update_units()
+        self.combat_state()
 
     def attack(self, p1_ship, p2_ship):
         if (p1_ship.shorthand == 'Dc' or p1_ship.shorthand == 'CS') and (p2_ship.shorthand == 'Dc' or p2_ship.shorthand == 'CS'):
@@ -116,32 +126,35 @@ class CombatEngine():
             if self.logging:
                 print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
         else:
-            rand = self.not_random[self.combat_turn%len(self.not_random)]
-            hit_threshold = ((p1_ship.strength + p1_ship.attack_tech) - (p2_ship.defense  + p2_ship.defense_tech)) - rand
-            if self.logging:
-                print("\nAttack "+str(self.combat_turn + 1)) 
-                print("\n   Attacker: Player "+str(p1_ship.team)+" "+str(p1_ship.unit_type))
-                print("\n   Defender: Player "+str(p2_ship.team)+" "+str(p2_ship.unit_type))
-                print("\n   Hit Threshold: "+str(hit_threshold + rand))
-                print("\n   Dice Roll: "+str(rand))
-            self.combat_turn += 1
-            if rand == 1 or hit_threshold >= 0:
-                if self.logging:
-                    print("\n   Hit or Miss: Hit")
-                if p2_ship.armor == 1:
-                    p2_ship.location = None
-                    if self.logging:
-                        print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
-                else:
-                    p2_ship.armor -= 1
-                    if self.logging:
-                        print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
+            self.attack_real_battle(p1_ship, p2_ship)
 
-            else:
+    def attack_real_battle(self,p1_ship, p2_ship):
+        rand = self.not_random[self.combat_turn%len(self.not_random)]
+        hit_threshold = ((p1_ship.strength + p1_ship.attack_tech) - (p2_ship.defense  + p2_ship.defense_tech)) - rand
+        if self.logging:
+            print("\nAttack "+str(self.combat_turn + 1)) 
+            print("\n   Attacker: Player "+str(p1_ship.team)+" "+str(p1_ship.unit_type))
+            print("\n   Defender: Player "+str(p2_ship.team)+" "+str(p2_ship.unit_type))
+            print("\n   Hit Threshold: "+str(hit_threshold + rand))
+            print("\n   Dice Roll: "+str(rand))
+        self.combat_turn += 1
+        if rand == 1 or hit_threshold >= 0:
+            if self.logging:
+                print("\n   Hit or Miss: Hit")
+            if p2_ship.armor == 1:
+                p2_ship.location = None
                 if self.logging:
-                    print("\n   Hit or Miss: Miss")
-                    print("\n   Player "+str(p1_ship.team)+"'s "+ str(p1_ship.unit_type)+" missed Player "+str(p2_ship.team)+"'s " + str(p2_ship.unit_type))
-    
+                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" destroyed Player " + str(p2_ship.team) + "'s " +str(p2_ship.unit_type))
+            else:
+                p2_ship.armor -= 1
+                if self.logging:
+                    print("\n   Player " + str(p1_ship.team) + "'s "+str(p1_ship.unit_type)+" hit Player " + str(p2_ship.team) + "'s "+ str(p2_ship.unit_type) + " but it still has " + str(p2_ship.armor) + " armor remaining!")
+
+        else:
+            if self.logging:
+                print("\n   Hit or Miss: Miss")
+                print("\n   Player "+str(p1_ship.team)+"'s "+ str(p1_ship.unit_type)+" missed Player "+str(p2_ship.team)+"'s " + str(p2_ship.unit_type))
+                
     def find_enemy_ships_at_colonies(self,player):
         colony_in_combat = None
         for ship in self.units:

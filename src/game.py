@@ -8,20 +8,8 @@ from combat_engine import CombatEngine
 from units.colony import Colony
 
 class Game:
-    def __init__(self,rolls, players, logging = True):
+    def __init__(self, players, logging = True):
         self.logging = logging
-        if rolls == 'ascending':
-            self.rolls = [1,2,3,4,5,6]
-        elif rolls == 'descending':
-            self.rolls = [6,5,4,3,2,1]
-        else:
-            self.rolls = []
-            dice = [i for i in range(1,7)]
-            while len(self.rolls) < 6:
-                roll = random.choice(dice)
-                self.rolls.append(roll)
-                dice.remove(roll)
-
         self.num_turns = 0
         self.winner = None 
         self.board = Board([5,5])
@@ -86,7 +74,7 @@ class Game:
                                         p2_ships.append(unit)
         #sort all units at location of combat by attack grade
                         ships_in_combat = p1_ships + p2_ships
-                        combat = CombatEngine(ships_in_combat,self.combat_turn, self.logging, self.rolls)
+                        combat = CombatEngine(ships_in_combat,self.combat_turn, self.logging, 'random')
                         combat.resolve_combat(p1_type = self.players[0].player_type,p2_type = self.players[1].player_type)
                         self.board.update_board()
                         self.combat_turn = combat.combat_turn
@@ -96,7 +84,7 @@ class Game:
         for planet in planets:
             units = [unit for unit in self.players[0].board.game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
             if len(units) > 0:
-                combat = CombatEngine(units,self.combat_turn, self.logging, self.rolls)
+                combat = CombatEngine(units,self.combat_turn, self.logging, 'random')
                 combat.find_enemy_ships_at_colonies(planet.player)
                 self.board.update_board()
                 self.combat_turn = combat.combat_turn

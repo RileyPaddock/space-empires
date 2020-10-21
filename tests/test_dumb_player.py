@@ -36,6 +36,6 @@ from game import Game
 # g.complete_economic_phase()
 # check(7)
 
-g = Game(rolls = 'random',players = ['Dumb','Dumb'],logging = False)
+g = Game(players = ['Dumb','Dumb'],logging = False)
 print(g.generate_state('red',g.players[0]))
 
