@@ -3,8 +3,10 @@ from players.random_player import Player
 from players.random_player import RandomPlayer
 from players.dumb_player import DumbPlayer
 from players.combat_testing_player import CombatTestPlayer
-from board import Board
+from movement_engine import MovementEngine
 from combat_engine import CombatEngine
+from economic_engine import EconomicEngine
+from board import Board
 from units.colony import Colony
 
 class Game:
@@ -15,12 +17,19 @@ class Game:
         self.board = Board([5,5])
         self.combat_turn = 0
         self.players = []
+        self.movement_engine = MovementEngine()
+        self.economic_engine = EconomicEngine()
+        self.build_players(players)
+        
+
+    def build_players(self, players):
         for i in range(len(players)):
             if players[i] == 'Combat':
                 self.players.append(CombatTestPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
             elif players[i] == 'Dumb':
                 self.players.append(DumbPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
-        
+            elif players[i] == 'Random':
+                self.players.append(RandomPlayer(i+1,((self.board.size[0] - 1)//2,(self.board.size[1]-1)* 1), self.board, self.logging))
 
     def generate_state(self,phase,player):
         state = {}
@@ -109,61 +118,7 @@ class Game:
                                 self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False))
 
                 
-                        
-    def distribute_player_income(self):
-        player_income = [0 for player in self.players]
-        player_colonies = [0 for player in self.players]
-        self.board.update_board()
-        for coord in self.players[0].board.game_data:
-            for unit in self.players[0].board.game_data[coord]:
-                if unit.unit_type == "Colony":
-                    if unit.location == self.players[unit.team - 1].start_pos:
-                         self.players[unit.team - 1].money += 20
-                         player_income[unit.team - 1] += 20
-                    else:
-                        self.players[unit.team - 1].money += unit.armor
-                        player_income[unit.team - 1] += unit.armor
-                    player_colonies[unit.team -1] += 1
-        if self.logging:
-            print("\n       Player 1 earned "+str(player_income[0])+" CP's from thier "+str(player_colonies[0])+" colonies")
-            print("\n       Player 2 earned "+str(player_income[1])+" CP's from thier "+str(player_colonies[1])+" colonies")
-
-    def collect_player_maintenence_costs(self):
-        for player in self.players:
-            maintainable_units = []
-            for coord in player.board.game_data:
-                for unit in player.board.game_data[coord]:
-                    if unit.unit_type != "Planet" and unit.unit_type != "Colony" and  unit.unit_type != 'CS' and unit.shorthand != 'Dc' and unit.location is not None and unit.team==player.player_num:
-                        maintainable_units.append(unit)
-            maintainable_units = self.sort_by_hull_size(maintainable_units)
-            for unit in maintainable_units:
-                if self.players[unit.team - 1].money - unit.hull_size < 0:
-                    unit.location = None
-                    self.board.update_board()
-                    if self.logging:
-                        print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
-                else:
-                    self.players[unit.team - 1].money -= unit.hull_size
-                    if self.logging:
-                        print("\n       Player "+str(unit.team)+" sustained thier "+str(unit.unit_type)+" for " +str(unit.hull_size))
-
-   
-    def sort_by_hull_size(self, ships):
-        for i in range(len(ships)):  
-            for j in range(0, len(ships)-(i+1)):  
-                if (ships[j].price < ships[j + 1].price):  
-                    temp = ships[j]  
-                    ships[j]= ships[j + 1]  
-                    ships[j + 1]= temp  
-        return ships 
-
-    def spend_player_money(self):
-        for player in self.players:
-            start_money = player.money
-            player.spend()
-            if player.money == start_money:
-                if self.logging:
-                    print("\n       Player "+str(player.player_num)+" didn't buy anything this turn")
+        
 
     def complete_movement_phase(self):
         self.num_turns += 1
@@ -195,56 +150,18 @@ class Game:
             print("\n TURN " + str(self.num_turns) + "  ECONOMIC PHASE")
         if self.logging:
             print("\n   Income From Colonies:")
-        self.distribute_player_income()
+        self.economic_engine.distribute_income()
         self.board.update_board()
         if self.logging:
             print("\n   Maintenence:")
-        self.collect_player_maintenence_costs()
+        self.economic_engine.maintenice()
         self.board.update_board()
         if self.logging:
             print("\n   New ships and Tech upgrades:")
-        self.spend_player_money()
+        self.economic_engine.spend()
         self.board.update_board()
         if self.logging:
             print("\n ------------- End of Economic Phase--------------")
-	# def plot_game_state(self):
-    #     game_data = []
-       
-    #     for planet in self.planets:
-    #         color = 'orange'
-    #         state = 'Planet'
-    #         if planet.has_a_colony:
-    #             color = 'green'
-    #             if planet.player == 1:
-    #                 state = 'Col(1)'
-    #             else:
-    #                 state = 'Col(2)'
-
-    #         ship_info = {'x': planet.location[0] , 'y': planet.location[1], 'color': color,'label': state}
-    #         game_data.append(ship_info)
-
-    #     for player in self.players:
-    #       if player.player_num == 1:
-    #         team_color = 'blue'
-    #       else:
-    #         team_color = 'red'
-    #       for i in range(len(player.units)):
-    #         stagger = 0
-    #         if player.units[i].location is not None:
-    #           for j in range(len(player.units)):
-    #             if player.units[i].location == player.units[j].location and i != j:
-    #               if i < j:
-    #                 stagger = -0.25
-    #               else:
-    #                 stagger = 0.25
-    #               break
-    #             else:
-    #               stagger = 0
-
-    #           ship_info = {'x': player.units[i].location[0] + stagger, 'y': player.units[i].location[1], 'color': team_color, 'label': str(player.units[i].shorthand) + str(i+1)}
-    #           game_data.append(ship_info)
-
-    #     self.render_game(game_data)
 
     def check_for_game_over(self):
         p1_check = [unit for coord in self.players[0].board.game_data for unit in self.players[0].board.game_data[coord] if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == 1]
