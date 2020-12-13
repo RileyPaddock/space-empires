@@ -25,8 +25,8 @@ class Board:
     def update_board(self):
             temp = self.game_data
             self.game_data = {}
-            for x in range(5):
-                for y in range(5):
+            for x in range(self.size[0]):
+                for y in range(self.size[1]):
                     self.game_data[(x,y)] = []
             for elem in temp:
                 for unit in temp[elem]:

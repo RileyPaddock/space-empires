@@ -1,8 +1,8 @@
 import random
 from players.random_player import Player
 from players.random_player import RandomPlayer
-from players.dumb_player import DumbPlayer
 from players.combat_testing_player import CombatTestPlayer
+from strategies.dumb_strategy import DumbStrategy
 from movement_engine import MovementEngine
 from combat_engine import CombatEngine
 from economic_engine import EconomicEngine
@@ -10,49 +10,36 @@ from board import Board
 from units.colony import Colony
 
 class Game:
-    def __init__(self, players, logging = True):
+    def __init__(self, players, board,logging = True,rolls = None):
         self.logging = logging
+        self.board = board
+        self.players = players
         self.num_turns = 0
         self.winner = None 
-        self.board = Board([5,5])
-        self.combat_turn = 0
-        self.players = []
+        if rolls == None:
+            self.rolls = lambda x : random.randrange(1,6)
+        else:
+            self.rolls = lambda x : rolls[x]
+        self.build_players()
         self.movement_engine = MovementEngine()
-        self.economic_engine = EconomicEngine()
-        self.build_players(players)
+        self.economic_engine = EconomicEngine(self.players, self.board, self.logging)
         
 
-    def build_players(self, players):
-        for i in range(len(players)):
-            if players[i] == 'Combat':
-                self.players.append(CombatTestPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
-            elif players[i] == 'Dumb':
-                self.players.append(DumbPlayer(i+1, ((self.board.size[0] - 1)//2, (self.board.size[1] - 1)* i), self.board,self.logging))
-            elif players[i] == 'Random':
-                self.players.append(RandomPlayer(i+1,((self.board.size[0] - 1)//2,(self.board.size[1]-1)* 1), self.board, self.logging))
+    def build_players(self):
+        for player in self.players:
+            player.logging = self.logging
+            player.player_num = self.players.index(player)+1
+            player.generate_fleet()
 
-    def generate_state(self,phase,player):
+    def generate_state(self):
         state = {}
+        state['board_size'] = self.board.size
         state['turn'] = self.num_turns
-        state['player'] = self.players.index(player)
         state['winner'] = self.winner
-        state['players'] = [self.player_state(player) for player in self.players]
+        state['players'] = [player.player_state() for player in self.players]
         state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         return state
 
-    def player_state(self,player):
-        player_state = {}
-        player_state['cp'] = player.money
-        player_state['technology'] = {attr:value for attr, value in player.__dict__.items() if 'tech' in attr}
-        player_state['units'] = [self.unit_state(unit) for coord in player.board.game_data for unit in player.board.game_data[coord] if unit.unit_type != 'Planet' and unit.team == player.player_num]
-        return player_state
-
-    def unit_state(self,unit):
-        unit_state = {}
-        unit_state['location'] = unit.location
-        unit_state['type'] = unit.unit_type
-        unit_state['technology'] = {attr:value for attr, value in unit.__dict__.items() if 'tech' in attr}
-        return unit_state
     
     
     def check_for_and_initiate_combat(self):
@@ -83,8 +70,8 @@ class Game:
                                         p2_ships.append(unit)
         #sort all units at location of combat by attack grade
                         ships_in_combat = p1_ships + p2_ships
-                        combat = CombatEngine(ships_in_combat,self.combat_turn, self.logging, 'random')
-                        combat.resolve_combat(p1_type = self.players[0].player_type,p2_type = self.players[1].player_type)
+                        combat = CombatEngine(self.players, ships_in_combat, self.logging, self.rolls)
+                        combat.resolve_combat()
                         self.board.update_board()
                         self.combat_turn = combat.combat_turn
                     
@@ -93,7 +80,7 @@ class Game:
         for planet in planets:
             units = [unit for unit in self.players[0].board.game_data[planet.location] if unit.unit_type != 'Planet' and unit.team != planet.player]
             if len(units) > 0:
-                combat = CombatEngine(units,self.combat_turn, self.logging, 'random')
+                combat = CombatEngine(self.players, units, self.logging, self.rolls)
                 combat.find_enemy_ships_at_colonies(planet.player)
                 self.board.update_board()
                 self.combat_turn = combat.combat_turn
@@ -107,7 +94,7 @@ class Game:
                 for unit in player.board.game_data[coord]:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
-                            if self.players[colony_ship.team - 1].will_colonize():
+                            if self.players[colony_ship.team - 1].strategy.will_colonize(colony_ship.unit_state(),colony_ship.team):
                                 colony_ship.location = None
                                 self.board.update_board()
                                 unit.player = colony_ship.team   
@@ -125,7 +112,7 @@ class Game:
         if self.logging:
             print("\n TURN " + str(self.num_turns) + "  MOVEMENT PHASE")
         for player in self.players:
-            player.move_player_units()
+            player.move_player_units(self.generate_state())
             self.board.update_board()
         for coord in self.board.game_data:
             for unit in self.board.game_data[coord]:
@@ -150,15 +137,15 @@ class Game:
             print("\n TURN " + str(self.num_turns) + "  ECONOMIC PHASE")
         if self.logging:
             print("\n   Income From Colonies:")
-        self.economic_engine.distribute_income()
+        self.economic_engine.distribute_income(self.economic_engine.calc_income())
         self.board.update_board()
         if self.logging:
             print("\n   Maintenence:")
-        self.economic_engine.maintenice()
+        self.economic_engine.maintenence(self.generate_state())
         self.board.update_board()
         if self.logging:
             print("\n   New ships and Tech upgrades:")
-        self.economic_engine.spend()
+        self.economic_engine.spend(self.generate_state())
         self.board.update_board()
         if self.logging:
             print("\n ------------- End of Economic Phase--------------")

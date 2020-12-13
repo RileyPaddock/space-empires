@@ -1,5 +1,5 @@
 class EconomicEngine:
-    def __init__(self, players, board, logging = True):
+    def __init__(self, players, board, logging):
         self.players = players
         self.board = board
         self.logging = logging
@@ -13,8 +13,8 @@ class EconomicEngine:
     def calc_income(self):
         player_income = [0 for player in self.players]
         self.board.update_board()
-        for coord in self.players[0].board.game_data:
-            for unit in self.players[0].board.game_data[coord]:
+        for coord in self.board.game_data:
+            for unit in self.board.game_data[coord]:
                 if unit.unit_type == "Colony":
                     if unit.location == self.players[unit.team - 1].start_pos:
                          player_income[unit.team - 1] += 20
@@ -43,20 +43,23 @@ class EconomicEngine:
             maintainable_units[i] = self.sort_by_hull_size(maintainable_units[i])
         return maintainable_units
             
-    def maintenence(self):
+    def maintenence(self,game_state):
         maintainable_units = self.active_units()
-        for player_units in maintainable_units:
-            for unit in player_units:
-                if self.players[unit.team - 1].money - unit.hull_size < 0:
-                    unit.location = None
-                    self.board.update_board()
+        for i in range(len(maintainable_units)):
+            exess_cp = sum([unit.hull_size for unit in maintainable_units[i]]) - self.players[i].money
+            if exess_cp > 0:
+                if self.logging:
+                    print("\n       Player "+str(i+1)+" removed:")
+                removals = self.players[i].strategy.decide_removals(game_state,exess_cp,i+1)
+                for unit_index in removals:
                     if self.logging:
-                        print("\n       Player "+str(unit.team)+" cannot sustain thier "+str(unit.unit_type)+" due to maintenence.")
-                else:
-                    self.players[unit.team - 1].money -= unit.hull_size
-                    if self.logging:
-                        print("\n       Player "+str(unit.team)+" sustained thier "+str(unit.unit_type)+" for " +str(unit.hull_size))
-
+                        print(self.players[i].units[unit_index].unit_type,self.players[i].units[unit_index].location)
+                    self.players[i].units[unit_index].location = None
+                self.board.update_board()
+            else:
+                self.players[i].money -= sum([unit.hull_size for unit in maintainable_units[i]])
+                if self.logging:
+                    print("Player "+str(i+1)+" sustained all thei ships")
    
     def sort_by_hull_size(self, ships):
         for i in range(len(ships)):  
@@ -67,6 +70,6 @@ class EconomicEngine:
                     ships[j + 1]= temp  
         return ships 
 
-    def spend(self):
+    def spend(self,game_state):
         for player in self.players:
-            player.spend()
+            player.spend(game_state)

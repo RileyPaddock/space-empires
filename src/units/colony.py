@@ -2,8 +2,8 @@ from units.unit import Unit
 
 class Colony(Unit):
     
-    def __init__(self,team,location, attack_tech, defense_tech,shipyards,base):
-        super().__init__(team, location)
+    def __init__(self,team,location, attack_tech, defense_tech, unit_num,shipyards,base):
+        super().__init__(team, location, unit_num)
         self.attack_tech = attack_tech
         self.defense_tech = defense_tech
         self.shipyards = shipyards

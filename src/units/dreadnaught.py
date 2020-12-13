@@ -2,8 +2,8 @@ from units.unit import Unit
 
 class Dreadnaught(Unit):
     
-    def __init__(self, team, location, attack_tech, defense_tech,age = 0):
-        super().__init__(team, location, age)
+    def __init__(self, team, location, attack_tech, defense_tech, unit_num, age = 0):
+        super().__init__(team, location, unit_num, age)
         self.attack_tech = attack_tech
         self.defense_tech = defense_tech
         self.unit_type = 'Dreadnaught'

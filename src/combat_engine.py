@@ -1,38 +1,19 @@
 import random
 class CombatEngine():
-    def __init__(self, units_in_combat,combat_turn,logging, rolls):
+    def __init__(self, players, units_in_combat,logging, rolls):
         self.units = self.sort_by_attack_grade(units_in_combat)
+        self.players = players
         self.logging = logging
         self.location = self.units[0].location
         self.p1_ships = [p1_ship for p1_ship in self.units if p1_ship.team == 1]
         self.p2_ships = [p2_ship for p2_ship in self.units if p2_ship.team == 2]
         self.not_random = []
-        if rolls == 'random':
-            dice = [i for i in range(1,7)]
-            while len(self.rolls) < 6:
-                roll = random.choice(dice)
-                self.not_random.append(roll)
-                dice.remove(roll)
-        else:
-            self.not_random = rolls
-        self.combat_turn = combat_turn
+        self.not_random = rolls
+        self.combat_turn = 0
         self.combat_state()
 
     def generate_combat_array(self):
-        combat_dict = {}
-        attack_arr = {unit.location:[] for unit in self.units}
-        for unit in self.units:
-            combat_dict[unit.location] = {"location":unit.location,'order':[]}
-            attack_arr[unit.location].append(unit)
-        for combat_loc in attack_arr:
-            for unit in self.sort_by_attack_grade(attack_arr[combat_loc]):
-                combat_dict['order'].append({'player':unit.team,'unit':unit.unit_num})
-
-        combat_arr = []
-        for combat in combat_dict:
-            combat_arr.append(combat_dict[combat])
-        
-        return combat_arr
+        return [{'player':unit.team,'unit_num':unit.unit_num} for unit in self.units if unit.location is not None]
 
     
     def update_units(self):
@@ -72,7 +53,7 @@ class CombatEngine():
                     print("       "+str(unit_num)+"        |    "+str(unit.team)+"   |         "+str(unit.unit_type)+"          |    "+str(unit.armor)+"    |")
                 unit_num+=1
 
-    def resolve_combat(self,p1_type,p2_type):
+    def resolve_combat(self):
         for ship in self.units:
             ship.age += 1
             if ship.location is not None:
@@ -83,28 +64,22 @@ class CombatEngine():
             for ship in self.units:
                 if ship.location is not None:
                     if ship.team == 1 and len(self.p2_ships)>0:
-                        self.p2_attack(ship, p1_type, p2_type)
+                        self.p2_attack(ship)
                     elif ship.team == 2 and len(self.p1_ships)>0:
-                        self.p1_attack(ship, p1_type, p2_type)
+                        self.p1_attack(ship)
                     
-    def p2_attack(self, ship, p1_type, p2_type):
-        if p1_type == 'combat':
-            enemy_ship = self.p2_ships[0]
-        else:
-            enemy_ship = random.choice(self.p2_ships)
+    def p2_attack(self, ship):
+        i = self.players[1].strategy.decide_which_unit_to_attack(ship.unit_state(), self.generate_combat_array())
+        enemy_ship = self.units[i]
         if self.logging:
-            print("\n Combat at "+str(ship.location)+" between Player 1's "+str(ship.unit_type)+" and Player 2's "+str(enemy_ship.unit_type)+".")
+            print("\n Combat at "+str(ship.location)+" between Player 2's "+str(ship.unit_type)+" and Player 1's "+str(enemy_ship.unit_type)+".")
         self.attack(ship, enemy_ship)
         self.update_units()
         self.combat_state()
     
-    def p1_attack(self, ship, p1_type, p2_type):
-        if p2_type == 'combat':
-            enemy_ship = self.p1_ships[0]
-        else:
-            enemy_ship = random.choice(self.p1_ships)
-            while enemy_ship.location is None:
-                enemy_ship = random.choice(self.p1_ships)
+    def p1_attack(self, ship):
+        i = self.players[0].strategy.decide_which_unit_to_attack(ship.unit_state(), self.generate_combat_array())
+        enemy_ship = self.units[i]
         if self.logging:
             print("\n Combat at "+str(ship.location)+" between Player 1's "+str(enemy_ship.unit_type)+" and Player 2's "+str(ship.unit_type)+".")
         self.attack(ship, enemy_ship)
@@ -129,7 +104,7 @@ class CombatEngine():
             self.attack_real_battle(p1_ship, p2_ship)
 
     def attack_real_battle(self,p1_ship, p2_ship):
-        rand = self.not_random[self.combat_turn%len(self.not_random)]
+        rand = self.not_random(self.combat_turn%6)
         hit_threshold = ((p1_ship.strength + p1_ship.attack_tech) - (p2_ship.defense  + p2_ship.defense_tech)) - rand
         if self.logging:
             print("\nAttack "+str(self.combat_turn + 1)) 

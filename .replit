@@ -1,3 +1,3 @@
-run = "python tests/test_dumb_player.py"
+run = "python tests/test_combat_test_player.py"
 #run = "python src/main.py"
 language = "python3" # optional
