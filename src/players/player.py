@@ -124,9 +124,11 @@ class Player():
         return colonies_with_shipyard
 
     def decide_removals(self,game_state):
-        removals = self.strategy.removals(game_state)
-        for i in removals:
-            self.units[i].location = None
+        exess_cp = sum([unit['hull_size'] for unit in self.units]) - self.money
+        while exess_cp > 0:
+            removal_index = self.strategy.removals(game_state)
+            exess_cp -= self.units[removal_index].hull_size
+            self.units[removal_index].location = None
             self.board.update_board()
 
     def movement_from_translation(self,ship,translation):

@@ -42,22 +42,20 @@ class CombatStrategy:
                         ship_choice = sc
                     elif ship_choice == sc:
                         ship_choice = ds
-        return {'units':units,'tech':[]}
+        return {'units':units,'technology':[]}
     
     def decide_removals(self, game_state):
-        ship_removals = []
         i = 0
-        exess_cp = sum([unit['hull_size'] for unit in game_state['players'][self.player_num-1]['units']]) - game_state['players'][self.player_num-1]['money']
-        while exess_cp>0:
-            ship_removals.append(game_state['players'][self.player_num - 1]['units'][i]['unit_num'])
-            exess_cp -= game_state['players'][self.player_num - 1]['units'][i]['hull_size']
-            i+=1
-        return ship_removals
+        while True:
+            if game_state['players'][self.player_index]['units'][i]['location'] != None:
+                return game_state['players'][self.player_index]['units'][i]['unit_num']
+            else:
+                i+=1
 
-    def decide_which_unit_to_attack(self, attacking_ship_index, combat_state):
-        for entry in combat_state:
-            if entry['player'] != combat_state['order'][attacking_ship_index]['team']:
-                return combat_state.index(entry)
+    def decide_which_unit_to_attack(self, attacking_ship_index, location, combat_state):
+        for entry in combat_state[location]:
+            if entry['player'] != combat_state[location][attacking_ship_index]['player']:
+                return combat_state[location].index(entry)
 
     def decide_which_units_to_screen(self, combat_state):
         return []

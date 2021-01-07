@@ -13,7 +13,11 @@ class CombatEngine():
         self.combat_state()
 
     def generate_combat_array(self):
-        return [{'player':unit.team,'unit_num':unit.unit_num} for unit in self.units if unit.location is not None]
+        combat_locs = []
+        for unit in self.unit:
+            if unit.location not in combat_locs:
+                combat_locs.append(unit.location)
+        return {combat_loc:[{'player':unit.team,'unit':unit.unit_num} for unit in self.units if unit.location == combat_loc] for combat_loc in combat_locs}
 
     
     def update_units(self):
