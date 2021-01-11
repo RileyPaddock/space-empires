@@ -31,6 +31,7 @@ class Board:
             for elem in temp:
                 for unit in temp[elem]:
                     if unit.location is not None:
+                        unit.location = tuple(unit.location)
                         self.game_data[unit.location].append(unit)
 
             for coord in self.game_data:

@@ -5,8 +5,8 @@ from players.player import Player
 from strategies.combat_strategy import CombatStrategy
 from board import Board
 b = Board([5,5])
-p1 = Player(CombatStrategy(),(2,0),b)
-p2 = Player(CombatStrategy(),(2,4),b)
+p1 = Player(CombatStrategy(0),(2,0),b)
+p2 = Player(CombatStrategy(1),(2,4),b)
 h = Game(players = [p1,p2],board = b,logging = False,rolls = [1,2,3,4,5,6])
 print("Ascending Rolls")
 print("\n   Testing Turn 1 Economic Phase")

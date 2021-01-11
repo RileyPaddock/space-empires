@@ -6,8 +6,7 @@ class CombatStrategy:
         return False
     
     def decide_ship_movement(self,ship_index, game_state):
-        print([self.player_num, len(game_state['players']), ship_index, len(game_state['players'][self.player_num]['units'])])
-        ship = game_state['players'][self.player_num]['units'][ship_index-4]
+        ship = game_state['players'][self.player_num]['units'][ship_index]
         if ship['location'][0]>2:
             return (-1,0)
         elif ship['location'][0]<2:
@@ -26,7 +25,7 @@ class CombatStrategy:
         sc = ['Scout',6] 
         ship_choice = ds
         cp = game_state['players'][self.player_num-1]['cp']
-        ship_size_tech = game_state['players'][self.player_num]['technology']['ship_size'][0]
+        ship_size_tech = game_state['players'][self.player_num-1]['technology']['ship_size'][0]
         while cp >= ship_choice[1]:
             if ship_size_tech<2:
                 ship_size_price = ((ship_size_tech + 1)*5)

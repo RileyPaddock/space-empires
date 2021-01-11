@@ -97,12 +97,12 @@ class Player():
                     if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
                         old_loc = unit.location
                         if unit.unit_type == 'Colony Ship':
-                            new_loc = self.movement_from_translation(self.strategy.decide_ship_movement(unit.unit_num,game_state))
+                            new_loc = self.movement_from_translation(unit, self.strategy.decide_ship_movement(unit.unit_num,game_state))
                             unit.location = new_loc
                         else:
                             old_loc = unit.location
                             for i in range(self.get_movement_phases()[i]):
-                               new_loc = self.movement_from_translation(self.strategy.decide_ship_movement(unit.unit_num,game_state))
+                               new_loc = self.movement_from_translation(unit,self.strategy.decide_ship_movement(unit.unit_num,game_state))
                                unit.location = new_loc
                         self.board.update_board()
                         if unit.location is not None and unit.location != old_loc and self.logging:
