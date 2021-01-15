@@ -25,7 +25,7 @@ class Player():
         self.shipyard_capacity = 0.5 + 0.5*self.tech['ship_yard'][0]
 
     def generate_fleet(self):
-        units = [Planet(self.start_pos), Colony(self.player_num,self.start_pos,self.tech['attack'][0], self.tech['defense'][0],0, [ShipYard(self.player_num, self.start_pos,i+1) for i in range(4)],None),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],5),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],6),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],7),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],8),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],9),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],10)]
+        units = [Colony(self.player_num,self.start_pos,self.tech['attack'][0], self.tech['defense'][0],0, [ShipYard(self.player_num, self.start_pos,None) for i in range(4)],None),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],1),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],2),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],3),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],4),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],5),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],6)]
         self.units = units
         for unit in units:
             self.board.game_data[unit.location].append(unit)
@@ -38,8 +38,9 @@ class Player():
         return player_state
     
     def spend(self,game_state):
-        wanted_purchases = self.strategy.decide_purchases(game_state,self.player_num)
+        wanted_purchases = self.strategy.decide_purchases(game_state)
         units = []
+        print(wanted_purchases, self.money)
         for unit in wanted_purchases['units']:
             cost = self.create_unit(unit,self.start_pos,False).price
             if self.money - cost >= 0:
@@ -97,13 +98,15 @@ class Player():
                     if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
                         old_loc = unit.location
                         if unit.unit_type == 'Colony Ship':
-                            new_loc = self.movement_from_translation(unit, self.strategy.decide_ship_movement(unit.unit_num,game_state))
-                            unit.location = new_loc
+                            new_loc = tuple(self.movement_from_translation(unit, self.strategy.decide_ship_movement(unit.unit_num,game_state)))
+                            if new_loc in [(x,y) for x in range(game_state['board_size'][0]) for y in range(game_state['board_size'][1])]:
+                                unit.location = new_loc
                         else:
                             old_loc = unit.location
                             for i in range(self.get_movement_phases()[i]):
-                               new_loc = self.movement_from_translation(unit,self.strategy.decide_ship_movement(unit.unit_num,game_state))
-                               unit.location = new_loc
+                                new_loc = tuple(self.movement_from_translation(unit,self.strategy.decide_ship_movement(unit.unit_num,game_state)))
+                                if new_loc in [(x,y) for x in range(game_state['board_size'][0]) for y in range(game_state['board_size'][1])]:
+                                    unit.location = new_loc
                         self.board.update_board()
                         if unit.location is not None and unit.location != old_loc and self.logging:
                             print("\n   Unit "+str(unit.unit_num)+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))

@@ -15,6 +15,7 @@ class Game:
         self.board = board
         self.players = players
         self.num_turns = 0
+        self.phase = 'movement'
         self.winner = None 
         if rolls == None:
             self.rolls = lambda x : random.randrange(1,6)
@@ -33,9 +34,27 @@ class Game:
 
     def generate_state(self):
         state = {}
-        state['board_size'] = self.board.size
+        state['board_size'] = tuple(self.board.size)
         state['turn'] = self.num_turns
+        state['phase'] = self.phase
         state['winner'] = self.winner
+        state['unit_data'] = {
+        'Battleship': {'cp_cost': 20, 'hullsize': 3},
+        'Battlecruiser': {'cp_cost': 15, 'hullsize': 2},
+        'Cruiser': {'cp_cost': 12, 'hullsize': 2},
+        'Destroyer': {'cp_cost': 9, 'hullsize': 1},
+        'Dreadnaught': {'cp_cost': 24, 'hullsize': 3},
+        'Scout': {'cp_cost': 6, 'hullsize': 1},
+        'Shipyard': {'cp_cost': 3, 'hullsize': 1},
+        'Decoy': {'cp_cost': 1, 'hullsize': 0},
+        'Colonyship': {'cp_cost': 8, 'hullsize': 1},
+        'Base': {'cp_cost': 12, 'hullsize': 3},}
+        state['technology_data'] = {
+        'shipsize': [10, 15, 20, 25, 30],
+        'attack': [20, 30, 40],
+        'defense': [20, 30, 40],
+        'movement': [20, 30, 40, 40, 40],
+        'shipyard': [20, 30]}
         state['players'] = [player.player_state() for player in self.players]
         state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         return state
@@ -94,20 +113,22 @@ class Game:
                 for unit in player.board.game_data[coord]:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
-                            if self.players[colony_ship.team - 1].strategy.will_colonize(colony_ship.unit_state(),colony_ship.team):
+                            if self.players[colony_ship.team - 1].strategy.will_colinize_planet(colony_ship.location,self.generate_state()):
                                 colony_ship.location = None
                                 self.board.update_board()
                                 unit.player = colony_ship.team   
                                 unit.has_a_colony = True 
-                                attack_tech = self.players[colony_ship.team -1].attack_tech
-                                defense_tech = self.players[colony_ship.team -1].defense_tech
-                                unit.colony = Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False)
-                                self.board.game_data[unit.location].append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,[],False))
+                                attack_tech = self.players[colony_ship.team -1].tech['attack']
+                                defense_tech = self.players[colony_ship.team -1].tech['defense']
+                                unit.colony = Colony(colony_ship.team, unit.location,attack_tech,defense_tech,len(self.players[colony_ship.team -1].units),[],False)
+                                self.players[unit.player -1].units.append(Colony(colony_ship.team, unit.location,attack_tech,defense_tech,len(self.players[colony_ship.team -1].units),[],False))
+                                self.board.update_board()
 
                 
         
 
     def complete_movement_phase(self):
+        self.phase = 'movement'
         self.num_turns += 1
         if self.logging:
             print("\n TURN " + str(self.num_turns) + "  MOVEMENT PHASE")
@@ -122,6 +143,7 @@ class Game:
             print("\n ------------- End of Movement Phase--------------")
     
     def complete_combat_phase(self):
+        self.phase = 'combat'
         if self.logging:
             print("\n TURN " + str(self.num_turns) + "  COMBAT PHASE")
         self.check_for_and_initiate_combat()
@@ -133,6 +155,7 @@ class Game:
 
 
     def complete_economic_phase(self):
+        self.phase = 'economic'
         if self.logging:
             print("\n TURN " + str(self.num_turns) + "  ECONOMIC PHASE")
         if self.logging:

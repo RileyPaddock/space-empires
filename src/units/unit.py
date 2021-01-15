@@ -8,7 +8,7 @@ class Unit:
 
     def unit_state(self):
         unit_state = {}
-        unit_state['location'] = self.location
+        unit_state['coords'] = self.location
         unit_state['type'] = self.unit_type
         unit_state['technology'] = {attr:value for attr, value in self.__dict__.items() if 'tech' in attr}
         unit_state['unit_num'] = self.unit_num

@@ -1,8 +1,9 @@
 from planet import Planet
 import random
 class Board:
-    def __init__(self,size):
+    def __init__(self,size,spawns):
         self.size = size
+        self.spawns = spawns
         self.game_data = {}
         self.set_up()
         self.generate_planets()
@@ -21,6 +22,8 @@ class Board:
                     pass
             else:
                 self.game_data[rand_loc].append(Planet(rand_loc))
+        for spawn in self.spawns:
+            self.game_data[spawn].append(Planet(spawn))
 
     def update_board(self):
             temp = self.game_data

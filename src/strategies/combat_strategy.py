@@ -6,8 +6,7 @@ class CombatStrategy:
         return False
     
     def decide_ship_movement(self,ship_index, game_state):
-        print([self.player_num, len(game_state['players']), ship_index, len(game_state['players'][self.player_num]['units'])])
-        ship = game_state['players'][self.player_num]['units'][ship_index-4]
+        ship = game_state['players'][self.player_num]['units'][ship_index]
         if ship['location'][0]>2:
             return (-1,0)
         elif ship['location'][0]<2:
@@ -53,7 +52,7 @@ class CombatStrategy:
             else:
                 i+=1
 
-    def decide_which_unit_to_attack(self, attacking_ship_index, location, combat_state):
+    def decide_which_unit_to_attack(self, combat_state, location, attacking_ship_index):
         for entry in combat_state[location]:
             if entry['player'] != combat_state[location][attacking_ship_index]['player']:
                 return combat_state[location].index(entry)

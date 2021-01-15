@@ -1,5 +1,5 @@
 import math
-from strategies.strategy_util import is_in_bounds
+from strategy_util import is_in_bounds
 
 
 class DumbStrategy:
@@ -8,7 +8,7 @@ class DumbStrategy:
         self.player_index = player_index
 
     # Don't colonize planets
-    def will_colonize_planet(self, pos, game_state):
+    def will_colinize_planet(self, pos, game_state):
         return False
 
     # Decide where each ship moves
@@ -20,7 +20,8 @@ class DumbStrategy:
 
     # Only build scouts
     def decide_purchases(self, game_state):
-        scout_cost = game_state['unit_types']["Scout"]["cp_cost"]
+        #scout_cost = game_state['unit_types']["Scout"]["cp_cost"]
+        scout_cost = 6
         amt = game_state['players'][self.player_index]['cp']//scout_cost
         return {"units": ["Scout"]*amt, "tech": {}}
 

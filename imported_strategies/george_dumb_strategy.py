@@ -1,9 +1,11 @@
+import sys
+sys.path.append('src')
 from units.scout import Scout
 from units.cruiser import Cruiser
-from units.colonyship import Colonyship
+from units.colony_ship import ColonyShip
 from units.colony import Colony
 from planet import Planet
-from units.shipyard import Shipyard
+from units.ship_yard import ShipYard
 from units.base import Base
 from units.destroyer import Destroyer
 

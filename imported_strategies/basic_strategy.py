@@ -1,17 +1,15 @@
-from unit.carrier import Carrier
-from unit.decoy import Decoy
-from unit.miner import Miner
-from unit.base import Base
-from unit.ship_yard import Ship_Yard
-from unit.colony import Colony
-from unit.colony_ship import Colony_Ship
-from unit.dreadnaught import Dreadnaught
-from unit.battleship import Battleship
-from unit.battle_cruiser import BattleCruiser
-from unit.cruiser import Cruiser
-from unit.destroyer import Destroyer
-from unit.scout import Scout
-from unit.unit import Unit
+from units.decoy import Decoy
+from units.base import Base
+from units.ship_yard import ShipYard
+from units.colony import Colony
+from units.colony_ship import ColonyShip
+from units.dreadnaught import Dreadnaught
+from units.battleship import Battleship
+from units.battlecruiser import Battlecruiser
+from units.cruiser import Cruiser
+from units.destroyer import Destroyer
+from units.scout import Scout
+from units.unit import Unit
 import sys
 import random
 sys.path.append('src')
