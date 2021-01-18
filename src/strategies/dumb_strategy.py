@@ -2,12 +2,12 @@ class DumbStrategy:
     def __init__(self,player_index):
         self.player_index = player_index
 
-    def will_colinize_planet(self,colony_ship_loc,game_state):
+    def will_colonize_planet(self,colony_ship_loc,game_state):
         return True
     
     def decide_ship_movement(self,ship_index, game_state):
         ship = game_state['players'][self.player_index]['units'][ship_index]
-        if ship['location'][0] != game_state['board_size'][0]-1:
+        if ship['coords'][0] != game_state['board_size'][0]-1:
            return (1, 0)
         else:
             return (0,0)
@@ -23,7 +23,7 @@ class DumbStrategy:
     def decide_removals(self, game_state):
         i = 0
         while True:
-            if game_state['players'][self.player_index]['units'][i]['location'] != None:
+            if game_state['players'][self.player_index]['units'][i]['coords'] != None:
                 return game_state['players'][self.player_index]['units'][i]['unit_num']
             else:
                 i+=1

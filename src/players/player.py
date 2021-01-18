@@ -21,7 +21,7 @@ class Player():
         self.num_turns = 0
         self.money = 0
         self.units = []
-        self.tech = {'attack':(0,3),'defense':(0,3),'movement':(1,6),'ship_yard':(1,3),'ship_size':(1,6)}
+        self.tech = {'attack':[0,3],'defense':[0,3],'movement':[1,6],'ship_yard':[1,3],'ship_size':[1,6]}
         self.shipyard_capacity = 0.5 + 0.5*self.tech['ship_yard'][0]
 
     def generate_fleet(self):
@@ -34,8 +34,22 @@ class Player():
         player_state = {}
         player_state['cp'] = self.money
         player_state['technology'] = self.tech
-        player_state['units'] = [unit.unit_state() for unit in self.units if unit.unit_type != 'Planet' and unit.location != None]
+        player_state['home_coords'] = self.start_pos
+        player_state['units'] = [self.unit_state(unit) for unit in self.units if unit.unit_type != 'Planet' and unit.location != None]
         return player_state
+
+    def unit_state(self,unit):
+        unit_state = {}
+        unit_state['coords'] = unit.location
+        unit_state['type'] = unit.unit_type
+        unit_state['technology'] = {attr:value for attr, value in unit.__dict__.items() if 'tech' in attr}
+        unit_state['speed'] = unit.speed
+        unit_state['hits_left'] = unit.armor
+        unit_state['defense'] = unit.defense
+        unit_state['speed'] = unit.strength
+        unit_state['unit_num'] = unit.unit_num
+        unit_state['team']  =unit.team
+        return unit_state
     
     def spend(self,game_state):
         wanted_purchases = self.strategy.decide_purchases(game_state)
@@ -49,7 +63,7 @@ class Player():
                     print("\n       Player "+str(self.player_num)+" bought a new "+str(unit)+". It spawned at "+str(self.start_pos))
             self.money -= cost
 
-        for tech in wanted_purchases['tech']:
+        for tech in wanted_purchases['technology']:
             self.tech_upgrade(tech)
 
         for unit in units:
@@ -57,11 +71,11 @@ class Player():
             self.board.game_data[unit.location].append(unit)
 
     def tech_upgrade(self, upgrade_choice):
-        tech_costs = {'attack':((self.tech['attack'] + 2) * 10)
-        ,'defense':((self.tech['defense'] + 2) * 10),
-        'movement':self.get_movement_price('movements'),
-        'ship_yard':((self.tech['ship_yard'] + 1)*10),
-        'ship_size':((self.tech['ship_size'] + 1)*5)}
+        tech_costs = {'attack':((self.tech['attack'][0] + 2) * 10)
+        ,'defense':((self.tech['defense'][0] + 2) * 10),
+        'movement':self.get_movement_price(),
+        'ship_yard':((self.tech['ship_yard'][0] + 1)*10),
+        'ship_size':((self.tech['ship_size'][0] + 1)*5)}
 
         if tech_costs[upgrade_choice] <= self.money and self.tech[upgrade_choice][0]<self.tech[upgrade_choice][1]:
             self.money -= tech_costs[upgrade_choice]
@@ -91,6 +105,7 @@ class Player():
 
     def move_player_units(self,game_state):
         for i in range(len(self.get_movement_phases())):
+            game_state['round'] = i
             if self.logging:
                 print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
             for coord in self.board.game_data:

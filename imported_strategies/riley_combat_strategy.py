@@ -25,7 +25,7 @@ class CombatStrategy:
         sc = ['Scout',6] 
         ship_choice = ds
         cp = game_state['players'][self.player_num-1]['cp']
-        ship_size_tech = game_state['players'][self.player_num-1]['technology']['ship_size'][0]
+        ship_size_tech = game_state['players'][self.player_num]['technology']['ship_size'][0]
         while cp >= ship_choice[1]:
             if ship_size_tech<2:
                 ship_size_price = ((ship_size_tech + 1)*5)
@@ -52,7 +52,7 @@ class CombatStrategy:
             else:
                 i+=1
 
-    def decide_which_unit_to_attack(self, attacking_ship_index, location, combat_state):
+    def decide_which_unit_to_attack(self, combat_state, location, attacking_ship_index):
         for entry in combat_state[location]:
             if entry['player'] != combat_state[location][attacking_ship_index]['player']:
                 return combat_state[location].index(entry)

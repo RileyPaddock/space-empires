@@ -6,11 +6,13 @@ class CombatStrategy:
     def will_colonize_planet(self,colony_ship, game_state):
       return False
 
-    def decide_ship_movement(self,ship, game_state):
-      if ship.coordinates[1]<4:
-        return (0,1)
-      else:
-        return"Stay"
+    def decide_ship_movement(self,ship_index, game_state):
+        if game_state[self.player_num-1]["Units"][ship_index]["Coords"][1]>2:
+             return (0,-1)
+        elif game_state[self.player_num-1]["Units"][ship_index]["Coords"][1]<2:
+             return (0,1)
+        else:
+            return (0,0)
 
 
     def decide_purchases(self,game_state):
@@ -48,10 +50,10 @@ class CombatStrategy:
       screens = []
       for ship in combat_state['order']:
         if ship['player']!=self.player_num:
-          enemy_count++
+          enemy_count+= 1
       for ship in combat_state['order']:
         if ship['player']==self.player_num:
-          player_count++
+          player_count=+1
           if player_count >= enemy_count:
             screens.append(combat_state['order'].index(ship))
       return screens

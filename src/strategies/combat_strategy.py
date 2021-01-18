@@ -2,18 +2,18 @@ class CombatStrategy:
     def __init__(self,player_num):
         self.player_num = player_num
 
-    def will_colonize(self,colony_ship_loc,game_state):
+    def will_colonize_planet(self,colony_ship_loc,game_state):
         return False
     
     def decide_ship_movement(self,ship_index, game_state):
         ship = game_state['players'][self.player_num]['units'][ship_index]
-        if ship['location'][0]>2:
+        if ship['coords'][0]>2:
             return (-1,0)
-        elif ship['location'][0]<2:
+        elif ship['coords'][0]<2:
              return (1,0)
-        elif ship['location'][1]>2:
+        elif ship['coords'][1]>2:
              return (0,-1)
-        elif ship['location'][1]<2:
+        elif ship['coords'][1]<2:
              return (0,1)
         else:
             return (0,0)
@@ -47,7 +47,7 @@ class CombatStrategy:
     def decide_removals(self, game_state):
         i = 0
         while True:
-            if game_state['players'][self.player_index]['units'][i]['location'] != None:
+            if game_state['players'][self.player_index]['units'][i]['coords'] != None:
                 return game_state['players'][self.player_index]['units'][i]['unit_num']
             else:
                 i+=1

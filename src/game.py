@@ -32,11 +32,12 @@ class Game:
             player.player_num = self.players.index(player)+1
             player.generate_fleet()
 
-    def generate_state(self):
+    def generate_state(self, round = None):
         state = {}
         state['board_size'] = tuple(self.board.size)
         state['turn'] = self.num_turns
         state['phase'] = self.phase
+        state['round'] = round
         state['winner'] = self.winner
         state['unit_data'] = {
         'Battleship': {'cp_cost': 20, 'hullsize': 3},
@@ -113,7 +114,7 @@ class Game:
                 for unit in player.board.game_data[coord]:
                     if unit.unit_type == "Planet":
                         if unit.location == colony_ship.location and not unit.has_a_colony:
-                            if self.players[colony_ship.team - 1].strategy.will_colinize_planet(colony_ship.location,self.generate_state()):
+                            if self.players[colony_ship.team - 1].strategy.will_colonize_planet(colony_ship.location,self.generate_state()):
                                 colony_ship.location = None
                                 self.board.update_board()
                                 unit.player = colony_ship.team   

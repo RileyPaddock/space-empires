@@ -1,52 +1,39 @@
-import sys
-sys.path.append('src')
-from units.scout import Scout
-from units.cruiser import Cruiser
-from units.colony_ship import ColonyShip
-from units.colony import Colony
-from planet import Planet
-from units.ship_yard import ShipYard
-from units.base import Base
-from units.destroyer import Destroyer
-
 class DumbStrategy:
 
     def __init__(self, player_num):
         self.player_num = player_num
 
     def decide_ship_movement(self, ship_index, game_state):
-        if game_state['players'][self.player_num]['units'][ship_index]['name'] == 'Scout':
-            return [-1,0] 
-        else:
-            return [0,0]
+        return (-1,0) 
 
-    def decide_purchases(self, player_state):
+    def decide_purchases(self, game_state):
         purchases = {}
-        cp = player_state['cp']
+        cp =game_state['players'][self.player_num]['cp']
         units = []
-        if cp > Scout.cost:
+        scout = game_state['unit_data']['Scout']
+        if cp > scout['cp_cost']:
             while True:
-                if cp >= Scout.cost:
-                    units.append(Scout)
-                    cp -= Scout.cost
+                if cp >= scout['cp_cost']:
+                    units.append('Scout')
+                    cp -= scout['cp_cost']
                 else:
                     break
         if len(units) >= 1:
-            purchases['ships'] = units
+            purchases['units'] = units
+        purchases['tech'] = []
         return purchases
 
-    def decide_removals(self, player_state):
-        removals = []
-        threshold = self.get_maintenance() - self.cp
-        for unit in player_state['units']:
-            removals.append(unit['unit num'])
-            threshold -= unit['maint']
-            if threshold <= 0:
-                break
-        return removals
+    def decide_removal(self, game_state):
+        return -1
         
-    def decide_which_ship_to_attack(self, attacker, unit_info):
-        return unit_info[0]
+    def decide_which_unit_to_attack(self, combat_state, location, attacker_index):
+        for unit in combat_state[tuple(location)]:
+            if unit['player'] != combat_state[tuple(location)][attacker_index]['player']:
+                return combat_state[tuple(location)].index(unit)
 
-    def will_colonize(self, colony_ship, game_state):
+
+    def will_colonize_planet(self, coords, game_state):
         return False
+
+    def decide_which_units_to_screen(self, combat_state):
+        return []

@@ -12,8 +12,8 @@ from elijah_dumb_strategy import DumbStrategy as EDS
 from george_dumb_strategy import DumbStrategy as GDS
 from david_dumb_strategy import DumbStrategy as DDS
 
-for strategy in [DumbStrategy, EDS]:
-    print("Strategy #: "+str([DumbStrategy, EDS].index(strategy)))
+for strategy in [DumbStrategy, EDS, DDS]:
+    print("Strategy #: "+str([DumbStrategy, EDS, DDS].index(strategy)))
     b = Board([5,5],[(2,0),(2,4)])
     p1 = Player(strategy(0),(2,0),b)
     p2 = Player(strategy(1),(2,4),b)
@@ -24,7 +24,7 @@ for strategy in [DumbStrategy, EDS]:
     def assert_player_scouts(player, pos, amt):
         state = game.generate_state()
         units = [u for u in state['players'][player-1]['units']
-                if u['location'] == pos and u['type'] == 'Scout']
+                if u['coords'] == pos and u['type'] == 'Scout']
         print(len(units), amt)
         #assert len(units) == amt, 'Incorrect num scouts, Got: '+ str(len(units))+' Wanted: '+ str(amt)
 
