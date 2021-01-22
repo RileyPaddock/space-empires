@@ -5,6 +5,7 @@ class Board:
         self.size = size
         self.spawns = spawns
         self.game_data = {}
+        self.planets = []
         self.set_up()
         self.generate_planets()
 
@@ -21,24 +22,27 @@ class Board:
                 if unit.unit_type == "Planet":
                     pass
             else:
-                self.game_data[rand_loc].append(Planet(rand_loc))
+                new_planet = Planet(rand_loc)
+                self.planets.append(new_planet)
+
         for spawn in self.spawns:
-            self.game_data[spawn].append(Planet(spawn))
+            home_planet = Planet(spawn)
+            self.planets.append(home_planet)
 
-    def update_board(self):
-            temp = self.game_data
-            self.game_data = {}
-            for x in range(self.size[0]):
-                for y in range(self.size[1]):
-                    self.game_data[(x,y)] = []
-            for elem in temp:
-                for unit in temp[elem]:
-                    if unit.location is not None:
-                        unit.location = tuple(unit.location)
-                        self.game_data[unit.location].append(unit)
+    def update_board(self, players):
+        all_units = []
+        for player in players:
+            for unit in player.units:
+                all_units.append(unit)
+        for space in self.grid.values():
+            space.units = []
+            for unit in all_units:
+                if unit.coords == space.coords:
+                    space.units.append(unit)
 
-            for coord in self.game_data:
-                for planet in self.game_data[coord]:
-                    if planet.unit_type == 'Planet' and planet.has_a_colony:
-                        if planet.colony.location == None:
-                            planet.reset()
+    def get_all_active_data(self):
+        board = {}
+        for board_space in self.game_data:
+            if len([unit for unit in self.game_data[board_space] if unit.unit_type != 'Planet']) >= 2:
+                board[board_space] = [unit for unit in self.game_data[board_space] if unit.unit_type != 'Planet']
+        return board

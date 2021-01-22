@@ -1,123 +1,61 @@
 import sys
 sys.path.append('src')
-from game import Game
 from players.player import Player
-from strategies.dumb_strategy import DumbStrategy
-from board import Board
+from units.unit import Unit
 from units.scout import Scout
-del sys.path[-1]
-sys.path.append('imported_strategies')
-from colby_dumb_strategy import DumbStrategy as CDS
-from elijah_dumb_strategy import DumbStrategy as EDS
-from george_dumb_strategy import DumbStrategy as GDS
-from david_dumb_strategy import DumbStrategy as DDS
+from units.colony_ship import ColonyShip
+from units.colony import Colony
+from game import Game
+from board import Board
+from planet import Planet
+from strategies.combat_strategy import CombatStrategy
+from strategies.dumb_strategy import DumbStrategy
+# from imported_strategies.strategy_util import is_in_bounds
+from imported_strategies.colby_dumb_strategy import DumbStrategy as colby_dumb
+from imported_strategies.elijah_dumb_strategy import DumbStrategy as eli_dumb
+# from imported_strategies.david_dumb_strategy import DumbStrategy as david_dumb
+from imported_strategies.george_dumb_strategy import DumbStrategy as george_dumb
 
-for strategy in [DumbStrategy, EDS, DDS]:
-    print("Strategy #: "+str([DumbStrategy, EDS, DDS].index(strategy)))
-    b = Board([5,5],[(2,0),(2,4)])
-    p1 = Player(strategy(0),(2,0),b)
-    p2 = Player(strategy(1),(2,4),b)
-    game = Game(players = [p1,p2],board = b,logging = False)
+scout_coords = [[4,0], [4,4]]
+non_scout_coords = [[2,0], [2,4]]
+player_scouts = [3,5,8,10,12]
+new_game = Game(logging = False, die_rolls = 'ascending')
+strategy_1 = colby_dumb(0)
+strategy_2 = colby_dumb(1)
+# strategy_1 = george_dumb(0)
+# strategy_2 = george_dumb(1)
+# strategy_1 = eli_dumb(0)
+# strategy_2 = eli_dumb(1)
+# strategy_1 = DumbStrategy(0)
+# strategy_2 = DumbStrategy(1)
+new_game.add_player(strategy_1, [2,0])
+new_game.add_player(strategy_2, [2,4])
+new_game.initialize_game()
 
+def check_player(player_index, scout_count, turn):
+    state = new_game.game_state()
+    scouts = [unit['type'] for unit in state['players'][player_index]['units'] if unit['type'] == 'Scout']
+    assert len(scouts) == scout_count
+    for unit in state['players'][player_index]['units']:
+        if unit['type'] == 'Scout':
+            if unit['turn_created'] == turn:
+                assert unit['coords'] == non_scout_coords[player_index]
+            else:
+                assert unit['coords'] == scout_coords[player_index]
+    print('Passed')
 
-
-    def assert_player_scouts(player, pos, amt):
-        state = game.generate_state()
-        units = [u for u in state['players'][player-1]['units']
-                if u['coords'] == pos and u['type'] == 'Scout']
-        print(len(units), amt)
-        #assert len(units) == amt, 'Incorrect num scouts, Got: '+ str(len(units))+' Wanted: '+ str(amt)
-
-
-    def assert_player_economic(player, cps):
-        state = game.generate_state()
-        print(state['players'][player-1]['cp'], cps)
-        #assert state['players'][player-1]['cp'] == cps, 'Incorrect CP, Got: ' + str(state['players'][player-1]['cp']) + ' Wanted: '+str(cps)
-
-
-    # 1 Movement Phase
-    print("Turn 1 Movement Phase")
-    game.complete_movement_phase()
-    assert_player_scouts(1, (4, 0), 3)
-    assert_player_scouts(2, (4, 4), 3)
-
-    # 1 Combat Phase (nothing happens)
-    print("Turn 1 Combat Phase")
-    game.complete_combat_phase()
-
-
-    # 1 Economic Phase
-    print("Turn 1 Economic Phase")
-    game.complete_economic_phase()
-    assert_player_economic(1, 5)
-    assert_player_economic(2, 5)
-
-    assert_player_scouts(1, (4, 0), 3)
-    assert_player_scouts(2, (4, 4), 3)
-    assert_player_scouts(1, (2, 0), 2)
-    assert_player_scouts(2, (2, 4), 2)
-
-    # 2 Movement Phase
-    print("Turn 2 Movement Phase")
-    print([unit.unit_type for unit in game.players[0].units])
-    game.complete_movement_phase()
-    assert_player_scouts(1, (4, 0), 5)
-    assert_player_scouts(2, (4, 4), 5)
-
-    # 2 Combat Phase (nothing happens)
-    print("Turn 2 Combat Phase")
-    game.complete_combat_phase()
-
-    # 2 Economic Phase
-    print("Turn 2 Economic Phase")
-    game.complete_economic_phase()
-    assert_player_economic(1, 2)
-    assert_player_economic(2, 2)
-
-    assert_player_scouts(1, (4, 0), 5)
-    assert_player_scouts(2, (4, 4), 5)
-    assert_player_scouts(1, (2, 0), 3)
-    assert_player_scouts(2, (2, 4), 3)
-
-    # 3 Movement Phase
-    print("Turn 3 Movement Phase")
-    game.complete_movement_phase()
-    assert_player_scouts(1, (4, 0), 8)
-    assert_player_scouts(2, (4, 4), 8)
-
-    # 3 Combat Phase (nothing happens)
-    print("Turn 3 Combat Phase")
-    game.complete_combat_phase()
-
-    # 3 Economic Phase
-    print("Turn 3 Economic Phase")
-    game.complete_economic_phase()
-    assert_player_scouts(1, (4, 0), 8)
-    assert_player_scouts(2, (4, 4), 8)
-    assert_player_scouts(1, (2, 0), 2)
-    assert_player_scouts(2, (2, 4), 2)
-
-    assert_player_economic(1, 2)
-    assert_player_economic(2, 2)
-
-    # 4 Movement Phase
-    print("Turn 4 Movement Phase")
-    game.complete_movement_phase()
-    assert_player_scouts(1, (4, 0), 10)
-    assert_player_scouts(2, (4, 4), 10)
-
-    # 4 Combat Phase (nothing happens)
-    print("Turn 4 Combat Phase")
-    game.complete_combat_phase()
-
-    # 4 Economic Phase
-    print("Turn 4 Economic Phase")
-    game.complete_economic_phase()
-    assert_player_scouts(1, (4, 0), 10)
-    assert_player_scouts(2, (4, 4), 10)
-
-    assert_player_economic(1, 0)
-    assert_player_economic(2, 0)
-
-
-
+for i in range(4):
+    print('===================================')
+    new_game.turn_count += 1
+    new_game.complete_movement_phase()
+    print('Testing',i+1, 'Turn Movement Scouts')
+    check_player(0, player_scouts[i], i+1)
+    check_player(1, player_scouts[i], i+1)
+    print('Testing',i+1, 'Turn Combat Phase')
+    new_game.complete_combat_phase()
+    print('passed')
+    new_game.complete_economic_phase()
+    print('Testing',i+1, 'Turn Economic Phase')
+    check_player(0, player_scouts[i + 1], i+1)
+    check_player(1, player_scouts[i + 1], i+1)
+    print('===================================')

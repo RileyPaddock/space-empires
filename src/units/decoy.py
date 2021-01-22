@@ -1,18 +1,17 @@
-from units.unit import Unit
+from units.unit import Unit 
 
 class Decoy(Unit):
-    
-    def __init__(self, team, location, attack_tech, defense_tech, unit_num, age = 0):
-        super().__init__(team, location, unit_num, age)
-        self.attack_tech = attack_tech
-        self.defense_tech = defense_tech
-        self.unit_type = 'Decoy'
-        self.price = 1
-        self.shorthand = 'Dc'
-        self.speed = 1
-        self.attack_grade = ' '
-        self.strength = ' '
-        self.defense = ' '
-        self.armor = ' '
-        self.hull_size = 0
-
+    cost = 1
+    strength = 0          
+    defense = 0
+    unit_type = 'Decoy'
+    shorthand = 'Dc'
+    class_num = 0
+    armor = 0
+    attack_grade = 'Z'
+    hull_size = 0
+    maintenance = None
+    can_atk = False
+    instant_ko = True
+    ship_size = 1
+    movement = 1

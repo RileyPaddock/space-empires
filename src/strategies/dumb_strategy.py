@@ -14,11 +14,12 @@ class DumbStrategy:
     
     def decide_purchases(self,game_state):
         units = []
+        spawn_coords = game_state['players'][self.player_index]['home_coords']
         money = game_state['players'][self.player_index]['cp']
         while money - 6 >= 0:
-            units.append('Scout')
+            units.append({'type':'Scout', 'coords': spawn_coords})
             money -= 6
-        return {'units':units,'tech':[]}
+        return {'units':units,'technology':[]}
     
     def decide_removals(self, game_state):
         i = 0

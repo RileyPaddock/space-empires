@@ -1,18 +1,22 @@
-from units.unit import Unit
+from units.unit import Unit 
 
 class Dreadnaught(Unit):
-    
-    def __init__(self, team, location, attack_tech, defense_tech, unit_num, age = 0):
-        super().__init__(team, location, unit_num, age)
-        self.attack_tech = attack_tech
-        self.defense_tech = defense_tech
-        self.unit_type = 'Dreadnaught'
-        self.price = 24
-        self.attack_grade = 'A'
-        self.strength = 6
-        self.defense = 3
-        self.shorthand = 'DN'
-        self.speed = 1
-        self.armor = 3
-        self.hull_size = 3
+    cost = 25
+    attack_grade = 'A'
+    strength = 6
+    defense = 3
+    class_num = 5
+    shorthand = 'DR'
+    unit_type = 'Dreadnaught'
+    armor = 3
+    speed = 1
+    hull_size = 3
+    ship_size = 6
+    movement = 1
 
+    def __init__(self, location, unit_num, player, technologies, game, turn_created):
+        super().__init__(location, unit_num, player, technologies, game, turn_created)
+        self.strength = self.strength + technologies['attack']
+        self.defense += technologies['defense']
+        self.movement = technologies['movement']
+        self.maintenance = 3

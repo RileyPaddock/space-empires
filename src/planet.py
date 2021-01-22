@@ -1,16 +1,14 @@
 class Planet:
-    def __init__(self,location):
-        self.player = None
-        self.unit_type = "Planet"
+    def __init__(self, location, colonized = False, colony = None):
         self.location = location
-        self.has_a_colony = False
-        self.colony = None
-        # self.shipyards = []
+        self.colonized = colonized
+        self.unit_type = "Planet"
+        self.colony = colony
 
-    def reset(self):
-        self.player = None
-        self.has_a_colony = False
-        self.colony = None
-        self.shipyards = []
+    def colonize(self, player, colony):
+        self.colonized = True
+        self.colony = colony
 
-        #test
+    def destroy(self):
+        self.colonized = False
+        self.colony = None

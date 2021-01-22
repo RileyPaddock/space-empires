@@ -1,45 +1,126 @@
 from units.scout import Scout
-from units.base import Base
-from units.battlecruiser import Battlecruiser
-from units.battleship import Battleship
-from units.colony_ship import ColonyShip
 from units.cruiser import Cruiser
-from units.decoy import Decoy
-from units.destroyer import Destroyer
-from units.dreadnaught import Dreadnaught
-from units.ship_yard import ShipYard
+from units.colony_ship import ColonyShip
 from units.colony import Colony
+from units.base import Base
 from planet import Planet
+from units.ship_yard import ShipYard
 
-class Player():
-    def __init__(self, strategy, start_pos, board, player_num = 0,logging = True):
+
+class Player:
+
+    def __init__(self, strategy, player_num, starting_coords, game):
         self.strategy = strategy
         self.player_num = player_num
-        self.start_pos = start_pos
-        self.board = board
-        self.logging = logging
-        self.num_turns = 0
-        self.money = 0
+        self.technologies = {'attack' : 0, 'defense' : 0, 'movement' : 1, 'shpyrd' : 1, 'ss' : 1}
+        self.home_coords = starting_coords
+        self.home_planet = None
+        self.game = game
         self.units = []
-        self.tech = {'attack':[0,3],'defense':[0,3],'movement':[1,6],'ship_yard':[1,3],'ship_size':[1,6]}
-        self.shipyard_capacity = 0.5 + 0.5*self.tech['ship_yard'][0]
+        self.cp = 0
+    
+    def build_unit(self, unit_name, coords, pay = True):
+        colony = self.find_colony(coords)
+        if unit_name.unit_type == 'Base':
+            if colony.base is not None:
+                return False
+        if unit_name.unit_type == 'Shipyard':
+            if len(colony.shipyards) == 4:
+                return False
+        ship_tech = {key: val for key,val in self.technologies.items() if key in ['attack', 'defense', 'movement']}
+        new_unit = unit_name(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.turn_count)
+        if pay:
+            self.cp -= new_unit.cost
+        self.units.append(new_unit)
 
-    def generate_fleet(self):
-        units = [Colony(self.player_num,self.start_pos,self.tech['attack'][0], self.tech['defense'][0],0, [ShipYard(self.player_num, self.start_pos,None) for i in range(4)],None),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],1),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],2),Scout(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],3),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],4),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],5),ColonyShip(self.player_num, self.start_pos,self.tech['attack'][0], self.tech['defense'][0],6)]
-        self.units = units
-        for unit in units:
-            self.board.game_data[unit.location].append(unit)
+    def find_colony(self, coords):
+        for unit in self.units:
+            if unit.unit_type == 'Colony':
+                if unit.location == coords:
+                    return unit
+
+    def build_colony(self, coords, col_type = 'Normal', colony_ship = None):
+        ship_tech = {key: val for key,val in self.technologies.items() if key in ['attack', 'defense']}
+        if col_type == 'Home':
+            home_colony = Colony(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.turn_count,colony_type = 'Home')
+            self.units.append(home_colony)
+        else:
+            new_colony = Colony(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
+            self.game.board.grid[tuple(coords)].planet.colonize(self, new_colony)
+            self.units.append(new_colony)
+            if colony_ship is not None:
+                colony_ship.destroy()
+
+    def initialize_units(self):
+        self.build_colony(self.home_coords, col_type = 'Home')
+        home_planet = Planet(self.home_coords, colonized = True, colony = self.units[0])
+        self.home_planet = home_planet
+        self.game.board.planets.append(home_planet)
+        self.game.board.grid[tuple(self.home_coords)].planet = home_planet
+        for i in range(4):
+            self.build_unit(ShipYard, self.home_coords, pay = False)
+        self.units[0].set_builders()
+        for i in range(3):
+            self.build_unit(Scout, self.home_coords, pay = False)
+        for i in range(3):
+            self.build_unit(ColonyShip, self.home_coords, pay = False)
+
+    def check_colony(self, build_size, ship, coords):
+        for unit in self.units:
+            if unit.unit_type == 'Colony' and unit.location == coords:
+                if self.technologies['ss'] >= ship.ship_size_needed:
+                    if unit.builders >= build_size:
+                        unit.builders -= build_size
+                        return unit.location
+                    else:
+                        if self.game.logging:
+                            print('Player does not have enough builders at colonies to build ship')
+                        return None
+                else:
+                    if self.game.logging:
+                        print('Player does not have proper ship size level')
+                    return None
+
+
+    def update_shipyards(self):
+        ship_size_capacity = {'1' : 1.0, '2':1.5, '3' : 2.0}
+        for unit in self.units:
+            if unit.unit_type == 'Shipyard':
+                unit.build_capacity = ship_size_capacity[str(self.technologies['shipyard'])]
+        self.set_colony_builders()
+
+    def set_colony_builders(self):
+        for unit in self.units:
+            if unit.unit_type == 'Colony':
+                unit.set_builders()
+
+    def get_maintenance(self):
+        total_maintenance = 0
+        for unit in self.units:
+            if unit.maintenance is not None:
+                total_maintenance += unit.maintenance
+        return total_maintenance
+
+    def get_income(self):
+        income = 0
+        for unit in self.units:
+            if unit.unit_type == 'Colony':
+                income += unit.capacity
+        return income
     
     def player_state(self):
         player_state = {}
-        player_state['cp'] = self.money
-        player_state['technology'] = self.tech
+        player_state['player_num'] = self.player_num
+        player_state['cp'] = self.cp
+        techs = ['shipsize', 'attack', 'defense', 'movement', 'shipyard']
+        player_state['technology'] = {techs[techs.index(tech)] : self.technologies[tech] for tech in self.technologies.keys()}
         player_state['home_coords'] = self.start_pos
-        player_state['units'] = [self.unit_state(unit) for unit in self.units if unit.unit_type != 'Planet' and unit.location != None]
+        player_state['units'] = [self.unit_state(unit) for unit in self.units if unit.alive]
         return player_state
 
     def unit_state(self,unit):
         unit_state = {}
+        unit_state['player'] = self.player_num
         unit_state['coords'] = unit.location
         unit_state['type'] = unit.unit_type
         unit_state['technology'] = {attr:value for attr, value in unit.__dict__.items() if 'tech' in attr}
@@ -49,131 +130,12 @@ class Player():
         unit_state['speed'] = unit.strength
         unit_state['unit_num'] = unit.unit_num
         unit_state['team']  =unit.team
+        unit_state['turn_created'] = unit.turn_created
+        unit_state['class_num'] = unit.attack_grade
+        unit_state['maintenance'] = unit.maintenance
+        unit_state['alive'] = unit.alive
+        techs = ['attack', 'defense', 'movement']
+        unit_state['technology'] = {techs[techs.index(tech)] : unit.technologies[tech] for tech in unit.technologies.keys()}
         return unit_state
+        
     
-    def spend(self,game_state):
-        wanted_purchases = self.strategy.decide_purchases(game_state)
-        units = []
-        print(wanted_purchases, self.money)
-        for unit in wanted_purchases['units']:
-            cost = self.create_unit(unit,self.start_pos,False).price
-            if self.money - cost >= 0:
-                units.append(self.create_unit(unit,self.start_pos))
-                if self.logging:
-                    print("\n       Player "+str(self.player_num)+" bought a new "+str(unit)+". It spawned at "+str(self.start_pos))
-            self.money -= cost
-
-        for tech in wanted_purchases['technology']:
-            self.tech_upgrade(tech)
-
-        for unit in units:
-            self.units.append(unit)
-            self.board.game_data[unit.location].append(unit)
-
-    def tech_upgrade(self, upgrade_choice):
-        tech_costs = {'attack':((self.tech['attack'][0] + 2) * 10)
-        ,'defense':((self.tech['defense'][0] + 2) * 10),
-        'movement':self.get_movement_price(),
-        'ship_yard':((self.tech['ship_yard'][0] + 1)*10),
-        'ship_size':((self.tech['ship_size'][0] + 1)*5)}
-
-        if tech_costs[upgrade_choice] <= self.money and self.tech[upgrade_choice][0]<self.tech[upgrade_choice][1]:
-            self.money -= tech_costs[upgrade_choice]
-            self.tech[upgrade_choice][0]+=1
-            if self.logging:
-                print("\n       Player "+str(self.player_num)+" upgraded thier "+str(upgrade_choice)+" technology to level "+str(self.tech[upgrade_choice][0])) 
-
-    def get_movement_phases(self):
-            if self.tech['movement'][0] == 1:
-                return (1,1,1)
-            elif self.tech['movement'][0] == 2:
-                return (1,1,2)
-            elif self.tech['movement'][0] == 3:
-                return (1,2,2)
-            elif self.tech['movement'][0] == 4:
-                return (2,2,2)
-            elif self.tech['movement'][0] == 5:
-                return (2,2,3)
-            elif self.tech['movement'][0] == 6:
-                return (2,3,3)
-
-    def get_movement_price(self):
-            if self.tech['movement'][0] < 4:
-                return (self.tech['movement'][0] + 1)*10
-            else:
-                return 40
-
-    def move_player_units(self,game_state):
-        for i in range(len(self.get_movement_phases())):
-            game_state['round'] = i
-            if self.logging:
-                print("\n Player "+str(self.player_num)+" - Move " + str(i+1))
-            for coord in self.board.game_data:
-                for unit in self.board.game_data[coord]:
-                    if unit.unit_type != 'Planet' and unit.unit_type != 'Colony' and unit.team == self.player_num and unit.location is not None:
-                        old_loc = unit.location
-                        if unit.unit_type == 'Colony Ship':
-                            new_loc = tuple(self.movement_from_translation(unit, self.strategy.decide_ship_movement(unit.unit_num,game_state)))
-                            if new_loc in [(x,y) for x in range(game_state['board_size'][0]) for y in range(game_state['board_size'][1])]:
-                                unit.location = new_loc
-                        else:
-                            old_loc = unit.location
-                            for i in range(self.get_movement_phases()[i]):
-                                new_loc = tuple(self.movement_from_translation(unit,self.strategy.decide_ship_movement(unit.unit_num,game_state)))
-                                if new_loc in [(x,y) for x in range(game_state['board_size'][0]) for y in range(game_state['board_size'][1])]:
-                                    unit.location = new_loc
-                        self.board.update_board()
-                        if unit.location is not None and unit.location != old_loc and self.logging:
-                            print("\n   Unit "+str(unit.unit_num)+" ("+str(unit.unit_type)+") moves from "+str(old_loc)+" to "+str(unit.location))
-                        elif unit.location is not None and self.logging:
-                            print("\n   Unit "+str(self.board.game_data[coord].index(unit))+" ("+str(unit.unit_type)+") did not move from"+str(unit.location))
-
-    def will_colonize(self,colony_ship,game_state):
-        return self.strategy.will_colonize(self,colony_ship.location, game_state)
-
-
-
-    def locate_colonies_with_shipyard(self):
-        colonies_with_shipyard = []
-        colonies = [colony for coord in self.board.game_data for colony in self.board.game_data[coord] if colony.unit_type == "Colony" and colony.location is not None and colony.team == self.player_num]
-        for colony in colonies:
-            if len(colony.shipyards) > 0 and colony.location is not None:
-                colonies_with_shipyard.append(colony)
-        return colonies_with_shipyard
-
-    def decide_removals(self,game_state):
-        exess_cp = sum([unit['hull_size'] for unit in self.units]) - self.money
-        while exess_cp > 0:
-            removal_index = self.strategy.removals(game_state)
-            exess_cp -= self.units[removal_index].hull_size
-            self.units[removal_index].location = None
-            self.board.update_board()
-
-    def movement_from_translation(self,ship,translation):
-        return [ship.location[i]+ translation[i] for i in range(len(translation))]
-
-    def decide_which_ships_to_attack(self,ship,combat_state):
-        return self.strategy.decide_which_ships_to_attack(self,ship,combat_state)
-
-    def create_unit(self, unit_type, location, logging = False):
-        unit_num = len(self.units)
-        if logging:
-            print("\n       Player "+str(self.player_num)+" bought a new " + str(unit_type)+". It spawned at "+str(location))
-        if unit_type == 'Scout':
-            return Scout(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Destroyer':
-            return Destroyer(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Cruiser':
-            return Cruiser(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Battlecruiser':
-            return Battlecruiser(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Battleship':
-            return Battleship(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Dreadnaught':
-            return Dreadnaught(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == 'Colony':
-            return ColonyShip(self.player_num, location,self.tech['attack'][0],self.tech['defense'][0],unit_num)
-        elif unit_type == 'Decoy':
-            return Decoy(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)
-        elif unit_type == "Base":
-            return Base(self.player_num, location,self.tech['attack'][0], self.tech['defense'][0],unit_num)

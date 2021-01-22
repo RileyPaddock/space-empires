@@ -1,18 +1,22 @@
-from units.unit import Unit
+from units.unit import Unit 
 
 class Destroyer(Unit):
-    
-    def __init__(self, team, location, attack_tech, defense_tech, unit_num, age = 0):
-        super().__init__(team, location, unit_num, age)
-        self.attack_tech = attack_tech
-        self.defense_tech = defense_tech
-        self.unit_type = 'Destroyer'
-        self.price = 9
-        self.attack_grade = 'D'
-        self.strength = 4
-        self.defense = 0
-        self.shorthand = 'DS'
-        self.speed = 1
-        self.armor = 1
-        self.hull_size = 1
+    cost = 9
+    attack_grade = 'D'
+    strength = 4
+    defense = 0
+    class_num = 2
+    shorthand = 'DE'
+    unit_type = 'Destroyer'
+    armor = 1
+    speed = 1
+    hull_size = 1
+    ship_size = 2
+    movement = 1
 
+    def __init__(self, location, unit_num, player, technologies, game, turn_created):
+        super().__init__(location, unit_num, player, technologies, game, turn_created)
+        self.strength = self.strength + technologies['attack']
+        self.defense += technologies['defense']
+        self.movement = technologies['movement']
+        self.maintenance = 1

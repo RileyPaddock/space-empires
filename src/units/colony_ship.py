@@ -1,18 +1,17 @@
-from units.unit import Unit
+from units.unit import Unit 
 
 class ColonyShip(Unit):
-    
-    def __init__(self, team, location, attack_tech, defense_tech, unit_num, age = 0):
-        super().__init__(team, location, unit_num, age)
-        self.attack_tech = attack_tech
-        self.defense_tech = defense_tech
-        self.unit_type = 'Colony Ship'
-        self.shorthand = 'CS'
-        self.attack_grade = 'Z'
-        self.price = 8
-        self.speed = 1
-        self.armor = 1
-        self.hull_size = 1
-        self.defense = 0
-        self.strength = 0
-
+    cost = 8
+    strength = 0          
+    defense = 0
+    unit_type = 'Colonyship'
+    shorthand = 'CO'
+    class_num = 0
+    armor = 0
+    attack_grade = 'Z'
+    hull_size = 1
+    maintenance = None
+    can_atk = False
+    instant_ko = True
+    ship_size = 1
+    movement = 1
