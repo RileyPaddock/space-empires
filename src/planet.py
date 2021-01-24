@@ -5,7 +5,7 @@ class Planet:
         self.unit_type = "Planet"
         self.colony = colony
 
-    def colonize(self, player, colony):
+    def colonize(self, colony):
         self.colonized = True
         self.colony = colony
 

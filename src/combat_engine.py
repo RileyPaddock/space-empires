@@ -26,7 +26,7 @@ class CombatEngine:
         rolls = []
         possible_rolls = [1,2,3,4,5,6]
         while len(rolls)<6:
-            rand_choice = random.choice([possible_rolls])
+            rand_choice = random.choice(possible_rolls)
             rolls.append(rand_choice)
             del possible_rolls[possible_rolls.index(rand_choice)]
 
@@ -110,16 +110,16 @@ class CombatEngine:
                 unit2 = units[j]
                 unit1_ability = unit1.player.technologies['attack'] + unit1.player.technologies['defense']
                 unit2_ability = unit2.player.technologies['attack'] + unit2.player.technologies['defense']
-                if (unit1.attack_grade + unit1_ability) < (unit2.attack_grade + unit2_ability):
+                if (unit1.class_num + unit1_ability) < (unit2.class_num + unit2_ability):
                     units[i], units[j] = units[j], units[i]
-                elif (unit1.attack_grade + unit1_ability) == (unit2.attack_grade + unit2_ability):
+                elif (unit1.class_num + unit1_ability) == (unit2.class_num + unit2_ability):
                     if unit1.player.player_num > unit2.player.player_num:
                         units[i], units[j] = units[j], units[i]
         return units
 
     def attack(self, attacker, defender):
         self.roll_dice()
-        hit_threshold = attacker.attack - defender.defense
+        hit_threshold = attacker.strength - defender.defense
         if self.game.logging:
             print('Player',attacker.player.player_num, attacker.unit_type, attacker.unit_num,'Shoots at','Player',defender.player.player_num, defender.unit_type, defender.unit_num)
             print('Threshold:', hit_threshold)
@@ -176,7 +176,7 @@ class CombatEngine:
                 self.units = self.battle_order
                 for unit in self.battle_order:
                     if unit.alive:
-                        if not unit.can_attack:
+                        if not unit.can_atk:
                             continue
                         self.sort_units(units, unit.player)
                         enemy = self.which_ship_to_attack(unit.player, unit, self.units)

@@ -4,17 +4,17 @@ class MovementEngine:
         self.board = board
         self.game = game
         self.movement_data = {'1' : [1,1,1,2,2,2], '2': [1,2,2,2,2,3], '3': [1,2,2,2,3,3]}
-        self.phase = None
+        self.movement_phase = None
 
 
     def complete_movement_phase(self):
-        self.game.phase = 'Movement'
+        self.game.movement_phase = 'Movement'
         if self.game.logging:
             print('BEGINNING OF MOVEMENT PHASE')
         for i in range(3):
             if self.game.logging:
                 print('Movement', i + 1)
-            self.phase = i
+            self.movement_phase = i
             for player in self.game.players:
                 if self.game.logging:
                     print('--------------------')
@@ -42,5 +42,5 @@ class MovementEngine:
     
     def generate_movement_state(self):
         movement_dict = {}
-        movement_dict['Phase'] = self.phase
+        movement_dict['Phase'] = self.movement_phase
         return movement_dict

@@ -35,7 +35,7 @@ class EconomicEngine:
                     removal = self.remove_ship(player)
                     excess_cp -= removal
                 maintenance = player.calc_maintenance()
-            player -= maintenance
+            player.cp -= maintenance
             if self.game.logging:
                 print('Player',player.player_num,'payed',maintenance,'in maintenance!')
             self.make_purchases(player)

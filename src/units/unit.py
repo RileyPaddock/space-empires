@@ -1,5 +1,5 @@
 class Unit:
-    can_move = True
+    moveable = True
     can_atk = True
     instant_ko = False
 
@@ -27,3 +27,8 @@ class Unit:
             self.armor -= 1
         else:
             self.destroy()
+
+    def destroy(self):
+        self.alive = False
+        if self in self.player.units:
+            self.player.units.remove(self)

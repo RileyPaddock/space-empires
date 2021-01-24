@@ -1,7 +1,7 @@
-from basic_strategy import BasicStrategy
 import sys
 import random
 sys.path.append('src')
+from imported_strategies.basic_strategy import BasicStrategy
 from units.decoy import Decoy
 from units.base import Base
 from units.ship_yard import ShipYard

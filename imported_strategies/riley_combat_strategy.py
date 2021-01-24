@@ -51,7 +51,7 @@ class CombatStrategy:
     def decide_removals(self, game_state):
         i = 0
         while True:
-            if game_state['players'][self.player_index]['units'][i]['alive']:
+            if game_state['players'][self.player_index]['units'][i]['coords'] != None:
                 return game_state['players'][self.player_index]['units'][i]['unit_num']
             else:
                 i+=1
