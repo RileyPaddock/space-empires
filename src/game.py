@@ -14,6 +14,7 @@ class Game:
         self.players = []
         self.defeated_players = []
         self.num_turns = 0
+        self.num_combats = 0
         self.complete = False
         self.current_player = None
         self.board = None
@@ -31,16 +32,16 @@ class Game:
         game_state['players'] = [player.player_state() for player in self.players]
         game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         game_state['unit_data'] = {
-        'Battleship': {'cp_cost': 20, 'hullsize': 3},
-        'Battlecruiser': {'cp_cost': 15, 'hullsize': 2},
-        'Cruiser': {'cp_cost': 12, 'hullsize': 2},
-        'Destroyer': {'cp_cost': 9, 'hullsize': 1},
-        'Dreadnaught': {'cp_cost': 24, 'hullsize': 3},
-        'Scout': {'cp_cost': 6, 'hullsize': 1},
-        'Shipyard': {'cp_cost': 3, 'hullsize': 1},
-        'Decoy': {'cp_cost': 1, 'hullsize': 0},
-        'Colonyship': {'cp_cost': 8, 'hullsize': 1},
-        'Base': {'cp_cost': 12, 'hullsize': 3},}
+        'Battleship': {'cp_cost': 20, 'shipsize_needed': 3},
+        'Battlecruiser': {'cp_cost': 15, 'shipsize_needed': 2},
+        'Cruiser': {'cp_cost': 12, 'shipsize_needed': 2},
+        'Destroyer': {'cp_cost': 9, 'shipsize_needed': 1},
+        'Dreadnaught': {'cp_cost': 24, 'shipsize_needed': 3},
+        'Scout': {'cp_cost': 6, 'shipsize_needed': 1},
+        'Shipyard': {'cp_cost': 3, 'shipsize_needed': 1},
+        'Decoy': {'cp_cost': 1, 'shipsize_needed': 0},
+        'Colonyship': {'cp_cost': 8, 'shipsize_needed': 1},
+        'Base': {'cp_cost': 12, 'shipsize_needed': 3},}
         game_state['technology_data'] = {
         'shipsize': [10, 15, 20, 25, 30],
         'attack': [20, 30, 40],
@@ -95,12 +96,19 @@ class Game:
         for _ in range(num_turns):
             self.complete_turn()
             if self.complete:
+                print('Player', self.winner,'Won')
                 return
 
     def run_to_completion(self):
-        while True:
+        while not self.complete and self.num_turns <= 100:
             self.complete_turn()
             if self.complete:
+                print(str(self.dice_rolls) + " die rolls:")
+                print("- num turns: "+str(self.num_turns))
+                print("- num combats: "+str(self.num_combats))
+                print("- winner: Player "+str(self.winner))
+                for player in self.players+self.defeated_players:
+                    print("- Player "+str(player.player_num)+" ending CP: "+ str(player.cp))
                 break
 
     def remove_defeated_players(self):
@@ -113,6 +121,7 @@ class Game:
                 for unit in player.units:
                     unit.destroy()
         for player in defeated_players:
+            self.defeated_players.append(player)
             self.players.remove(player)
             if self.logging:
                 print('Player', player.player_num, 'Has Died')
@@ -120,7 +129,6 @@ class Game:
             player = self.players[0]
             self.winner = player.player_num
             self.complete = True
-            print('Player', player.player_num,'Won')
 
     
 

@@ -1,4 +1,4 @@
-class CombatStrategy:
+class CombatStrategy:#WORKS WITH GEORGE
     def __init__(self,player_num):
         self.player_num = player_num
         self.next_buy = 'Destroyer'
@@ -25,10 +25,10 @@ class CombatStrategy:
         if game_state['players'][self.player_num]['cp']>=game_state['unit_data'][self.next_buy]['cp_cost']:
           if self.next_buy == 'Destroyer':
             self.next_buy = 'Scout'
-            return_dic['units'].append({'type': 'Destroyer', 'coords': (2,self.player_num*4)})
+            return_dic['units'].append({'type': 'Destroyer', 'coords': game_state['players'][self.player_num]['home_coords']})
           elif self.next_buy == 'Scout':
             self.next_buy = 'Destroyer'
-            return_dic['units'].append({'type': 'Scout', 'coords': (2,self.player_num*4)})
+            return_dic['units'].append({'type': 'Scout', 'coords': game_state['players'][self.player_num]['home_coords']})
       return return_dic
 
     def will_colonize_planet(self, coordinates, game_state):
@@ -40,7 +40,7 @@ class CombatStrategy:
     def decide_which_unit_to_attack(self,combat_state, coords, attacker_index):
       for ship in combat_state[coords]:
         if ship['player']!=self.player_num:
-          return combat_state['coords'].index(ship)
+          return combat_state[coords].index(ship)
       
 
     def decide_which_units_to_screen(self, combat_state):

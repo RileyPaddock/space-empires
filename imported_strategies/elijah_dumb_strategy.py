@@ -1,5 +1,7 @@
 import math
-from strategies.strategy_util import is_in_bounds
+import sys
+sys.path.append('imported_strategies')
+from strategy_util import is_in_bounds
 
 
 class DumbStrategy:

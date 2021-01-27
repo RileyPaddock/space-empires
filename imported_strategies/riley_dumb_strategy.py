@@ -24,7 +24,7 @@ class DumbStrategy:
     def decide_removals(self, game_state):
         i = 0
         while True:
-            if game_state['players'][self.player_index]['units'][i]['coords'] != None:
+            if game_state['players'][self.player_index]['units'][i]['alive']:
                 return game_state['players'][self.player_index]['units'][i]['unit_num']
             else:
                 i+=1

@@ -1,4 +1,6 @@
-from strategies.strategy_util import get_possible_spots, is_in_bounds, get_spaces
+import sys
+sys.path.append('imported_strategies')
+from strategy_util import get_possible_spots, is_in_bounds, get_spaces
 
 
 class CombatStrategy:

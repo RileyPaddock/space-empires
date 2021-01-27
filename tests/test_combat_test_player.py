@@ -1,30 +1,32 @@
 import sys
+sys.path.append('imported_strategies')
+from colby_combat_strategy import CombatStrategy as CCS
+from elijah_combat_strategy import CombatStrategy as ECS
+from george_combat_strategy import CombatStrategy as GCS
+from david_combat_strategy import CombatStrategy as DCS
+del sys.path[-1]
 sys.path.append('src')
 from game import Game
 from players.player import Player
 from strategies.combat_strategy import CombatStrategy
 from board import Board
 from units.scout import Scout
-from imported_strategies.colby_combat_strategy import CombatStrategy as CCS
-from imported_strategies.elijah_combat_strategy import CombatStrategy as ECS
-from imported_strategies.george_combat_strategy import CombatStrategy as GCS
-from imported_strategies.david_combat_strategy import CombatStrategy as DCS
 
 print('ASCENDING TESTS')
 
 print('TURN 1 Economic')
 
 new_game = Game(logging = False, die_rolls = 'ascending')
-# strategy_1 = DCS(0)
-# strategy_2 = DCS(1)
-strategy_1 = CombatStrategy(0)
-strategy_2 = CombatStrategy(1)
-# strategy_1 = ECS(0)
-# strategy_2 = ECS(1)
-# strategy_1 = GCS(player_num = 0)
-# strategy_2 = GCS(player_num = 1)
-# strategy_1 = CCS(0)
-# strategy_2 = CCS(1)
+strategy_1 = DCS(0)
+strategy_2 = DCS(1)
+#strategy_1 = CombatStrategy(0)
+#strategy_2 = CombatStrategy(1)
+#strategy_1 = ECS(0)
+#strategy_2 = ECS(1)
+#strategy_1 = GCS(player_num = 0)
+#strategy_2 = GCS(player_num = 1)
+#strategy_1 = CCS(0)
+#strategy_2 = CCS(1)
 new_game.add_player(strategy_1, [2,0])
 new_game.add_player(strategy_2, [2,4])
 new_game.initialize_game()

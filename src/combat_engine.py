@@ -53,6 +53,7 @@ class CombatEngine:
                 print('Battle at: '+ str(coords))
             self.combat_finished = False
             self.resolve_combat(units)
+            self.game.num_combats += 1
             self.reset_stats()
             self.game.board.update(self.game.players)
         self.game.board.update(self.game.players)
@@ -130,6 +131,11 @@ class CombatEngine:
             defender.hit()
             if not defender.alive:
                 self.dead_ships.append(defender)
+                if defender.unit_type == 'Colony':
+                    if defender.colony_type == 'Home':
+                        self.game.winner = attacker.player.player_num
+                        self.game.complete = True
+                        self.combat_finished = True
                 if self.game.logging:
                     print('Unit Destroyed')
         else:
@@ -205,7 +211,7 @@ class CombatEngine:
                         planet = self.game.board.planets[planet_coords.index(unit.location)]
                         if not planet.colonized:
                             if player.strategy.will_colonize_planet(unit.location, self.game.game_state()):
-                                player.build_colony(unit.location, col_type = 'Normal', colony_ship = unit)
+                                player.build_colony(unit.location, colony_type = 'Normal', colony_ship = unit)
                                 if self.game.logging:
                                     print('Player', player.player_num,'colonized a planet at',unit.location)
 

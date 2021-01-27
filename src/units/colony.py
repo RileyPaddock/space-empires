@@ -10,7 +10,7 @@ class Colony(Unit):
     moveable = False
     maintenance = None
     can_atk = False
-    ship_size_needed = 0
+    ship_size = 0
     
     def __init__(self, location, unit_num, player, technologies, game, turn_created, colony_type = 'Normal'):
         super().__init__(location, unit_num, player, technologies, game, turn_created)

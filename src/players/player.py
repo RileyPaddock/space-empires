@@ -15,6 +15,7 @@ class Player:
         self.home_coords = starting_coords
         self.game = game
         self.home_planet = None
+        self.last_purchase = None
         self.units = []
         self.cp = 0
         self.technologies = {'attack' : 0, 'defense' : 0, 'movement' : 1, 'shipyard' : 1, 'shipsize' : 1}
@@ -23,6 +24,7 @@ class Player:
         player_state = {}
         player_state['player_num'] = self.player_num
         player_state['cp'] = self.cp
+        player_state['last_purshase'] = self.last_purchase
         techs = ['shipsize', 'attack', 'defense', 'movement', 'shipyard']
         player_state['technology'] = {techs[techs.index(tech)] : self.technologies[tech] for tech in self.technologies.keys()}
         player_state['home_coords'] = self.home_coords
@@ -62,6 +64,7 @@ class Player:
         new_unit = unit_name(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.num_turns)
         if pay:
             self.cp -= new_unit.cost
+            self.last_purchase = unit_name
         self.units.append(new_unit)
 
     def find_colony(self, coords):
@@ -97,6 +100,7 @@ class Player:
             self.create_unit(Scout, self.home_coords, pay = False)
         for i in range(3):
             self.create_unit(ColonyShip, self.home_coords, pay = False)
+        self.last_purchase = 'Scout'
 
     def check_colony(self, build_size, ship, coords):
         for unit in self.units:

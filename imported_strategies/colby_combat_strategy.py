@@ -1,7 +1,8 @@
 import random
-from strategies.basic_strategy import BasicStrategy
 import sys
-sys.path.append('src')
+sys.path.append('imported_strategies')
+from basic_strategy import BasicStrategy
+
 
 
 class CombatStrategy(BasicStrategy):
