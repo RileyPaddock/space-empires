@@ -28,7 +28,7 @@ class AggresiveStrategy:
         spawn_loc = game_state['players'][self.player_num]['home_coords']
         cp = game_state['players'][self.player_num]['cp']
         ship_size_tech = game_state['players'][self.player_num]['technology']['shipsize']
-        ss = ['shipsize', ((ship_size_tech + 1)*5)]
+        ss = ['shipsize', ((ship_size_tech)*5)]
         if ship_size_tech<2:
             ship_choice = ss
         elif game_state['players'][self.player_num]['last_purshase'] == 'Scout':
@@ -37,7 +37,7 @@ class AggresiveStrategy:
             ship_choice = sc
         while cp >= ship_choice[1]:
             if ship_size_tech<2:
-                ship_size_price = ((ship_size_tech + 1)*5)
+                ship_size_price = ((ship_size_tech)*5)
                 if cp > ship_size_price:
                     ship_size_tech+=1
                     tech.append('shipsize')

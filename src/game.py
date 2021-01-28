@@ -43,11 +43,11 @@ class Game:
         'Colonyship': {'cp_cost': 8, 'shipsize_needed': 1},
         'Base': {'cp_cost': 12, 'shipsize_needed': 3},}
         game_state['technology_data'] = {
-        'shipsize': [10, 15, 20, 25, 30],
+        'shipsize': [0, 10, 15, 20, 25, 30],
         'attack': [20, 30, 40],
         'defense': [20, 30, 40],
-        'movement': [20, 30, 40, 40, 40],
-        'shipyard': [20, 30]}
+        'movement': [0, 20, 30, 40, 40, 40],
+        'shipyard': [0, 20, 30]}
         return game_state
 
     def add_player(self, strategy, home_coords):
