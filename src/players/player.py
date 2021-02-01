@@ -14,6 +14,7 @@ class Player:
         self.player_num = player_num
         self.home_coords = starting_coords
         self.game = game
+        self.restricted = True
         self.home_planet = None
         self.last_purchase = None
         self.units = []
@@ -98,7 +99,7 @@ class Player:
             self.create_unit(Scout, self.home_coords, pay = False)
         self.last_purchase = 'Scout'
         
-        if True:
+        if not self.restricted:
             for i in range(4):
                 self.create_unit(ShipYard, self.home_coords, pay = False)
             self.units[0].set_builders()

@@ -1,10 +1,11 @@
 from planet import Planet
 import random
 class Board:
-    def __init__(self,size,game, spawns):
+    def __init__(self,size,game, spawns, restricted):
         self.size = size
         self.game = game
         self.spawns = spawns
+        self.restricted = restricted
         self.game_data = {}
         self.planets = []
         self.set_up()
@@ -19,7 +20,7 @@ class Board:
         for spawn in self.spawns:
             new_planet = Planet(spawn)
             self.planets.append(new_planet)
-        if True:
+        if not self.restricted:
             while len(self.planets) < 8:
                 rand_loc = (random.randint(0,self.size[0] - 1), random.randint(0, self.size[1] - 1))
 

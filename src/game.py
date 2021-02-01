@@ -6,11 +6,12 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [5,5],max_turns = 10, logging = True, die_rolls = 'descending'):
+    def __init__(self, board_size = [5,5],max_turns = 10, logging = True, die_rolls = 'descending', restricted = False):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logging
         self.dice_rolls = die_rolls
+        self.restricted = restricted
         self.players = []
         self.defeated_players = []
         self.num_turns = 0
@@ -58,7 +59,7 @@ class Game:
     def start_engines(self):
         if self.logging:
             print('Creating Board')
-        self.board = Board(self.board_size, self, [player.home_coords for player in self.players])
+        self.board = Board(self.board_size, self, [player.home_coords for player in self.players], self.restricted)
         self.economic_engine = EconomicEngine(self.board, self)
         self.movement_engine = MovementEngine(self.board, self)
         self.combat_engine = CombatEngine(self)
@@ -85,7 +86,7 @@ class Game:
         self.remove_defeated_players()
         if self.complete:
             return
-        if True:
+        if not self.restricted:
             self.economic_engine.complete_economic_phase()
 
     def complete_movement_phase(self): return self.movement_engine.complete_movement_phase()
@@ -104,7 +105,7 @@ class Game:
     def run_to_completion(self):
         while not self.complete and self.num_turns <= 100:
             self.complete_turn()
-            if self.complete:
+            if self.complete and self.logging:
                 print(str(self.dice_rolls) + " die rolls:")
                 print("- num turns: "+str(self.num_turns))
                 print("- num combats: "+str(self.num_combats))

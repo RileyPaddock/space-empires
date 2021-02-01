@@ -1,4 +1,4 @@
-class RileyStategy:
+class RileyStrategy:
     def __init__(self,player_index):
         self.player_index = player_index
 
@@ -11,8 +11,16 @@ class RileyStategy:
     
     def decide_ship_movement(self,ship_index, game_state):
         ship = game_state['players'][self.player_index]['units'][ship_index]
-        if ship['coords'][0] != game_state['board_size'][0]-1:
-           return (1, 0)
+        enemy_home = game_state['players'][0 if self.player_index !=0 else 1]['home_coords']
+
+        if ship['coords'][0]>enemy_home[0]:
+            return (-1,0)
+        elif ship['coords'][0]<enemy_home[0]:
+             return (1,0)
+        elif ship['coords'][1]>enemy_home[1]:
+             return (0,-1)
+        elif ship['coords'][1]<enemy_home[1]:
+             return (0,1)
         else:
             return (0,0)
     
@@ -35,11 +43,11 @@ class RileyStategy:
         units = []
         tech = []
 
-        spawn_loc = game_state['players'][self.player_num]['home_coords']
-        cp = game_state['players'][self.player_num]['cp']
-        ship_size_tech = game_state['players'][self.player_num]['technology']['shipsize']
+        spawn_loc = game_state['players'][self.player_index]['home_coords']
+        cp = game_state['players'][self.player_index]['cp']
+        ship_size_tech = game_state['players'][self.player_index]['technology']['shipsize']
 
-        if 'Base' not in [unit['type'] for unit in self.game_state['players'][player_num]['units']]:
+        if 'Base' not in [unit['type'] for unit in self.game_state['players'][player_index]['units']]:
             ship_choice = ['Base', 12]
         ship_choice = self.decide_purchase(self, cp, ship_size_tech)
 

@@ -27,13 +27,13 @@ class BerserkerStrategyLevel1:
 
         return best_translation
 
-    def decide_which_unit_to_attack(self, hidden_game_state_for_combat, combat_state, coords, attacker_index):
+    def decide_which_unit_to_attack(self, combat_state, coords, attacker_index):
         # attack opponent's first ship in combat order
 
         combat_order = combat_state[coords]
-        player_indices = [unit['player_index'] for unit in combat_order]
+        player_indices = [unit['player'] for unit in combat_order]
 
         opponent_index = 1 - self.player_index
         for combat_index, unit in enumerate(combat_order):
-            if unit['player_index'] == opponent_index:
+            if unit['player'] == opponent_index:
                 return combat_index

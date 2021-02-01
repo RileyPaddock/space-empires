@@ -1,10 +1,4 @@
 import sys
-# sys.path.append('imported_strategies')
-# from colby_dumb_strategy import DumbStrategy as colby_dumb
-# from elijah_dumb_strategy import DumbStrategy as eli_dumb
-# from david_dumb_strategy import DumbStrategy as david_dumb
-# from george_dumb_strategy import DumbStrategy as george_dumb
-# del sys.path[-1]
 sys.path.append('src')
 from players.player import Player
 from units.unit import Unit
