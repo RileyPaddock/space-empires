@@ -21,7 +21,7 @@ class Game:
         self.phase = None
         self.winner = None
     
-    def game_state(self):
+    def game_state(self, state_type = 'regular'):
         game_state = {}
         game_state['board_size'] = tuple(self.board.size)
         game_state['turn'] = self.num_turns
@@ -29,8 +29,9 @@ class Game:
         game_state['round'] = self.movement_engine.movement_phase
         game_state['player_whose_turn'] = self.current_player
         game_state['winner'] = self.winner
-        game_state['players'] = [player.player_state() for player in self.players]
-        game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
+        game_state['players'] = [player.player_state(state_type) for player in self.players]
+        if state_type == 'regular':
+            game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         game_state['unit_data'] = {
         'Battleship': {'cp_cost': 20, 'shipsize_needed': 3},
         'Battlecruiser': {'cp_cost': 15, 'shipsize_needed': 2},
@@ -84,7 +85,8 @@ class Game:
         self.remove_defeated_players()
         if self.complete:
             return
-        self.economic_engine.complete_economic_phase()
+        if True:
+            self.economic_engine.complete_economic_phase()
 
     def complete_movement_phase(self): return self.movement_engine.complete_movement_phase()
 

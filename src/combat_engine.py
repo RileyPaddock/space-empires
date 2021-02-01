@@ -234,4 +234,3 @@ class CombatEngine:
             unit_dicts = [{'player' : unit.player.player_num, 'unit': unit.unit_num} for unit in ordered_units]
             combat_state[coords] = unit_dicts
         return combat_state
-                        

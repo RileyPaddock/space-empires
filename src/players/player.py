@@ -20,37 +20,38 @@ class Player:
         self.cp = 0
         self.technologies = {'attack' : 0, 'defense' : 0, 'movement' : 1, 'shipyard' : 1, 'shipsize' : 1}
 
-    def player_state(self):
+    def player_state(self, state_type):
         player_state = {}
         player_state['player_num'] = self.player_num
-        player_state['cp'] = self.cp
+        if state_type == 'regular':
+            player_state['cp'] = self.cp
         player_state['last_purshase'] = self.last_purchase
         techs = ['shipsize', 'attack', 'defense', 'movement', 'shipyard']
         player_state['technology'] = {techs[techs.index(tech)] : self.technologies[tech] for tech in self.technologies.keys()}
         player_state['home_coords'] = self.home_coords
-        player_state['units'] = [self.unit_state(unit) for unit in self.units if unit.alive]
+        player_state['units'] = [self.unit_state(unit, state_type) for unit in self.units if unit.alive]
         return player_state
 
-    def unit_state(self,unit):
+    def unit_state(self,unit, state_type):
         unit_state = {}
         unit_state['player'] = self.player_num
         unit_state['coords'] = unit.location
-        unit_state['type'] = unit.unit_type
-        unit_state['hits_left'] = unit.armor
-        unit_state['defense'] = unit.defense
-        unit_state['speed'] = unit.strength
         unit_state['unit_num'] = unit.unit_num
-        unit_state['team']  =unit.player
-        unit_state['turn_created'] = unit.turn_created
-        unit_state['maintenance'] = unit.maintenance
-        unit_state['alive'] = unit.alive
-        techs = ['attack', 'defense', 'movement']
-        unit_state['technology'] = {techs[techs.index(tech)] : unit.technologies[tech] for tech in unit.technologies.keys()}
-        if unit.moveable:
-            unit_state['speed'] = unit.movement
-        if unit.can_atk:
-            unit_state['class_num'] = unit.attack_grade
-        return unit_state
+        if state_type != 'hidden':
+            unit_state['type'] = unit.unit_type
+            unit_state['hits_left'] = unit.armor
+            unit_state['defense'] = unit.defense
+            unit_state['speed'] = unit.strength
+            unit_state['turn_created'] = unit.turn_created
+            unit_state['maintenance'] = unit.maintenance
+            unit_state['alive'] = unit.alive
+            techs = ['attack', 'defense', 'movement']
+            unit_state['technology'] = {techs[techs.index(tech)] : unit.technologies[tech] for tech in unit.technologies.keys()}
+            if unit.moveable:
+                unit_state['speed'] = unit.movement
+            if unit.can_atk:
+                unit_state['class_num'] = unit.attack_grade
+            return unit_state
 
     def create_unit(self, unit_name, coords, pay = True):
         colony = self.find_colony(coords)
@@ -93,14 +94,18 @@ class Player:
 
     def initialize_units(self):
         self.build_colony(self.home_coords, col_type = 'Home')
-        for i in range(4):
-            self.create_unit(ShipYard, self.home_coords, pay = False)
-        self.units[0].set_builders()
         for i in range(3):
             self.create_unit(Scout, self.home_coords, pay = False)
-        for i in range(3):
-            self.create_unit(ColonyShip, self.home_coords, pay = False)
         self.last_purchase = 'Scout'
+        
+        if True:
+            for i in range(4):
+                self.create_unit(ShipYard, self.home_coords, pay = False)
+            self.units[0].set_builders()
+        
+            for i in range(3):
+                self.create_unit(ColonyShip, self.home_coords, pay = False)
+        
 
     def check_colony(self, build_size, ship, coords):
         for unit in self.units:

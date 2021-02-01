@@ -3,6 +3,7 @@ class MovementEngine:
     def __init__(self, board, game):
         self.board = board
         self.game = game
+        self.phases = 3
         self.movement_data = {'1' : [1,1,1,2,2,2], '2': [1,2,2,2,2,3], '3': [1,2,2,2,3,3]}
         self.movement_phase = None
 
@@ -11,7 +12,7 @@ class MovementEngine:
         self.game.movement_phase = 'Movement'
         if self.game.logging:
             print('BEGINNING OF MOVEMENT PHASE')
-        for i in range(3):
+        for i in range(self.phases):
             if self.game.logging:
                 print('Movement', i + 1)
             self.movement_phase = i

@@ -19,12 +19,13 @@ class Board:
         for spawn in self.spawns:
             new_planet = Planet(spawn)
             self.planets.append(new_planet)
-        while len(self.planets) < 8:
-            rand_loc = (random.randint(0,self.size[0] - 1), random.randint(0, self.size[1] - 1))
+        if True:
+            while len(self.planets) < 8:
+                rand_loc = (random.randint(0,self.size[0] - 1), random.randint(0, self.size[1] - 1))
 
-            if rand_loc not in [planet.location for planet in self.planets]:
-                new_planet = Planet(rand_loc)
-                self.planets.append(new_planet)
+                if rand_loc not in [planet.location for planet in self.planets]:
+                    new_planet = Planet(rand_loc)
+                    self.planets.append(new_planet)
 
     def update(self, players):
         all_units = []
