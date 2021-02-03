@@ -10,13 +10,13 @@ class CombatEngine:
         self.battle_order = []
         self.dead_ships = []
         self.roll_type = self.game.dice_rolls
-        self.dice = {'ascending' : [1,2,3,4,5,6], 'descending' : [6,5,4,3,2,1], 'random' : self.generate_random_rolls()}
+        self.dice = {'ascending' : [1,2,3,4,5,6,7,8,9,10], 'descending' : [10,9,8,7,6,5,4,3,2,1], 'random' : self.generate_random_rolls()}
         self.roll_index = -1
         self.dice_roll = 0
         self.combat_state = None
 
     def roll_dice(self):
-        if self.roll_index < 5:
+        if self.roll_index < 9:
             self.roll_index += 1
         else:
             self.roll_index = 0
@@ -24,11 +24,12 @@ class CombatEngine:
     
     def generate_random_rolls(self):
         rolls = []
-        possible_rolls = [1,2,3,4,5,6]
-        while len(rolls)<6:
+        possible_rolls = [1,2,3,4,5,6,7,8,9,10]
+        while len(rolls)<10:
             rand_choice = random.choice(possible_rolls)
             rolls.append(rand_choice)
             del possible_rolls[possible_rolls.index(rand_choice)]
+        return rolls
 
     def find_battles(self):
         potential_battles = self.game.board.get_all_active_data()
