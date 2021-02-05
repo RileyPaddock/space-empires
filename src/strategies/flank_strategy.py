@@ -3,8 +3,9 @@ class FlankerStrategyLevel1:
     # Sends 1 unit slightly to the side to avoid any combat
     # that happens on the direct path between home colonies.
 
-    def __init__(self, player_index):
-        self.player_index = player_index
+    def __init__(self, player_num):
+        self.player_index = player_num
+        self.name = 'flanker'
         self.flank_direction = (1,0)
 
     def decide_ship_movement(self, unit_index, hidden_game_state):
@@ -19,9 +20,9 @@ class FlankerStrategyLevel1:
         translations = [(0,0), (1,0), (-1,0), (0,1), (0,-1)]
 
         # unit 0 does the flanking
-        if unit_index == 0:
+        if unit_index == 1:
             dist = abs(x_unit - x_opp) + abs(y_unit - y_opp)
-            delta_x, delta_y = self.sidestep_direction
+            delta_x, delta_y = self.flank_direction
             reverse_flank_direction = (-delta_x, -delta_y)
 
             # at the start, sidestep

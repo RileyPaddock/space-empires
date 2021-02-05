@@ -10,26 +10,20 @@ class CombatEngine:
         self.battle_order = []
         self.dead_ships = []
         self.roll_type = self.game.dice_rolls
-        self.dice = {'ascending' : [1,2,3,4,5,6,7,8,9,10], 'descending' : [10,9,8,7,6,5,4,3,2,1], 'random' : self.generate_random_rolls()}
+        self.dice = {'ascending' : [1,2,3,4,5,6,7,8,9,10], 'descending' : [10,9,8,7,6,5,4,3,2,1]}
         self.roll_index = -1
         self.dice_roll = 0
         self.combat_state = None
 
     def roll_dice(self):
-        if self.roll_index < 9:
-            self.roll_index += 1
+        if self.roll_type == 'random':
+            self.dice_roll = random.choice([1,2,3,4,5,6,7,8,9,10])
         else:
-            self.roll_index = 0
-        self.dice_roll = self.dice[self.roll_type][self.roll_index]
-    
-    def generate_random_rolls(self):
-        rolls = []
-        possible_rolls = [1,2,3,4,5,6,7,8,9,10]
-        while len(rolls)<10:
-            rand_choice = random.choice(possible_rolls)
-            rolls.append(rand_choice)
-            del possible_rolls[possible_rolls.index(rand_choice)]
-        return rolls
+            if self.roll_index < 9:
+                self.roll_index += 1
+            else:
+                self.roll_index = 0
+            self.dice_roll = self.dice[self.roll_type][self.roll_index]
 
     def find_battles(self):
         potential_battles = self.game.board.get_all_active_data()
@@ -110,18 +104,16 @@ class CombatEngine:
             for j in range(i + 1, len(units)):
                 unit1 = units[i]
                 unit2 = units[j]
-                unit1_ability = unit1.player.technologies['attack'] + unit1.player.technologies['defense']
-                unit2_ability = unit2.player.technologies['attack'] + unit2.player.technologies['defense']
-                if (unit1.class_num + unit1_ability) < (unit2.class_num + unit2_ability):
+                if (unit1.class_num) < (unit2.class_num):
                     units[i], units[j] = units[j], units[i]
-                elif (unit1.class_num + unit1_ability) == (unit2.class_num + unit2_ability):
+                elif (unit1.class_num) == (unit2.class_num):
                     if unit1.player.player_num > unit2.player.player_num:
                         units[i], units[j] = units[j], units[i]
         return units
 
     def attack(self, attacker, defender):
         self.roll_dice()
-        hit_threshold = attacker.strength - defender.defense
+        hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
         if self.game.logging:
             print('Player',attacker.player.player_num, attacker.unit_type, attacker.unit_num,'Shoots at','Player',defender.player.player_num, defender.unit_type, defender.unit_num)
             print('Threshold:', hit_threshold)

@@ -23,24 +23,12 @@ def run_game(strategy1, strategy2):
     return strategy1 if new_game.winner == 0 else strategy2
 
 
-print('Random vs Dumb: ')
-results = []
-for _ in range(50):
-    results.append(run_game('Random','Dumb'))
-
-for _ in range(50):
-    results.append(run_game('Dumb','Random'))
-
-print('- Random wins ' + str(results.count('Random')/len(results)) + '% of the time')
-print('- Dumb wins ' + str(results.count('Dumb')/len(results)) + '% of the time')
-
-
 print('Berserker vs Dumb: ')
 results = []
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Berserker','Dumb'))
 
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Dumb','Berserker'))
 
 print('- Berserker wins ' + str(results.count('Berserker')/len(results)) + '% of the time')
@@ -49,10 +37,10 @@ print('- Dumb wins ' + str(results.count('Dumb')/len(results)) + '% of the time'
 
 print('Berserker vs Random: ')
 results = []
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Berserker','Random'))
 
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Random','Berserker'))
 
 print('- Berserker wins ' + str(results.count('Berserker')/len(results)) + '% of the time')
@@ -61,10 +49,10 @@ print('- Random wins ' + str(results.count('Random')/len(results)) + '% of the t
 
 print('Flanker vs Random: ')
 results = []
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Flanker','Random'))
 
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Random','Flanker'))
 
 print('- Flanker wins ' + str(results.count('Flanker')/len(results)) + '% of the time')
@@ -73,10 +61,10 @@ print('- Random wins ' + str(results.count('Random')/len(results)) + '% of the t
 
 print('Flanker vs Berserker: ')
 results = []
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Flanker','Berserker'))
 
-for _ in range(50):
+for _ in range(500):
     results.append(run_game('Berserker','Flanker'))
 
 print('- Flanker wins ' + str(results.count('Flanker')/len(results)) + '% of the time')
