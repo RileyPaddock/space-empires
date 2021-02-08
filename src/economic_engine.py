@@ -13,9 +13,11 @@ class EconomicEngine:
         self.board = board
         self.game = game
         self.current_player = None
+        self.used_colonies = []#colonies that have already built shipyards this turn
 
 
     def complete_economic_phase(self):
+        self.used_colonies = []
         self.game.phase = 'Economic'
         if self.game.logging:
             print('BEGINNING OF ECONOMIC PHASE')
@@ -60,7 +62,14 @@ class EconomicEngine:
         for unit in purchases['units']:
             ship = ship_objects[ship_names.index(unit['type'])]
             if ship.cost <= player.cp:
-                coords = player.check_colony(ship.hull_size, ship,unit['coords'] )
+                if ship.shorthand == 'SY':
+                    for player_unit in player.units:
+                        if player_unit.unit_type == 'Colony' and player_unit.location == unit['coords']:
+                            if player_unit.turn_colonized != self.game.num_turns & player_unit not in self.used_colonies:
+                                self.used_colonies.append(player_unit)
+                                coords = player_unit.location
+                else:
+                    coords = player.check_colony(ship.hull_size, ship,unit['coords'])
                 if coords is not None:
                     builder = player.create_unit(ship, coords, pay = True)
                     if self.game.logging and builder is not False:
@@ -68,6 +77,9 @@ class EconomicEngine:
             else:
                 if self.game.logging:
                     print('Could not afford to buy', ship.name)
+
+
+
 
     def buy_tech(self, tech_type, player):
         tech_data = {'attack': {'levels' : [-1,0,1,2], 'costs' : [20, 50 , 90], 'max_level' : 4},

@@ -14,7 +14,7 @@ class Player:
         self.player_num = player_num
         self.home_coords = starting_coords
         self.game = game
-        self.restricted = True
+        self.level = self.game.level
         self.home_planet = None
         self.last_purchase = None
         self.units = []
@@ -59,10 +59,7 @@ class Player:
         if unit_name.unit_type == 'Base':
             if colony.base is not None:
                 return False
-        if unit_name.unit_type == 'Shipyard':
-            if len(colony.shipyards) == 4:
-                return False
-        ship_tech = {key: val for key,val in self.technologies.items() if key in ['attack', 'defense', 'movement']}
+        ship_tech = {key: self.technologies[key] for key in self.technologies if key in ['attack', 'defense', 'movement']}
         new_unit = unit_name(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.num_turns)
         if pay:
             self.cp -= new_unit.cost
@@ -86,6 +83,7 @@ class Player:
             self.units.append(home_colony)
         else:
             new_colony = Colony(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
+            new_colony.turn_colonized = self.game.num_turns
             for planet in self.game.board.planets:
                 if planet.location == new_colony.location:
                     planet.colonize(new_colony)
@@ -99,11 +97,11 @@ class Player:
             self.create_unit(Scout, self.home_coords, pay = False)
         self.last_purchase = 'Scout'
         
-        if not self.restricted:
+        if self.level > 1:
             for i in range(4):
                 self.create_unit(ShipYard, self.home_coords, pay = False)
             self.units[0].set_builders()
-        
+        if self.level > 2:
             for i in range(3):
                 self.create_unit(ColonyShip, self.home_coords, pay = False)
         
@@ -151,4 +149,5 @@ class Player:
                 income += unit.capacity
         return income
         
+    
     

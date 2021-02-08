@@ -6,12 +6,12 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [5,5],max_turns = 10, logging = True, die_rolls = 'descending', restricted = False):
+    def __init__(self, board_size = [5,5],max_turns = 10, logging = True, die_rolls = 'descending', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logging
         self.dice_rolls = die_rolls
-        self.restricted = restricted
+        self.level = level
         self.players = []
         self.defeated_players = []
         self.num_turns = 0
@@ -59,7 +59,7 @@ class Game:
     def start_engines(self):
         if self.logging:
             print('Creating Board')
-        self.board = Board(self.board_size, self, [player.home_coords for player in self.players], self.restricted)
+        self.board = Board(self.board_size, self, [player.home_coords for player in self.players], self.level)
         self.economic_engine = EconomicEngine(self.board, self)
         self.movement_engine = MovementEngine(self.board, self)
         self.combat_engine = CombatEngine(self)
@@ -69,7 +69,8 @@ class Game:
         if self.logging:
             print('Initializing Players')
         for player in self.players:
-            player.cp = 0
+            if self.level > 1:
+                player.cp = 30
             player.initialize_units()
         self.board.update(self.players)
         if self.logging:
@@ -86,7 +87,11 @@ class Game:
         self.remove_defeated_players()
         if self.complete:
             return
-        if not self.restricted:
+
+        if self.level == 2:
+            if self.num_turns == 1:
+                self.economic_engine.complete_economic_phase()
+        else:
             self.economic_engine.complete_economic_phase()
 
     def complete_movement_phase(self): return self.movement_engine.complete_movement_phase()

@@ -1,9 +1,10 @@
+import logging
 class MovementEngine:
 
     def __init__(self, board, game):
         self.board = board
         self.game = game
-        if self.game.restricted:
+        if self.game.level < 3:
             self.phases = 1
         else:
             self.phases = 3
@@ -42,6 +43,7 @@ class MovementEngine:
                 for _  in range(ship_movements):
                     translation = player.strategy.decide_ship_movement(unit_index, self.game.game_state())
                     translation = [translation[0], translation[1]]
+
                     unit.move(translation, self.game.board_size)
     
     def generate_movement_state(self):

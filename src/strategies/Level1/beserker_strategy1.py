@@ -1,12 +1,12 @@
 class BerserkerStrategyLevel1:
     # Sends all of its units directly towards the enemy home colony
 
-    def __init__(self, player_index):
-        self.player_index = player_index
+    def __init__(self, player_num):
+        self.player_num = player_num
 
     def decide_ship_movement(self, unit_index, hidden_game_state):
-        myself = hidden_game_state['players'][self.player_index]
-        opponent_index = 1 - self.player_index
+        myself = hidden_game_state['players'][self.player_num]
+        opponent_index = 1 - self.player_num
         opponent = hidden_game_state['players'][opponent_index]
 
         unit = myself['units'][unit_index]
@@ -33,7 +33,7 @@ class BerserkerStrategyLevel1:
         combat_order = combat_state[coords]
         player_indices = [unit['player'] for unit in combat_order]
 
-        opponent_index = 1 - self.player_index
+        opponent_index = 1 - self.player_num
         for combat_index, unit in enumerate(combat_order):
             if unit['player'] == opponent_index:
                 return combat_index

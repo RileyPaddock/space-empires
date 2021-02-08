@@ -5,6 +5,7 @@ class Colony(Unit):
     unit_type = 'Colony'
     class_num = 0
     defense = 1
+    turn_colonized = 0;
     armor = 3
     capacity = 3
     moveable = False

@@ -1,4 +1,6 @@
 import random
+import math
+import logging
 
 class CombatEngine:
 
@@ -9,6 +11,7 @@ class CombatEngine:
         self.enemies = []
         self.battle_order = []
         self.dead_ships = []
+        self.seed = None
         self.roll_type = self.game.dice_rolls
         self.dice = {'ascending' : [1,2,3,4,5,6,7,8,9,10], 'descending' : [10,9,8,7,6,5,4,3,2,1]}
         self.roll_index = -1
@@ -17,7 +20,7 @@ class CombatEngine:
 
     def roll_dice(self):
         if self.roll_type == 'random':
-            self.dice_roll = random.choice([1,2,3,4,5,6,7,8,9,10])
+            self.dice_roll = math.ceil(9*random.random())
         else:
             if self.roll_index < 9:
                 self.roll_index += 1
@@ -205,6 +208,7 @@ class CombatEngine:
                         if not planet.colonized:
                             if player.strategy.will_colonize_planet(unit.location, self.game.game_state()):
                                 player.build_colony(unit.location, colony_type = 'Normal', colony_ship = unit)
+                                
                                 if self.game.logging:
                                     print('Player', player.player_num,'colonized a planet at',unit.location)
 

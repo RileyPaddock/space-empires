@@ -21,6 +21,7 @@ class Unit:
         if y < 0 or y > grid_size[1] - 1:
             return
         self.location = [x, y]
+        
 
     def hit(self):
         if self.armor > 1:
