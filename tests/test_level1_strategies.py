@@ -18,7 +18,7 @@ strategy_5 = RileyStrategy
 
 def run_game(strategy1, strategy2, game_num):
     strats = {'Dumb':DumbStrategyLevel1, 'Random':RandomStrategyLevel1, 'Berserker':BerserkerStrategyLevel1, 'Flanker':FlankerStrategyLevel1, 'Riley':RileyStrategy}
-    new_game = Game(logging = False, die_rolls = 'random', level = 1)
+    new_game = Game(logs = False, die_rolls = 'random', level = 1)
     new_game.add_player(strats[strategy1](0), [2,0])
     new_game.add_player(strats[strategy2](1), [2,4])
     new_game.initialize_game()
@@ -30,17 +30,17 @@ def run_game(strategy1, strategy2, game_num):
 print('Flanker vs Berserker: ')
 results = []
 loss_indices = []
-for _ in range(5):
+for _ in range(10):
     winner = run_game('Flanker','Berserker',_)
     results.append(winner)
     if winner == 'Flanker':
         loss_indices.append(_)
 
-for _ in range(5):
-    winner = run_game('Berserker','Flanker',_+5)
+for _ in range(10):
+    winner = run_game('Berserker','Flanker',_+10)
     results.append(winner)
     if winner == 'Flanker':
-        loss_indices.append(_+5)
+        loss_indices.append(_+10)
 
 print('- Flanker wins ' + str(results.count('Flanker')/len(results)) + '% of the time')
 print('- Berserker wins ' + str(results.count('Berserker')/len(results)) + '% of the time')

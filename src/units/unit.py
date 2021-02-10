@@ -20,6 +20,7 @@ class Unit:
             return
         if y < 0 or y > grid_size[1] - 1:
             return
+        self.player.game.logger.info("Player %s Unit %s, Move %s",self.player.player_num, self.unit_num, (x,y))
         self.location = [x, y]
         
 

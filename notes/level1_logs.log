@@ -1,0 +1,2202 @@
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 4
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 4
+Fight between Player 1 Unit 2 and Player 0 Unit 4
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 2, Move (2, 1)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 2, Move (2, 0)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 2 and Player 0 Unit 2
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 6
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 9
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 7
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 9
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 2, Move (2, 1)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 2, Move (2, 0)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 8
+Fight between Player 1 Unit 2 and Player 0 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Combats : []
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 8
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 2, Move (2, 1)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 2, Move (2, 0)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 6
+Fight between Player 1 Unit 2 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 4
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (2, 3)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 2)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 4
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (3, 0)
+Player 1 Unit 2, Move (2, 1)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 0 Unit 2, Move (2, 0)
+Player 1 Unit 2, Move (2, 0)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 2 and Player 0 Unit 2
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 3
+Hit!
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 6
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 3)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 2, Move (2, 4)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 4
+Fight between Player 1 Unit 3 and Player 0 Unit 4
+Dice Roll: 3
+Hit!
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (2, 3)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 2, Move (2, 4)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 9
+Fight between Player 0 Unit 2 and Player 1 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 2, Move (2, 3)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 2, Move (2, 4)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 7
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 1
+Hit!
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 7
+Fight between Player 1 Unit 2 and Player 0 Unit 3
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 4
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 4
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 4
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 3
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 4
+Dice Roll: 1
+Hit!
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 1)
+Player 1 Unit 4, Move (2, 1)
+Combats : []
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 0)
+Player 1 Unit 4, Move (2, 0)
+Combats : [(2, 0)]
+Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 4
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 7
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 9
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 8
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 6
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 3
+Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 1
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 4
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 3
+Dice Roll: 5
+Fight between Player 0 Unit 3 and Player 1 Unit 4
+Dice Roll: 5
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 3
+Hit!
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 3 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 7
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 9
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (2, 1)
+Player 0 Unit 3, Move (2, 1)
+Player 0 Unit 4, Move (2, 1)
+Player 1 Unit 2, Move (3, 4)
+Player 1 Unit 3, Move (2, 3)
+Player 1 Unit 4, Move (2, 3)
+Combats : []
+Player 0 Unit 2, Move (2, 2)
+Player 0 Unit 3, Move (2, 2)
+Player 0 Unit 4, Move (2, 2)
+Player 1 Unit 2, Move (2, 4)
+Player 1 Unit 3, Move (2, 2)
+Player 1 Unit 4, Move (2, 2)
+Combats : [(2, 2)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}]
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 7
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 8
+Fight between Player 0 Unit 4 and Player 1 Unit 3
+Dice Roll: 5
+Fight between Player 1 Unit 3 and Player 0 Unit 2
+Dice Roll: 5
+Fight between Player 1 Unit 4 and Player 0 Unit 2
+Dice Roll: 4
+Fight between Player 0 Unit 2 and Player 1 Unit 3
+Dice Roll: 9
+Fight between Player 0 Unit 3 and Player 1 Unit 3
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 4
+Dice Roll: 2
+Hit!
+Player 0 Unit 2, Move (2, 3)
+Player 0 Unit 3, Move (2, 3)
+Player 0 Unit 4, Move (2, 3)
+Player 1 Unit 2, Move (3, 4)
+Combats : []
+Player 0 Unit 2, Move (2, 4)
+Player 0 Unit 3, Move (2, 4)
+Player 0 Unit 4, Move (2, 4)
+Player 1 Unit 2, Move (2, 4)
+Combats : [(2, 4)]
+Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1, 'unit': 2}, {'player': 1, 'unit': 1}]
+Fight between Player 0 Unit 2 and Player 1 Unit 2
+Dice Roll: 3
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 3
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 6
+Fight between Player 0 Unit 4 and Player 1 Unit 1
+Dice Roll: 2
+Hit!
+Fight between Player 0 Unit 2 and Player 1 Unit 1
+Dice Roll: 1
+Hit!
+Fight between Player 0 Unit 3 and Player 1 Unit 1
+Dice Roll: 2
+Hit!

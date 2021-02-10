@@ -1,3 +1,8 @@
+import logging 
+  
+logging.basicConfig(filename="notes/level1_logs.log", 
+                    format='%(message)s', 
+                    filemode='w') 
 from players.player import Player
 from board import Board
 from movement_engine import MovementEngine
@@ -6,12 +11,14 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [5,5],max_turns = 10, logging = True, die_rolls = 'descending', level = 3):
+    def __init__(self, board_size = [5,5],max_turns = 10, logs = True, die_rolls = 'descending', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
-        self.logging = logging
+        self.logging = logs
         self.dice_rolls = die_rolls
         self.level = level
+        self.logger= logging.getLogger() 
+        self.logger.setLevel(logging.DEBUG) 
         self.players = []
         self.defeated_players = []
         self.num_turns = 0
@@ -87,12 +94,12 @@ class Game:
         self.remove_defeated_players()
         if self.complete:
             return
-
-        if self.level == 2:
-            if self.num_turns == 1:
+        if self.level!=1:
+            if self.level == 2:
+                if self.num_turns == 1:
+                    self.economic_engine.complete_economic_phase()
+            else:
                 self.economic_engine.complete_economic_phase()
-        else:
-            self.economic_engine.complete_economic_phase()
 
     def complete_movement_phase(self): return self.movement_engine.complete_movement_phase()
 

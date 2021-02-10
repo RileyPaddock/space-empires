@@ -46,6 +46,7 @@ class CombatEngine:
         if self.game.logging:
             print('START OF COMBAT PHASE')
         battles = self.find_battles()
+        self.game.logger.info('Combats : %s',[key for key in battles])
         for coords, units in battles.items():
             if self.game.logging:
                 print('Battle at: '+ str(coords))
@@ -117,11 +118,14 @@ class CombatEngine:
     def attack(self, attacker, defender):
         self.roll_dice()
         hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
+        self.game.logger.info('Fight between Player %s Unit %s and Player %s Unit %s', attacker.player.player_num,attacker.unit_num, defender.player.player_num,defender.unit_num)
+        self.game.logger.info('Dice Roll: %s',self.dice_roll)
         if self.game.logging:
             print('Player',attacker.player.player_num, attacker.unit_type, attacker.unit_num,'Shoots at','Player',defender.player.player_num, defender.unit_type, defender.unit_num)
             print('Threshold:', hit_threshold)
             print('Player',attacker.player.player_num,'Rolled a',self.dice_roll)
         if self.dice_roll <= hit_threshold or self.dice_roll == 1:
+            self.game.logger.info('Hit!')
             if self.game.logging:
                 print('Hit!')
             defender.hit()
@@ -163,6 +167,10 @@ class CombatEngine:
     
     def resolve_combat(self, units):
         units = self.remove_non_fighters(units)
+        ordered_units = self.sort_by_attack_grade(units)
+        ordered_units = [unit for unit in ordered_units if unit.alive]
+        unit_dicts = [{'player' : unit.player.player_num, 'unit': unit.unit_num} for unit in ordered_units]
+        self.game.logger.info('Combat Order: %s',unit_dicts)
         if self.combat_finished:
             return
         else:
