@@ -22,7 +22,7 @@ def run_game(strategy1, strategy2, game_num):
     new_game.add_player(strats[strategy1](0), [2,0])
     new_game.add_player(strats[strategy2](1), [2,4])
     new_game.initialize_game()
-    new_game.combat_engine.seed = random.seed(game_num)
+    new_game.combat_engine.seed = random.seed(game_num+1)
     new_game.run_to_completion()
     return strategy1 if new_game.winner == 0 else strategy2
 

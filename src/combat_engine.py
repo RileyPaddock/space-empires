@@ -20,7 +20,7 @@ class CombatEngine:
 
     def roll_dice(self):
         if self.roll_type == 'random':
-            self.dice_roll = math.ceil(9*random.random())
+            self.dice_roll = math.floor(10*random.random()) + 1
         else:
             if self.roll_index < 9:
                 self.roll_index += 1
