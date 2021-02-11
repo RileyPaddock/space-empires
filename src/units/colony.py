@@ -4,7 +4,7 @@ class Colony(Unit):
     strength = 0
     unit_type = 'Colony'
     class_num = 0
-    defense = 1
+    defense = 0
     turn_colonized = 0;
     armor = 3
     capacity = 3

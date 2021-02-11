@@ -66,54 +66,50 @@ Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
+Fight between Player 1 Unit 3 and Player 0 Unit 1
+Dice Roll: 10
+Hit Threshold: 3
+Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
+Dice Roll: 10
+Hit Threshold: 3
+Attacker: Scout, Defender: Colony
+Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -165,110 +161,78 @@ Combat Order: [{'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -338,122 +302,74 @@ Combat Order: [{'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -504,70 +420,42 @@ Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -669,46 +557,34 @@ Combat Order: [{'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -764,106 +640,86 @@ Combat Order: [{'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -926,38 +782,38 @@ Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -1015,70 +871,46 @@ Combat Order: [{'player': 1, 'unit': 4}, {'player': 0, 'unit': 1}]
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -1134,58 +966,54 @@ Combat Order: [{'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (3, 0)
@@ -1253,90 +1081,66 @@ Combat Order: [{'player': 1, 'unit': 2}, {'player': 1, 'unit': 3}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 2 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 2 and Player 0 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -1416,50 +1220,50 @@ Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -1522,54 +1326,54 @@ Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -1625,62 +1429,26 @@ Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -1736,86 +1504,54 @@ Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -1874,138 +1610,46 @@ Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Dice Roll: 3
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Dice Roll: 3
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -2107,110 +1751,46 @@ Combat Order: [{'player': 0, 'unit': 4}, {'player': 1, 'unit': 1}]
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
+Dice Roll: 3
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -2281,110 +1861,74 @@ Combat Order: [{'player': 1, 'unit': 3}, {'player': 1, 'unit': 4}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 4 and Player 0 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 1 Unit 3 and Player 0 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 3 and Player 0 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 1 Unit 4 and Player 0 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -2455,142 +1999,54 @@ Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 8
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -2658,134 +2114,26 @@ Combat Order: [{'player': 0, 'unit': 2}, {'player': 0, 'unit': 3}, {'player': 0,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 2 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 2
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 5
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 7
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 10
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 3
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 6
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 8
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 9
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 2 and Player 1 Unit 1
-Dice Roll: 4
-Hit Threshold: 2
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 3 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
 Player 0 Unit 2, Move (2, 1)
@@ -2872,69 +2220,65 @@ Combat Order: [{'player': 0, 'unit': 3}, {'player': 0, 'unit': 4}, {'player': 1,
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 3
-Hit Threshold: 2
+Hit Threshold: 3
+Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 10
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 4
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 7
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 9
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 5
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 6
-Hit Threshold: 2
+Hit Threshold: 3
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 4 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Attacker: Scout, Defender: Colony
 Fight between Player 0 Unit 3 and Player 1 Unit 1
 Dice Roll: 1
-Hit Threshold: 2
-Hit!
-Attacker: Scout, Defender: Colony
-Fight between Player 0 Unit 4 and Player 1 Unit 1
-Dice Roll: 2
-Hit Threshold: 2
+Hit Threshold: 3
 Hit!
 Game Complete
