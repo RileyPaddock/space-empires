@@ -25,4 +25,6 @@ class AttackBerserkerLevel2(BerserkerStrategyLevel1):
             else:
                 units.append({'type':ship_choice[0], 'coords':spawn_loc})
                 cp -= ship_choice[1]
+                break
+
         return {'units':units,'technology':tech}

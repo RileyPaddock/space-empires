@@ -104,22 +104,26 @@ class CombatEngine:
         return targeted_enemy
 
     def sort_by_attack_grade(self, units):
-        for i in range(len(units)):
-            for j in range(i + 1, len(units)):
-                unit1 = units[i]
-                unit2 = units[j]
-                if (unit1.class_num) < (unit2.class_num):
-                    units[i], units[j] = units[j], units[i]
-                elif (unit1.class_num) == (unit2.class_num):
-                    if unit1.player.player_num > unit2.player.player_num:
-                        units[i], units[j] = units[j], units[i]
-        return units
+        # for i in range(len(units)):
+        #     for j in range(i + 1, len(units)):
+        #         unit1 = units[i]
+        #         unit2 = units[j]
+        #         if (unit1.class_num) < (unit2.class_num):
+        #             units[i], units[j] = units[j], units[i]
+        #         elif (unit1.class_num) == (unit2.class_num):
+        #             if unit1.player.player_num > unit2.player.player_num:
+        #                 units[i], units[j] = units[j], units[i]
+        # return units
+        return sorted(units,key = lambda unit:
+        (unit.class_num,-unit.player.player_num,-unit.unit_num),reverse=True)
 
     def attack(self, attacker, defender):
+        self.game.logger.info('Attacker: %s, Defender: %s',attacker.unit_type, defender.unit_type)
         self.roll_dice()
         hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
         self.game.logger.info('Fight between Player %s Unit %s and Player %s Unit %s', attacker.player.player_num,attacker.unit_num, defender.player.player_num,defender.unit_num)
         self.game.logger.info('Dice Roll: %s',self.dice_roll)
+        self.game.logger.info('Hit Threshold: %s',defender.technologies['defense'])
         if self.game.logging:
             print('Player',attacker.player.player_num, attacker.unit_type, attacker.unit_num,'Shoots at','Player',defender.player.player_num, defender.unit_type, defender.unit_num)
             print('Threshold:', hit_threshold)
@@ -168,6 +172,7 @@ class CombatEngine:
     def resolve_combat(self, units):
         units = self.remove_non_fighters(units)
         ordered_units = self.sort_by_attack_grade(units)
+        self.game.logger.info('Combat Order: %s',[(unit.player.player_num,unit.unit_type) for unit in ordered_units])
         ordered_units = [unit for unit in ordered_units if unit.alive]
         unit_dicts = [{'player' : unit.player.player_num, 'unit': unit.unit_num} for unit in ordered_units]
         self.game.logger.info('Combat Order: %s',unit_dicts)

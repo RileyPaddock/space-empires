@@ -77,7 +77,7 @@ class Game:
             print('Initializing Players')
         for player in self.players:
             if self.level > 1:
-                player.cp = 30
+                player.cp = 10
             player.initialize_units()
         self.board.update(self.players)
         if self.logging:
@@ -89,17 +89,17 @@ class Game:
 
     def complete_turn(self):
         self.num_turns += 1
+        if self.level ==2 and self.num_turns == 1:
+            self.economic_engine.complete_economic_phase()
+
         self.movement_engine.complete_movement_phase()
         self.combat_engine.complete_combat_phase()
         self.remove_defeated_players()
+
         if self.complete:
             return
-        if self.level!=1:
-            if self.level == 2:
-                if self.num_turns == 1:
-                    self.economic_engine.complete_economic_phase()
-            else:
-                self.economic_engine.complete_economic_phase()
+        if self.level > 2:
+            self.economic_engine.complete_economic_phase()
 
     def complete_movement_phase(self): return self.movement_engine.complete_movement_phase()
 
@@ -117,14 +117,17 @@ class Game:
     def run_to_completion(self):
         while not self.complete and self.num_turns <= 100:
             self.complete_turn()
-            if self.complete and self.logging:
-                print(str(self.dice_rolls) + " die rolls:")
-                print("- num turns: "+str(self.num_turns))
-                print("- num combats: "+str(self.num_combats))
-                print("- winner: Player "+str(self.winner))
-                for player in self.players+self.defeated_players:
-                    print("- Player "+str(player.player_num)+" ending CP: "+ str(player.cp))
+            if self.complete:
+                if self.logging:
+                    print(str(self.dice_rolls) + " die rolls:")
+                    print("- num turns: "+str(self.num_turns))
+                    print("- num combats: "+str(self.num_combats))
+                    print("- winner: Player "+str(self.winner))
+                    for player in self.players+self.defeated_players:
+                        print("- Player "+str(player.player_num)+" ending CP: "+ str(player.cp))
                 break
+        self.logger.info("Game Complete")
+        return self.winner
 
     def remove_defeated_players(self):
         defeated_players = []

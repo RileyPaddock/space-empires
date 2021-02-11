@@ -22,8 +22,10 @@ class EconomicEngine:
         if self.game.logging:
             print('BEGINNING OF ECONOMIC PHASE')
         for player in self.game.players:
+            self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
             self.current_player = player
             income = player.calc_income()
+            self.game.logger.info('Player %s income: %s',player.player_num, income)
             player.cp += income
             if self.game.logging:
                 print('--------------')
@@ -38,6 +40,7 @@ class EconomicEngine:
                     excess_cp -= removal
                 maintenance = player.calc_maintenance()
             player.cp -= maintenance
+            self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
             if self.game.logging:
                 print('Player',player.player_num,'payed',maintenance,'in maintenance!')
             self.make_purchases(player)
@@ -59,6 +62,7 @@ class EconomicEngine:
             techs = ['shipsize', 'attack', 'defense', 'movement', 'shipyard']
             wanted_upgrade = techs[techs.index(technology)]
             self.buy_tech(wanted_upgrade, player)
+            self.game.logger.info('Player %s upgraded: %s',player.player_num, wanted_upgrade)
         for unit in purchases['units']:
             ship = ship_objects[ship_names.index(unit['type'])]
             if ship.cost <= player.cp:
@@ -72,6 +76,7 @@ class EconomicEngine:
                     coords = player.check_colony(ship.hull_size, ship,unit['coords'])
                 if coords is not None:
                     builder = player.create_unit(ship, coords, pay = True)
+                    self.game.logger.info('Player %s bought: %s',player.player_num, ship.unit_type)
                     if self.game.logging and builder is not False:
                         print('PLAYER', player.player_num,'BOUGHT A:', ship.name)
             else:
