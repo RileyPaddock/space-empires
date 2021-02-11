@@ -123,7 +123,7 @@ class CombatEngine:
         hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
         self.game.logger.info('Fight between Player %s Unit %s and Player %s Unit %s', attacker.player.player_num,attacker.unit_num, defender.player.player_num,defender.unit_num)
         self.game.logger.info('Dice Roll: %s',self.dice_roll)
-        self.game.logger.info('Hit Threshold: %s',defender.technologies['defense'])
+        self.game.logger.info('Hit Threshold: %s', hit_threshold)
         if self.game.logging:
             print('Player',attacker.player.player_num, attacker.unit_type, attacker.unit_num,'Shoots at','Player',defender.player.player_num, defender.unit_type, defender.unit_num)
             print('Threshold:', hit_threshold)

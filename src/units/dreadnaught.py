@@ -13,10 +13,7 @@ class Dreadnaught(Unit):
     hull_size = 3
     ship_size = 6
     movement = 1
+    maintenance = 3
 
     def __init__(self, location, unit_num, player, technologies, game, turn_created):
         super().__init__(location, unit_num, player, technologies, game, turn_created)
-        self.strength = self.strength + technologies['attack']
-        self.defense += technologies['defense']
-        self.movement = technologies['movement']
-        self.maintenance = 3

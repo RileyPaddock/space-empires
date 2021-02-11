@@ -13,9 +13,7 @@ class Battlecruiser(Unit):
     hull_size = 2
     ship_size = 4
     movement = 1
+    maintenance = 2
 
     def __init__(self, location, unit_num, player, technologies, game, turn_created):
         super().__init__(location, unit_num, player, technologies, game, turn_created)
-        self.strength = self.strength + technologies['attack']
-        self.defense += technologies['defense']
-        self.maintenance = 2

@@ -19,7 +19,6 @@ class Colony(Unit):
         self.shipyards = []
         self.builders = 0
         self.colony_type = colony_type
-        self.defense += technologies['defense']
         if colony_type == 'Home':
             self.capacity = 20
 
