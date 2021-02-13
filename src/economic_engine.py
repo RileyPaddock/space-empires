@@ -33,6 +33,7 @@ class EconomicEngine:
                 print('New Total:', player.cp)
                 print('--------------')
             maintenance = player.calc_maintenance()
+            self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
             if player.cp < maintenance:
                 excess_cp = maintenance - player.cp
                 while excess_cp > 0:
@@ -40,7 +41,6 @@ class EconomicEngine:
                     excess_cp -= removal
                 maintenance = player.calc_maintenance()
             player.cp -= maintenance
-            self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
             if self.game.logging:
                 print('Player',player.player_num,'payed',maintenance,'in maintenance!')
             self.make_purchases(player)

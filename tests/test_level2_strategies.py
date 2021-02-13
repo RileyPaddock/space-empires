@@ -28,24 +28,24 @@ def run_game(strategy1, strategy2, game_num):
 
 results = []
 for _ in range(10):
-    winner = run_game('Movement','Defense',_)
+    winner = run_game('Numbers','Attack',_)
     if winner == 0:
-        results.append('Movement')
+        results.append('Numbers')
     elif winner == 1:
-        results.append('Defense')
+        results.append('Attack')
     else:
         results.append('Draw')
 
 for _ in range(10):
-    winner = run_game('Defense','Movement',_+10)
+    winner = run_game('Attack','Numbers',_+10)
     if winner == 0:
-        results.append('Defense')
+        results.append('Attack')
     elif winner == 1:
-        results.append('Movement')
+        results.append('Numbers')
     else:
         results.append('Draw')
 
-print([i for i in range(len(results)) if results[i] == 'Movement'])
-print('- Movement wins ' + str(results.count('Movement')/len(results)) + '% of the time')
-print('- Defense wins ' + str(results.count('Defense')/len(results)) + '% of the time')
+print([i for i in range(len(results)) if results[i] == 'Numbers'])
+print('- Numbers wins ' + str(results.count('Numbers')/len(results)) + '% of the time')
+print('- Attack wins ' + str(results.count('Attack')/len(results)) + '% of the time')
 print('- Draw wins ' + str(results.count('Draw')/len(results)) + '% of the time')

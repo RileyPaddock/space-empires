@@ -1,6 +1,6 @@
 import logging 
   
-logging.basicConfig(filename="notes/level1_logs.log", 
+logging.basicConfig(filename="notes/level2_logs.log", 
                     format='%(message)s', 
                     filemode='w') 
 from players.player import Player
