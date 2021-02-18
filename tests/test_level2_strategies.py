@@ -30,24 +30,24 @@ def run_game(strategy1, strategy2, game_num):
 
 results = []
 for _ in range(500):
-    winner = run_game('Flank','Riley',_)
+    winner = run_game('Numbers','Riley',_)
     if winner == 0:
-        results.append('Flank')
+        results.append('Numbers')
     elif winner == 1:
         results.append('Riley')
     else:
         results.append('Draw')
 
 for _ in range(500):
-    winner = run_game('Riley','Flank',_+500)
+    winner = run_game('Riley','Numbers',_+500)
     if winner == 0:
         results.append('Riley')
     elif winner == 1:
-        results.append('Flank')
+        results.append('Numbers')
     else:
         results.append('Draw')
 
-print([i for i in range(len(results)) if results[i] == 'Riley'])
-print('- Flank wins ' + str(results.count('Flank')/len(results)) + '% of the time')
-print('- Riley wins ' + str(results.count('Riley')/len(results)) + '% of the time')
+actual_results = [elem for elem in results if elem != 'Draw']
+print('- Numbers wins ' + str(actual_results.count('Numbers')/len(actual_results)) + '% of the time')
+print('- Riley wins ' + str(actual_results.count('Riley')/len(actual_results)) + '% of the time')
 print('- Draw wins ' + str(results.count('Draw')/len(results)) + '% of the time')
