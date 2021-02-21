@@ -95,7 +95,7 @@ class CombatEngine:
     def which_ship_to_attack(self, player, attacker, units):
         self.sort_units(units, player)
         units = [unit for unit in units if unit.alive]
-        targeted_unit_data = player.strategy.decide_which_unit_to_attack(self.get_combat_state(), tuple(attacker.location), units.index(attacker))
+        targeted_unit_data = player.strategy.decide_which_unit_to_attack(self.game.game_state(),self.get_combat_state(), tuple(attacker.location), units.index(attacker))
         targeted_unit_data = self.get_combat_state()[tuple(attacker.location)][targeted_unit_data]
         targeted_enemy = None
         for unit in units:

@@ -4,7 +4,7 @@ class MovementEngine:
     def __init__(self, board, game):
         self.board = board
         self.game = game
-        if self.game.level < 3:
+        if self.game.level <= 2:
             self.phases = 1
         else:
             self.phases = 3
@@ -25,14 +25,13 @@ class MovementEngine:
                     print('--------------------')
                     print('Player', player.player_num,'is moving')
                 self.move_player_units(player, i+1)
+                
                 self.board.update(self.game.players)
-                if self.game.logging:
-                    print('--------------------')
+                
         self.game.combat_engine.colonize()
         self.board.update(self.game.players)
         if self.game.logging:
             print('END OF MOVEMENT PHASE')
-                
 
     def move_player_units(self, player, movement_round):
         self.game.current_player = player.player_num
@@ -45,6 +44,7 @@ class MovementEngine:
                     translation = [translation[0], translation[1]]
 
                     unit.move(translation, self.game.board_size)
+            
     
     def generate_movement_state(self):
         movement_dict = {}

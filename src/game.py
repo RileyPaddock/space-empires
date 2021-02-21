@@ -1,5 +1,5 @@
 import logging 
-  
+
 logging.basicConfig(filename="notes/level2_logs.log", 
                     format='%(message)s', 
                     filemode='w') 
@@ -11,7 +11,7 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [5,5],max_turns = 10, logs = True, die_rolls = 'descending', level = 3):
+    def __init__(self, board_size = [7,7],max_turns = 10, logs = True, die_rolls = 'descending', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logs
@@ -76,8 +76,10 @@ class Game:
         if self.logging:
             print('Initializing Players')
         for player in self.players:
-            if self.level > 1:
+            if self.level == 2:
                 player.cp = 10
+            else:
+                player.cp = 0;
             player.initialize_units()
         self.board.update(self.players)
         if self.logging:
@@ -91,7 +93,7 @@ class Game:
         self.num_turns += 1
         if self.level ==2 and self.num_turns == 1:
             self.economic_engine.complete_economic_phase()
-
+            
         self.movement_engine.complete_movement_phase()
         self.combat_engine.complete_combat_phase()
         self.remove_defeated_players()

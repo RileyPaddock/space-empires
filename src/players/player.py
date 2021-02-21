@@ -60,7 +60,7 @@ class Player:
             if colony.base is not None:
                 return False
         ship_tech = {key: self.technologies[key] for key in self.technologies if key in ['attack', 'defense', 'movement']}
-        new_unit = unit_name(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.num_turns)
+        new_unit = unit_name(coords, len(self.units), self, ship_tech, self.game, self.game.num_turns)
         if pay:
             self.cp -= new_unit.cost
             self.last_purchase = unit_name

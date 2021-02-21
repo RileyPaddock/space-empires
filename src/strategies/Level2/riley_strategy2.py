@@ -1,11 +1,11 @@
 
 class RileyStrategy2:
-    def __init__(self, player_num):
-        self.player_num = player_num
+    def __init__(self, player_index):
+        self.player_index = player_index
 
     def decide_ship_movement(self, unit_index, hidden_game_state):
-        myself = hidden_game_state['players'][self.player_num]
-        opponent_index = 1 - self.player_num
+        myself = hidden_game_state['players'][self.player_index]
+        opponent_index = 1 - self.player_index
 
         opponent = hidden_game_state['players'][opponent_index]
 
@@ -39,13 +39,13 @@ class RileyStrategy2:
                 smallest_distance_to_opponent = dist
         return best_translation
 
-    def decide_which_unit_to_attack(self, combat_state, coords, attacker_index):
+    def decide_which_unit_to_attack(self, hidden_game_state,combat_state, coords, attacker_index):
         # attack opponent's first ship in combat order
 
         combat_order = combat_state[coords]
         player_indices = [unit['player'] for unit in combat_order]
 
-        opponent_index = 1 - self.player_num
+        opponent_index = 1 - self.player_index
         for combat_index, unit in enumerate(combat_order):
             if unit['player'] == opponent_index:
                 return combat_index
@@ -54,8 +54,8 @@ class RileyStrategy2:
         units = []
         tech = []
         sc = ['Scout',6] 
-        spawn_loc = game_state['players'][self.player_num]['home_coords']
-        cp = game_state['players'][self.player_num]['cp']
+        spawn_loc = game_state['players'][self.player_index]['home_coords']
+        cp = game_state['players'][self.player_index]['cp']
         ship_choice = sc
 
         while cp >= ship_choice[1]:

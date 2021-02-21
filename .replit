@@ -1,3 +1,2 @@
-run = "python tests/test_level2_strategies.py"
-#run = "python src/main.py"
-language = "python3" # optional
+run = "python tests/test_classmate_level2.py"
+language = "python3"
