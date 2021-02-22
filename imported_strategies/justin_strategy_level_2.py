@@ -39,7 +39,7 @@ class JustinStrategyLevel2:
             return self.calc_translation_towards_opponent(x_unit, y_unit, x_opp, y_opp)
         else:
             for unit in opponent['units']:
-                if unit['coords'] != (x_opp, y_opp):
+                if tuple(unit['coords']) != (x_opp, y_opp):
                     return (0,0)
 
             return self.calc_translation_towards_opponent(x_unit, y_unit, x_opp, y_opp)

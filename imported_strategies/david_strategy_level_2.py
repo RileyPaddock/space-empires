@@ -32,7 +32,7 @@ class DavidStrategyLevel2:
 
         opponent_index = 1 - self.player_index
         for combat_index, unit in enumerate(combat_order):
-            if unit['player_index'] == opponent_index:
+            if unit['player'] == opponent_index:
                 return combat_index
 
     def directional_input(self, current, goal):

@@ -36,38 +36,37 @@ def run_game(strategy1, strategy2, game_num):
     
 
 matchups = []
-matchups = [('Colby','Riley')]
+matchups = [('Numbers', 'David')]
 print(matchups)
 
 for p1,p2 in matchups:
     team = [p1,p2]
     print(p1+' v. '+p2)
     results = []
-    for _ in range(10):
-        #print(_)
+    for _ in range(250):
         winner = run_game(p1,p2,_)
         
         if winner == 0:
-            print(team[winner])
-            results.append(p1)
+            #print(team[winner])
+            results.append(0)
         elif winner == 1:
-            print(team[winner])
-            results.append(p2)
+            #print(team[winner])
+            results.append(1)
         else:
-            results.append('Draw')
+            #print('Draw')
+            results.append(None)
 
-    # for _ in range(250):
-    #     #print(_+250)
-    #     winner = run_game(p2,p1,_+250)
-    #     if winner == 0:
-    #         results.append(p2)
-    #     elif winner == 1:
-    #         results.append(p1)
-    #     else:
-    #         results.append('Draw')
+    for _ in range(250):
+        #print(_+250)
+        winner = run_game(p2,p1,_+250)
+        if winner == 0:
+            results.append(1)
+        elif winner == 1:
+            results.append(0)
+        else:
+            results.append(None)
 
-
-    print('     - '+p1+ ' wins ' + str(results.count(p1)/len(results)) + '% of the time')
-    print('     - '+p2+ ' wins ' + str(results.count(p2)/len(results)) + '% of the time')
-    print('     - Draw wins ' + str(results.count('Draw')/len(results)) + '% of the time')
+    print('     - '+p1+ ' wins ' + str(results.count(0)/len(results)) + '% of the time')
+    print('     - '+p2+ ' wins ' + str(results.count(1)/len(results)) + '% of the time')
+    print('     - Draw wins ' + str(results.count(None)/len(results)) + '% of the time')
     print("\n")

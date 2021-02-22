@@ -95,12 +95,16 @@ class Player:
         self.build_colony(self.home_coords, col_type = 'Home')
         for i in range(3):
             self.create_unit(Scout, self.home_coords, pay = False)
-        self.last_purchase = 'Scout'
-        
         if self.level > 1:
             for i in range(4):
                 self.create_unit(ShipYard, self.home_coords, pay = False)
             self.units[0].set_builders()
+
+        
+
+        self.last_purchase = 'Scout'
+        
+        
         if self.level > 2:
             for i in range(3):
                 self.create_unit(ColonyShip, self.home_coords, pay = False)
@@ -114,12 +118,8 @@ class Player:
                         unit.builders -= build_size
                         return unit.location
                     else:
-                        if self.game.logging:
-                            print('Player does not have enough builders at colonies to build ship')
                         return None
                 else:
-                    if self.game.logging:
-                        print('Player does not have proper ship size level')
                     return None
 
 

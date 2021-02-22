@@ -14,24 +14,15 @@ class MovementEngine:
 
     def complete_movement_phase(self):
         self.game.movement_phase = 'Movement'
-        if self.game.logging:
-            print('BEGINNING OF MOVEMENT PHASE')
         for i in range(self.phases):
-            if self.game.logging:
-                print('Movement', i + 1)
             self.movement_phase = i
             for player in self.game.players:
-                if self.game.logging:
-                    print('--------------------')
-                    print('Player', player.player_num,'is moving')
                 self.move_player_units(player, i+1)
                 
                 self.board.update(self.game.players)
                 
         self.game.combat_engine.colonize()
         self.board.update(self.game.players)
-        if self.game.logging:
-            print('END OF MOVEMENT PHASE')
 
     def move_player_units(self, player, movement_round):
         self.game.current_player = player.player_num

@@ -19,21 +19,17 @@ class EconomicEngine:
     def complete_economic_phase(self):
         self.used_colonies = []
         self.game.phase = 'Economic'
-        if self.game.logging:
-            print('BEGINNING OF ECONOMIC PHASE')
         for player in self.game.players:
-            self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
+            if self.game.logging:
+                self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
             self.current_player = player
             income = player.calc_income()
-            self.game.logger.info('Player %s income: %s',player.player_num, income)
-            player.cp += income
             if self.game.logging:
-                print('--------------')
-                print('Added', income, 'Combat Points from Colonies to Player', player.player_num)
-                print('New Total:', player.cp)
-                print('--------------')
+                self.game.logger.info('Player %s income: %s',player.player_num, income)
+            player.cp += income
             maintenance = player.calc_maintenance()
-            self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
+            if self.game.logging:
+                self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
             if player.cp < maintenance:
                 excess_cp = maintenance - player.cp
                 while excess_cp > 0:
@@ -41,17 +37,10 @@ class EconomicEngine:
                     excess_cp -= removal
                 maintenance = player.calc_maintenance()
             player.cp -= maintenance
-            if self.game.logging:
-                print('Player',player.player_num,'payed',maintenance,'in maintenance!')
             self.make_purchases(player)
             player.set_colony_builders()
-            if self.game.logging:
-                print('PLAYER', player.player_num,'HAS', player.cp,'LEFT')
             self.board.update(self.game.players)
         self.board.update(self.game.players)
-        if self.game.logging:
-            print('----------------------------')
-            print('END OF ECONOMIC PHASE')
 
 
     def make_purchases(self, player):
@@ -62,7 +51,8 @@ class EconomicEngine:
             techs = ['shipsize', 'attack', 'defense', 'movement', 'shipyard']
             wanted_upgrade = techs[techs.index(technology)]
             self.buy_tech(wanted_upgrade, player)
-            self.game.logger.info('Player %s upgraded: %s',player.player_num, wanted_upgrade)
+            if self.game.logging:
+                self.game.logger.info('Player %s upgraded: %s',player.player_num, wanted_upgrade)
         for unit in purchases['units']:
             ship = ship_objects[ship_names.index(unit['type'])]
             if ship.cost <= player.cp:
@@ -76,12 +66,8 @@ class EconomicEngine:
                     coords = player.check_colony(ship.hull_size, ship,unit['coords'])
                 if coords is not None:
                     builder = player.create_unit(ship, coords, pay = True)
-                    self.game.logger.info('Player %s bought: %s',player.player_num, ship.unit_type)
-                    if self.game.logging and builder is not False:
-                        print('PLAYER', player.player_num,'BOUGHT A:', ship.name)
-            else:
-                if self.game.logging:
-                    print('Could not afford to buy', ship.name)
+                    if self.game.logging:
+                        self.game.logger.info('Player %s bought: %s',player.player_num, ship.unit_type)
 
 
 
@@ -102,30 +88,12 @@ class EconomicEngine:
                 player.technologies[tech_type] = new_lvl
                 if tech_type == 'shipyard':
                     player.update_shipyards()
-                if self.game.logging:
-                    print('---------')
-                    print('Player', player.player_num,'Payed For:')
-                    print('Level:', player.technologies[tech_type],' Of', tech_type,'Technology')
-                    print('---------')
-            else:
-                if self.game.logging:
-                    print('---------')
-                    print('Player', player.player_num,'could not afford:')
-                    print('Level:', player.technologies[tech_type] + 1,' Of', tech_type,'Technology')
-                    print('---------')
-        else:
-            if self.game.logging:
-                print(tech_type,'TECHNOLOGY MAXED OUT')
 
 
     def remove_ship(self, player):
         removal = player.strategy.decide_removal(self.game.game_state())
         unit = player.units[removal]
         cp = unit.maintenance
-        if self.game.logging:
-            print('-------')
-            print('Unit:',unit.name, unit.unit_num,'could not be sustained, was destroyed!')
-            print('-------')
         unit.destroy()
         return cp
 

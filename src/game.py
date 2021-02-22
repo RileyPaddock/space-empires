@@ -11,7 +11,7 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [7,7],max_turns = 10, logs = True, die_rolls = 'descending', level = 3):
+    def __init__(self, board_size = [7,7],max_turns = 20, logs = True, die_rolls = 'descending', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logs
@@ -64,8 +64,6 @@ class Game:
         self.players.append(new_player)
 
     def start_engines(self):
-        if self.logging:
-            print('Creating Board')
         self.board = Board(self.board_size, self, [player.home_coords for player in self.players], self.level)
         self.economic_engine = EconomicEngine(self.board, self)
         self.movement_engine = MovementEngine(self.board, self)
@@ -73,8 +71,6 @@ class Game:
 
     def initialize_game(self):
         self.start_engines()
-        if self.logging:
-            print('Initializing Players')
         for player in self.players:
             if self.level == 2:
                 player.cp = 10
@@ -82,15 +78,11 @@ class Game:
                 player.cp = 0;
             player.initialize_units()
         self.board.update(self.players)
-        if self.logging:
-            for s in range(len(self.players)):
-                print('Player', s + 1, ':')
-                print('Combat Points:',self.players[s].cp)
-                for unit in self.players[s].units:
-                    print(unit.name, ':', unit.coords)
 
     def complete_turn(self):
         self.num_turns += 1
+        if self.logging:
+            self.logger.info("TURN: "+str(self.num_turns))
         if self.level ==2 and self.num_turns == 1:
             self.economic_engine.complete_economic_phase()
             
@@ -113,22 +105,15 @@ class Game:
         for _ in range(num_turns):
             self.complete_turn()
             if self.complete:
-                print('Player', self.winner,'Won')
                 return
 
     def run_to_completion(self):
-        while not self.complete and self.num_turns <= 100:
+        while not self.complete and self.num_turns <= self.max_turns:
             self.complete_turn()
             if self.complete:
-                if self.logging:
-                    print(str(self.dice_rolls) + " die rolls:")
-                    print("- num turns: "+str(self.num_turns))
-                    print("- num combats: "+str(self.num_combats))
-                    print("- winner: Player "+str(self.winner))
-                    for player in self.players+self.defeated_players:
-                        print("- Player "+str(player.player_num)+" ending CP: "+ str(player.cp))
                 break
-        self.logger.info("Game Complete")
+        if self.logging:
+            self.logger.info("Game Complete")
         return self.winner
 
     def remove_defeated_players(self):
@@ -143,8 +128,6 @@ class Game:
         for player in defeated_players:
             self.defeated_players.append(player)
             self.players.remove(player)
-            if self.logging:
-                print('Player', player.player_num, 'Has Died')
         if len(self.players) == 1:
             player = self.players[0]
             self.winner = player.player_num
