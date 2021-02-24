@@ -41,15 +41,11 @@ class Player:
         if state_type != 'hidden':
             unit_state['type'] = unit.unit_type
             unit_state['hits_left'] = unit.armor
-            unit_state['defense'] = unit.defense
-            unit_state['speed'] = unit.strength
             unit_state['turn_created'] = unit.turn_created
             unit_state['maintenance'] = unit.maintenance
             unit_state['alive'] = unit.alive
             techs = ['attack', 'defense', 'movement']
             unit_state['technology'] = {techs[techs.index(tech)] : unit.technologies[tech] for tech in unit.technologies.keys()}
-            if unit.moveable:
-                unit_state['speed'] = unit.movement
             if unit.can_atk:
                 unit_state['class_num'] = unit.attack_grade
             return unit_state
