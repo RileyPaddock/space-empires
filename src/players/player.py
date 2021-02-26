@@ -61,6 +61,11 @@ class Player:
             self.cp -= new_unit.cost
             self.last_purchase = unit_name
         self.units.append(new_unit)
+        self.reset_units()
+
+    def reset_units(self):
+        for unit in self.units:
+            unit.unit_num = self.units.index(unit)
 
     def find_colony(self, coords):
         for unit in self.units:

@@ -24,9 +24,9 @@ class EconomicEngine:
                 self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
             self.current_player = player
             income = player.calc_income()
+            player.cp += income
             if self.game.logging:
                 self.game.logger.info('Player %s income: %s',player.player_num, income)
-            player.cp += income
             maintenance = player.calc_maintenance()
             if self.game.logging:
                 self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
@@ -37,6 +37,8 @@ class EconomicEngine:
                     excess_cp -= removal
                 maintenance = player.calc_maintenance()
             player.cp -= maintenance
+            if self.game.logging:
+                self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
             self.make_purchases(player)
             player.set_colony_builders()
             self.board.update(self.game.players)
@@ -52,7 +54,7 @@ class EconomicEngine:
             wanted_upgrade = techs[techs.index(technology)]
             self.buy_tech(wanted_upgrade, player)
             if self.game.logging:
-                self.game.logger.info('Player %s upgraded: %s',player.player_num, wanted_upgrade)
+                self.game.logger.info('Player %s upgraded: %s to level %s',player.player_num, wanted_upgrade, player.technologies[wanted_upgrade])
         for unit in purchases['units']:
             ship = ship_objects[ship_names.index(unit['type'])]
             if ship.cost <= player.cp:
@@ -73,18 +75,13 @@ class EconomicEngine:
 
 
     def buy_tech(self, tech_type, player):
-        tech_data = {'attack': {'levels' : [-1,0,1,2], 'costs' : [20, 50 , 90], 'max_level' : 4},
-            'defense': {'levels' : [-1,0,1,2], 'costs' : [20, 50 , 90], 'max_level' : 4},
-            'movement': {'levels': [0,1,2,3,4,5], 'costs': [20, 50, 90, 130, 170], 'max_level' : 6}, 
-            'shipyard': {'levels' : [0, 1, 2], 'costs' : [20, 50], 'max_level' : 3}, 
-            'shipsize' : {'levels': [0,1,2,3,4,5], 'costs' : [10,15,20,25,30], 'max_level' : 6}}
-
-        if player.technologies[tech_type] < tech_data[tech_type]['max_level']:
-            current_lvl = tech_data[tech_type]['levels'].index(player.technologies[tech_type] - 1)
-            cost = tech_data[tech_type]['costs'][current_lvl]
+        tech = self.game.game_state()['technology_data']
+        if player.technologies[tech_type] < len(tech[tech_type]):
+            current_lvl = player.technologies[tech_type]
+            cost = tech[tech_type][current_lvl]
             if player.cp >= cost:
                 player.cp -= cost
-                new_lvl = tech_data[tech_type]['levels'][current_lvl + 1] + 1
+                new_lvl = current_lvl + 1
                 player.technologies[tech_type] = new_lvl
                 if tech_type == 'shipyard':
                     player.update_shipyards()

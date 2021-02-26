@@ -1,6 +1,6 @@
 import logging 
 
-logging.basicConfig(filename="notes/level2_logs.log", 
+logging.basicConfig(filename="notes/level3_logs.log", 
                     format='%(message)s', 
                     filemode='w') 
 from players.player import Player
@@ -11,7 +11,7 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [7,7],max_turns = 20, logs = True, die_rolls = 'descending', level = 3):
+    def __init__(self, board_size = [7,7],max_turns = 100, logs = True, die_rolls = 'random', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logs

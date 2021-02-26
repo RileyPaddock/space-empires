@@ -33,7 +33,6 @@ class MovementEngine:
                 for _  in range(ship_movements):
                     translation = player.strategy.decide_ship_movement(unit_index, self.game.game_state())
                     translation = [translation[0], translation[1]]
-
                     unit.move(translation, self.game.board_size)
             
     
