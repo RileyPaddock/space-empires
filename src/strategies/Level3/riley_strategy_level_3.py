@@ -13,7 +13,10 @@ class RileyStrategy3:
         x_opp, y_opp = opponent['home_coords']
 
         if (len([unit for unit in myself['units'] if unit['type'] == 'Shipyard']) <2 or len([unit for unit in myself['units'] if unit['technology']['attack'] == 2 and unit['technology']['defense'] == 2]) > 5) and hidden_game_state['turn'] >= 20:
-            best_translation = self.best_move(unit, opponent, myself)
+            if unit['technology']['attack'] >= 1 or unit['technology']['defense'] >= 1:
+                best_translation = self.best_move(unit, opponent, myself)
+            else:
+                best_translation = (0,0)
         else:
             best_translation = (0,0)
 
