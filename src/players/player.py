@@ -38,6 +38,8 @@ class Player:
         unit_state['player'] = self.player_num
         unit_state['coords'] = unit.location
         unit_state['unit_num'] = unit.unit_num
+        if unit.unit_type == 'Shipyard':
+            unit_state['build_capacity'] = unit.build_capacity
         if state_type != 'hidden':
             unit_state['type'] = unit.unit_type
             unit_state['hits_left'] = unit.armor
