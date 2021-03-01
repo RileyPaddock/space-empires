@@ -1,4 +1,4 @@
-class RileyStrategy3:
+class RileyStrategyLevel3:
     def __init__(self, player_index):
         self.player_index = player_index
 
@@ -62,7 +62,7 @@ class RileyStrategy3:
     def decide_purchases(self,game_state):
         units = []
         tech = []
-        build_capacity = sum([unit['build_capacity'] for unit in game_state['players'][self.player_index]['units'] if unit['type'] == 'Shipyard'])
+        build_capacity = sum([1 for unit in game_state['players'][self.player_index]['units'] if unit['type'] == 'Shipyard'])
         spawn_loc = game_state['players'][self.player_index]['home_coords']
         cp = game_state['players'][self.player_index]['cp']
         defense_tech = game_state['players'][self.player_index]['technology']['defense']

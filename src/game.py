@@ -40,17 +40,27 @@ class Game:
         game_state['players'] = [player.player_state(state_type) for player in self.players]
         if state_type == 'regular':
             game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
-        game_state['unit_data'] = {
-        'Battleship': {'cp_cost': 20, 'shipsize_needed': 3},
-        'Battlecruiser': {'cp_cost': 15, 'shipsize_needed': 2},
-        'Cruiser': {'cp_cost': 12, 'shipsize_needed': 2},
-        'Destroyer': {'cp_cost': 9, 'shipsize_needed': 1},
-        'Dreadnaught': {'cp_cost': 24, 'shipsize_needed': 3},
-        'Scout': {'cp_cost': 6, 'shipsize_needed': 1},
-        'Shipyard': {'cp_cost': 3, 'shipsize_needed': 1},
-        'Decoy': {'cp_cost': 1, 'shipsize_needed': 0},
-        'Colonyship': {'cp_cost': 8, 'shipsize_needed': 1},
-        'Base': {'cp_cost': 12, 'shipsize_needed': 3},}
+        game_state['unit_data'] ={
+            'Battleship': {'cp_cost': 20, 'hullsize': 3, 'shipsize_needed': 5, 'tactics': 5, 'attack': 5, 'defense': 2, 'maintenance': 3},
+
+            'Battlecruiser': {'cp_cost': 15, 'hullsize': 2, 'shipsize_needed': 4, 'tactics': 4, 'attack': 5, 'defense': 1, 'maintenance': 2},
+
+            'Cruiser': {'cp_cost': 12, 'hullsize': 2, 'shipsize_needed': 3, 'tactics': 3, 'attack': 4, 'defense': 1, 'maintenance': 2},
+
+            'Destroyer': {'cp_cost': 9, 'hullsize': 1, 'shipsize_needed': 2, 'tactics': 2, 'attack': 4, 'defense': 0, 'maintenance': 1},
+
+            'Dreadnaught': {'cp_cost': 24, 'hullsize': 3, 'shipsize_needed': 6, 'tactics': 5, 'attack': 6, 'defense': 3, 'maintenance': 3},
+            
+            'Scout': {'cp_cost': 6, 'hullsize': 1, 'shipsize_needed': 1, 'tactics': 1, 'attack': 3, 'defense': 0, 'maintenance': 1},
+
+            'Shipyard': {'cp_cost': 3, 'hullsize': 1, 'shipsize_needed': 1, 'tactics': 3, 'attack': 3, 'defense': 0, 'maintenance': 0},
+
+            'Decoy': {'cp_cost': 1, 'hullsize': 0, 'shipsize_needed': 1, 'tactics': 0, 'attack': 0, 'defense': 0, 'maintenance': 0},
+
+            'Colonyship': {'cp_cost': 8, 'hullsize': 1, 'shipsize_needed': 1, 'tactics': 0, 'attack': 0, 'defense': 0, 'maintenance': 0},
+            
+            'Base': {'cp_cost': 12, 'hullsize': 3, 'shipsize_needed': 2, 'tactics': 5, 'attack': 7, 'defense': 2, 'maintenance': 0},
+            }
         game_state['technology_data'] = {
         'shipsize': [0, 10, 15, 20, 25, 30],
         'attack': [20, 30, 40],
