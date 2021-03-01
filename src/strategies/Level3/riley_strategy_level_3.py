@@ -57,7 +57,7 @@ class RileyStrategyLevel3:
     def decide_removal(self,game_state):
         for unit in game_state['players'][self.player_index]['units']:
             if unit['type'] == 'Scout':
-                return unit['unit_num']
+                return game_state['players'][self.player_index]['units'].index(unit)
 
     def decide_purchases(self,game_state):
         units = []
