@@ -96,7 +96,7 @@ class RileyStrategyLevel3:
                     
 
         if full_tech:
-            while cp >= ship_choice[1]:
+            while cp >= ship_choice[1] and build_capacity >= 1:
                 units.append({'type':ship_choice[0], 'coords':spawn_loc})
                 cp -= ship_choice[1]
                 build_capacity -= 1

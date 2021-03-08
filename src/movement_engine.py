@@ -15,7 +15,7 @@ class MovementEngine:
     def complete_movement_phase(self):
         self.game.movement_phase = 'Movement'
         for i in range(self.phases):
-            self.movement_phase = i
+            self.movement_phase = i+1;
             for player in self.game.players:
                 self.move_player_units(player, i+1)
                 
@@ -25,15 +25,16 @@ class MovementEngine:
         self.board.update(self.game.players)
 
     def move_player_units(self, player, movement_round):
+        player.reset_units()
         self.game.current_player = player.player_num
         for unit in player.units:
-            if unit.moveable:
+            if unit.moveable:  
                 ship_movements = self.movement_data[str(movement_round)][unit.movement - 1]
-                unit_index = player.units.index(unit)
                 for _  in range(ship_movements):
-                    translation = player.strategy.decide_ship_movement(unit_index, self.game.game_state())
-                    translation = [translation[0], translation[1]]
-                    unit.move(translation, self.game.board_size)
+                    if len([enemy for enemy in self.game.players[player.player_num-1].units if enemy.location == unit.location]) == 0:
+                        translation = player.strategy.decide_ship_movement(unit.unit_num, self.game.game_state())
+                        translation = [translation[0], translation[1]]
+                        unit.move(translation, self.game.board_size)
             
     
     def generate_movement_state(self):

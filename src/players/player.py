@@ -53,6 +53,7 @@ class Player:
             return unit_state
 
     def create_unit(self, unit_name, coords, pay = True):
+        self.reset_units()
         colony = self.find_colony(coords)
         if unit_name.unit_type == 'Base':
             if colony.base is not None:
@@ -63,7 +64,7 @@ class Player:
             self.cp -= new_unit.cost
             self.last_purchase = unit_name
         self.units.append(new_unit)
-        self.reset_units()
+        
 
     def reset_units(self):
         for unit in self.units:
@@ -78,14 +79,14 @@ class Player:
     def build_colony(self, coords, col_type = 'Normal', colony_ship = None):
         ship_tech = {key: val for key,val in self.technologies.items() if key in ['attack', 'defense']}
         if col_type == 'Home':
-            home_colony = Colony(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.num_turns,colony_type = 'Home')
+            home_colony = Colony(coords, len(self.units), self, ship_tech, self.game, self.game.num_turns,colony_type = 'Home')
             for planet in self.game.board.planets:
                 if planet.location == self.home_coords:
                     self.home_planet = planet
                     planet.colonize(home_colony)
             self.units.append(home_colony)
         else:
-            new_colony = Colony(coords, len(self.units) + 1, self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
+            new_colony = Colony(coords, len(self.units), self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
             new_colony.turn_colonized = self.game.num_turns
             for planet in self.game.board.planets:
                 if planet.location == new_colony.location:
@@ -108,7 +109,7 @@ class Player:
         self.last_purchase = 'Scout'
         
         
-        if self.level > 2:
+        if self.level > 3:
             for i in range(3):
                 self.create_unit(ColonyShip, self.home_coords, pay = False)
         

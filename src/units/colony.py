@@ -4,7 +4,7 @@ class Colony(Unit):
     strength = 0
     unit_type = 'Colony'
     class_num = 0
-    defense = 0
+    defense = 1
     turn_colonized = 0;
     armor = 3
     capacity = 3
@@ -25,7 +25,7 @@ class Colony(Unit):
     def hit(self):
         if self.armor > 0:
             self.armor -= 1
-            self.capacity -= 1
+            self.capacity -= 5
         else:
             self.destroy()
 

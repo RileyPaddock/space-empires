@@ -49,6 +49,8 @@ class CombatEngine:
         for coords, units in battles.items():
             self.combat_finished = False
             self.resolve_combat(units)
+            if self.game.complete:
+                return
             self.game.num_combats += 1
             self.reset_stats()
             self.game.board.update(self.game.players)
@@ -102,8 +104,7 @@ class CombatEngine:
         return sorted(units,key = lambda unit:
         (unit.class_num,-unit.player.player_num,-unit.unit_num),reverse=True)
 
-    def attack(self, attacker, defender):
-        
+    def attack(self, attacker, defender): 
         self.roll_dice()
         hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
         if self.game.logging:
@@ -149,7 +150,7 @@ class CombatEngine:
         units = self.remove_non_fighters(units)
         ordered_units = self.sort_by_attack_grade(units)
         if self.game.logging:
-            self.game.logger.info('Combat Order: %s',[(unit.player.player_num,unit.unit_type) for unit in ordered_units])
+            self.game.logger.info('Combat Order: %s',[(unit.player.player_num,unit.unit_num, unit.unit_type) for unit in ordered_units])
         ordered_units = [unit for unit in ordered_units if unit.alive]
         unit_dicts = [{'player' : unit.player.player_num, 'unit': unit.unit_num} for unit in ordered_units]
         if self.combat_finished:
@@ -173,6 +174,7 @@ class CombatEngine:
                             if len(self.units) >= 1:
                                 self.remove_dead_ships(self.units)
                                 return
+                                break
                 self.units = self.remove_dead_ships(self.units)
 
     def colonize(self):
