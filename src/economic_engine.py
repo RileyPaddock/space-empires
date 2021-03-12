@@ -70,6 +70,9 @@ class EconomicEngine:
                     builder = player.create_unit(ship, coords, pay = True)
                     if self.game.logging:
                         self.game.logger.info('Player %s bought: %s',player.player_num, ship.unit_type)
+            else:
+                if self.game.mode == 'debug':
+                    raise Exception("Cannot afford ship")
 
 
 
@@ -85,6 +88,9 @@ class EconomicEngine:
                 player.technologies[tech_type] = new_lvl
                 if tech_type == 'shipyard':
                     player.update_shipyards()
+            else:
+                if self.game.mode == 'debug':
+                    raise Exception("Cannot afford ship")
 
 
     def remove_ship(self, player):

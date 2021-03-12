@@ -17,9 +17,11 @@ class Game:
         self.logging = logs
         self.dice_rolls = die_rolls
         self.level = level
+        self.mode = 'debug'
         self.logger= logging.getLogger() 
         self.logger.setLevel(logging.DEBUG) 
-        self.players = []
+        self.players = {}
+        self.num_players = 0
         self.defeated_players = []
         self.num_turns = 0
         self.num_combats = 0
@@ -37,7 +39,7 @@ class Game:
         game_state['round'] = self.movement_engine.movement_phase
         game_state['player_whose_turn'] = self.current_player
         game_state['winner'] = self.winner
-        game_state['players'] = [player.player_state(state_type) for player in self.players]
+        game_state['players'] = [self.players[i].player_state(state_type) for i in self.players]
         if state_type == 'regular':
             game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         game_state['unit_data'] ={
@@ -71,7 +73,8 @@ class Game:
 
     def add_player(self, strategy, home_coords):
         new_player = Player(strategy, len(self.players), home_coords, self)
-        self.players.append(new_player)
+        self.players[self.num_players] = new_player
+        self.num_players += 1
 
     def start_engines(self):
         self.board = Board(self.board_size, self, [player.home_coords for player in self.players], self.level)
