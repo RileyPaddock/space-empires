@@ -17,7 +17,7 @@ class Player:
         self.level = self.game.level
         self.home_planet = None
         self.last_purchase = None
-        self.unit_counter = {unit_type:0 for unit_type in self.game.game_state()['unit_data']}
+        self.unit_counter = {unit_type:0 for unit_type in self.game.unit_data}
         self.unit_counter['Colony'] = 0
         self.units = []
         self.cp = 0
@@ -39,7 +39,7 @@ class Player:
         unit_state = {}
         unit_state['player'] = self.player_num
         unit_state['coords'] = unit.location
-        unit_state['unit_num'] = unit.unit_num
+        unit_state['num'] = unit.unit_num
         if unit.unit_type == 'Shipyard':
             unit_state['build_capacity'] = unit.build_capacity
         if state_type != 'hidden':
@@ -56,13 +56,12 @@ class Player:
 
     def create_unit(self, unit_name, coords, pay = True):
         name = unit_name.unit_type
-        self.reset_units()
         colony = self.find_colony(coords)
         if name == 'Base':
             if colony.base is not None:
                 return False
         ship_tech = {key: self.technologies[key] for key in self.technologies if key in ['attack', 'defense', 'movement']}
-        new_unit = unit_name(coords, name+"_"+str(self.unit_counter[name]), self, ship_tech, self.game, self.game.num_turns)
+        new_unit = unit_name(coords, name+" "+str(self.unit_counter[name]), self, ship_tech, self.game, self.game.num_turns)
         self.unit_counter[name] += 1
         if pay:
             self.cp -= new_unit.cost
@@ -78,14 +77,15 @@ class Player:
     def build_colony(self, coords, col_type = 'Normal', colony_ship = None):
         ship_tech = {key: val for key,val in self.technologies.items() if key in ['attack', 'defense']}
         if col_type == 'Home':
-            home_colony = Colony(coords, "Homeworld_0", self, ship_tech, self.game, self.game.num_turns,colony_type = 'Home')
+            
+            home_colony = Colony(coords, "Homeworld", self, ship_tech, self.game, self.game.num_turns,colony_type = 'Home')
             for planet in self.game.board.planets:
-                if planet.location == self.home_coords:
+                if tuple(planet.location) == tuple(self.home_coords):
                     self.home_planet = planet
                     planet.colonize(home_colony)
             self.units.append(home_colony)
         else:
-            new_colony = Colony(coords, "Colony_"+str(self.unit_counter["Colony"]), self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
+            new_colony = Colony(coords, "Colony "+str(self.unit_counter["Colony"]), self, ship_tech, self.game, self.game.turn_count, colony_type = 'Normal')
             new_colony.turn_colonized = self.game.num_turns
             for planet in self.game.board.planets:
                 if planet.location == new_colony.location:
@@ -98,16 +98,22 @@ class Player:
         self.build_colony(self.home_coords, col_type = 'Home')
         for i in range(3):
             self.create_unit(Scout, self.home_coords, pay = False)
+        for i in range(4):
+                self.create_unit(ShipYard, self.home_coords, pay = False)
+        self.units[0].set_builders()
+
+        
+
         if self.level > 1:
             for i in range(4):
                 self.create_unit(ShipYard, self.home_coords, pay = False)
             self.units[0].set_builders()
 
+
         
 
         self.last_purchase = 'Scout'
-        
-        
+
         if self.level > 3:
             for i in range(3):
                 self.create_unit(ColonyShip, self.home_coords, pay = False)

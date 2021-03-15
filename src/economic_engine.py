@@ -21,15 +21,15 @@ class EconomicEngine:
         self.game.phase = 'Economic'
         for player in self.game.players:
             if self.game.logging:
-                self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
+                self.game.logger.info('Player %s cp: %s',str(player.player_num), str(player.cp))
             self.current_player = player
             income = player.calc_income()
             player.cp += income
             if self.game.logging:
-                self.game.logger.info('Player %s income: %s',player.player_num, income)
+                self.game.logger.info('Player %s income: %s',str(player.player_num), str(income))
             maintenance = player.calc_maintenance()
             if self.game.logging:
-                self.game.logger.info('Player %s maintenance: %s',player.player_num, maintenance)
+                self.game.logger.info('Player %s maintenance: %s',str(player.player_num), str(maintenance))
             if player.cp < maintenance:
                 excess_cp = maintenance - player.cp
                 while excess_cp > 0:
@@ -38,7 +38,7 @@ class EconomicEngine:
                 maintenance = player.calc_maintenance()
             player.cp -= maintenance
             if self.game.logging:
-                self.game.logger.info('Player %s cp: %s',player.player_num, player.cp)
+                self.game.logger.info('Player %s cp: %s',str(player.player_num), str(player.cp))
             self.make_purchases(player)
             player.set_colony_builders()
             self.board.update(self.game.players)
@@ -54,7 +54,7 @@ class EconomicEngine:
             wanted_upgrade = techs[techs.index(technology)]
             self.buy_tech(wanted_upgrade, player)
             if self.game.logging:
-                self.game.logger.info('Player %s upgraded: %s to level %s',player.player_num, wanted_upgrade, player.technologies[wanted_upgrade])
+                self.game.logger.info('Player %s upgraded: %s to level %s',str(player.player_num), wanted_upgrade, player.technologies[wanted_upgrade])
         for unit in purchases['units']:
             ship = ship_objects[ship_names.index(unit['type'])]
             if ship.cost <= player.cp:

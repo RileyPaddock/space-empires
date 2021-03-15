@@ -21,7 +21,7 @@ class Unit:
         if y < 0 or y > grid_size[1] - 1:
             return
         if self.player.game.logging:
-            self.player.game.logger.info("Player %s Unit %s, Move %s",self.player.player_num, self.unit_num, (x,y))
+            self.player.game.logger.info("\t\tPlayer %s %s: %s -> %s",str(self.player.player_num), str(self.unit_num),str(tuple(self.location)), str((x,y)))
         self.location = [x, y]
         
 

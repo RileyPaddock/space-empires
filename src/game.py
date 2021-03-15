@@ -11,7 +11,7 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [7,7],max_turns = 100, logs = True, die_rolls = 'random', level = 3):
+    def __init__(self, board_size = [7,7],max_turns = 5, logs = True, die_rolls = 'random', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logs
@@ -20,7 +20,7 @@ class Game:
         self.mode = 'debug'
         self.logger= logging.getLogger() 
         self.logger.setLevel(logging.DEBUG) 
-        self.players = {}
+        self.players = []
         self.num_players = 0
         self.defeated_players = []
         self.num_turns = 0
@@ -30,19 +30,7 @@ class Game:
         self.board = None
         self.phase = None
         self.winner = None
-    
-    def game_state(self, state_type = 'regular'):
-        game_state = {}
-        game_state['board_size'] = tuple(self.board.size)
-        game_state['turn'] = self.num_turns
-        game_state['phase'] = self.phase
-        game_state['round'] = self.movement_engine.movement_phase
-        game_state['player_whose_turn'] = self.current_player
-        game_state['winner'] = self.winner
-        game_state['players'] = [self.players[i].player_state(state_type) for i in self.players]
-        if state_type == 'regular':
-            game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
-        game_state['unit_data'] ={
+        self.unit_data = {
             'Battleship': {'cp_cost': 20, 'hullsize': 3, 'shipsize_needed': 5, 'tactics': 5, 'attack': 5, 'defense': 2, 'maintenance': 3},
 
             'Battlecruiser': {'cp_cost': 15, 'hullsize': 2, 'shipsize_needed': 4, 'tactics': 4, 'attack': 5, 'defense': 1, 'maintenance': 2},
@@ -63,6 +51,19 @@ class Game:
             
             'Base': {'cp_cost': 12, 'hullsize': 3, 'shipsize_needed': 2, 'tactics': 5, 'attack': 7, 'defense': 2, 'maintenance': 0},
             }
+    
+    def game_state(self, state_type = 'regular'):
+        game_state = {}
+        game_state['board_size'] = tuple(self.board_size)
+        game_state['turn'] = self.num_turns
+        game_state['phase'] = self.phase
+        game_state['round'] = self.movement_engine.movement_phase
+        game_state['player_whose_turn'] = self.current_player
+        game_state['winner'] = self.winner
+        game_state['players'] = [player.player_state(state_type) for player in self.players]
+        if state_type == 'regular':
+            game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
+        game_state['unit_data'] = self.unit_data
         game_state['technology_data'] = {
         'shipsize': [0, 10, 15, 20, 25, 30],
         'attack': [20, 30, 40],
@@ -72,8 +73,8 @@ class Game:
         return game_state
 
     def add_player(self, strategy, home_coords):
-        new_player = Player(strategy, len(self.players), home_coords, self)
-        self.players[self.num_players] = new_player
+        new_player = Player(strategy, len(self.players)+1, home_coords, self)
+        self.players.append(new_player)
         self.num_players += 1
 
     def start_engines(self):
@@ -94,8 +95,6 @@ class Game:
 
     def complete_turn(self):
         self.num_turns += 1
-        if self.logging:
-            self.logger.info("TURN: "+str(self.num_turns))
         if self.level ==2 and self.num_turns == 1:
             self.economic_engine.complete_economic_phase()
             
