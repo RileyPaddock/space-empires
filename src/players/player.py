@@ -17,7 +17,7 @@ class Player:
         self.level = self.game.level
         self.home_planet = None
         self.last_purchase = None
-        self.unit_counter = {unit_type:0 for unit_type in self.game.unit_data}
+        self.unit_counter = {unit_type:1 for unit_type in self.game.unit_data}
         self.unit_counter['Colony'] = 0
         self.units = []
         self.cp = 0

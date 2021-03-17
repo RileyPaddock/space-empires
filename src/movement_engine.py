@@ -31,20 +31,26 @@ class MovementEngine:
             self.game.logger.info("\n\tEnding Unit Locations\n")
             for player in self.game.players:
                 for unit in player.units:
-                    self.game.logger.info("\t\tPlayer %s %s: %s",str(unit.player.player_num),str(unit.unit_num), str(tuple(unit.location)))
-                self.game.logger.info("\n")
+                    if unit.unit_type != "Colony":
+                        self.game.logger.info("\t\tPlayer %s %s: %s",str(unit.player.player_num+1),str(unit.unit_num), str(tuple(unit.location)))
+                self.game.logger.info("\t\tPlayer %s %s: %s\n",str(player.units[0].player.player_num+1),str(player.units[0].unit_num), str(tuple(player.units[0].location)))
+
+
             self.game.logger.info("END OF TURN %s MOVEMENT PHASE\n",str(self.game.num_turns))
 
     def move_player_units(self, player, movement_round):
+        
         self.game.current_player = player.player_num
         for unit in player.units:
             if unit.moveable:
                 ship_movements = self.movement_data[str(movement_round)][unit.movement - 1]
                 for _  in range(ship_movements):
-                    if len([enemy for enemy in self.game.players[player.player_num-2].units if enemy.location == unit.location]) == 0:
+                    if len([enemy for enemy in self.game.players[player.player_num-1].units if enemy.location == unit.location]) == 0:
                         translation = player.strategy.decide_ship_movement(unit.unit_num, self.game.game_state())
                         translation = [translation[0], translation[1]]
                         unit.move(translation, self.game.board_size)
+            else:
+                unit.time_at_space += 1
             
     
     def generate_movement_state(self):

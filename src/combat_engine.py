@@ -46,15 +46,17 @@ class CombatEngine:
         battles = self.find_battles()
         if self.game.logging:
             self.game.logger.info("BEGINNING OF TURN %s COMBAT PHASE\n",str(self.game.num_turns))
-            self.game.logger.info("\tCombat Locations:\n")
+            if len([key for key in battles]) > 0:
+                self.game.logger.info("\tCombat Locations:\n")
             for coords in battles:
                 self.game.logger.info("\t\t%s\n",coords)
                 for unit in self.sort_by_attack_grade(battles[coords]):
-                    self.game.logger.info("\t\t\t Player %s %s",str(unit.player.player_num), str(unit.unit_num))
+                    if unit.unit_type != "Colony":
+                        self.game.logger.info("\t\t\tPlayer %s %s",str(unit.player.player_num+1), str(unit.unit_num))
 
 
         for coords, units in battles.items():
-            if self.game.logging: self.game.logger.info("\n\tCombat at %s\n",str(coords))
+            if self.game.logging: self.game.logger.info("\n\tCombat at %s\n ",str(coords))
             self.combat_finished = False
             self.resolve_combat(units)
             if self.game.complete:
@@ -63,7 +65,18 @@ class CombatEngine:
             self.reset_stats()
             self.game.board.update(self.game.players)
         self.game.board.update(self.game.players)
-        self.game.logger.info("\nEND OF TURN %s COMBAT PHASE\n",str(self.game.num_turns))
+        if self.game.logging:
+            if len([key for key in battles]) > 0:
+                self.game.logger.info("\tSurvivors:\n")
+            for coords in battles:
+                self.game.logger.info("\t\t%s\n",coords)
+                for unit in self.sort_by_attack_grade(battles[coords]):
+                    if unit.unit_type != "Colony" and unit.alive:
+                        self.game.logger.info("\t\t\tPlayer %s %s",str(unit.player.player_num+1), str(unit.unit_num))
+            if len([coords for coords in battles]) > 0:
+                self.game.logger.info("\nEND OF TURN %s COMBAT PHASE\n",str(self.game.num_turns))
+            else:
+                self.game.logger.info("END OF TURN %s COMBAT PHASE\n",str(self.game.num_turns))
 
 
     def sort_units(self, units, player):
@@ -111,20 +124,21 @@ class CombatEngine:
 
     def sort_by_attack_grade(self, units):
         return sorted(units,key = lambda unit:
-        (unit.class_num,unit.player.player_num),reverse=True)
+        (unit.time_at_space,-unit.class_num,unit.player.player_num),reverse=True)
 
     def attack(self, attacker, defender): 
         self.roll_dice()
         hit_threshold = (attacker.strength + attacker.technologies['attack']) - (defender.defense + defender.technologies['defense'])
         if self.game.logging:
-            self.game.logger.info("\t\tAttacker: Player %s %s",str(attacker.player.player_num), str(attacker.unit_num))
-            self.game.logger.info("\t\tDefender: Player %s %s",str(defender.player.player_num), str(defender.unit_num))
+            self.game.logger.info("\t\tAttacker: Player %s %s",str(attacker.player.player_num+1), str(attacker.unit_num))
+            self.game.logger.info("\t\tDefender: Player %s %s",str(defender.player.player_num+1), str(defender.unit_num))
+            self.game.logger.info("\t\tHighest Roll for Hit: %s",str(hit_threshold))
             self.game.logger.info("\t\tDie Roll: %s",str(self.dice_roll))
         if self.dice_roll <= hit_threshold or self.dice_roll == 1:
             if self.game.logging: self.game.logger.info("\t\tHit!")
             defender.hit()
             if not defender.alive:
-                if self.game.logging: self.game.logger.info("\t\tPlayer %s %s was destroyed\n",str(defender.player.player_num), str(defender.unit_num))
+                if self.game.logging: self.game.logger.info("\t\tPlayer %s %s was destroyed\n",str(defender.player.player_num+1), str(defender.unit_num))
                 self.dead_ships.append(defender)
                 if defender.unit_type == 'Colony':
                     if defender.colony_type == 'Home':
@@ -133,6 +147,7 @@ class CombatEngine:
                         self.combat_finished = True
         elif self.game.logging:
             self.game.logger.info("\t\t(Miss)\n")
+            
             
 
     def remove_non_fighters(self, units):
@@ -186,6 +201,9 @@ class CombatEngine:
                                 return
                                 break
                 self.units = self.remove_dead_ships(self.units)
+            
+            
+
 
     def colonize(self):
         planet_coords = [planet.location for planet in self.game.board.planets]

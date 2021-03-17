@@ -11,6 +11,7 @@ class Unit:
         self.alive = True
         self.game = game
         self.maintenance = 0
+        self.time_at_space = 0
         self.turn_created = turn_created
 
     def move(self, direction, grid_size):
@@ -20,8 +21,13 @@ class Unit:
             return
         if y < 0 or y > grid_size[1] - 1:
             return
-        if self.player.game.logging:
-            self.player.game.logger.info("\t\tPlayer %s %s: %s -> %s",str(self.player.player_num), str(self.unit_num),str(tuple(self.location)), str((x,y)))
+
+        if tuple(self.location) != (x,y):
+            self.time_at_space = 0
+            if self.player.game.logging:
+                self.player.game.logger.info("\t\tPlayer %s %s: %s -> %s",str(self.player.player_num+1), str(self.unit_num),str(tuple(self.location)), str((x,y)))
+        else:
+            self.time_at_space += 1
         self.location = [x, y]
         
 

@@ -11,7 +11,7 @@ from combat_engine import CombatEngine
 
 class Game:
 
-    def __init__(self, board_size = [7,7],max_turns = 5, logs = True, die_rolls = 'random', level = 3):
+    def __init__(self, board_size = [7,7],max_turns = 4, logs = True, die_rolls = 'random', level = 3):
         self.board_size = board_size
         self.max_turns = max_turns
         self.logging = logs
@@ -73,7 +73,7 @@ class Game:
         return game_state
 
     def add_player(self, strategy, home_coords):
-        new_player = Player(strategy, len(self.players)+1, home_coords, self)
+        new_player = Player(strategy, len(self.players), home_coords, self)
         self.players.append(new_player)
         self.num_players += 1
 
@@ -124,8 +124,6 @@ class Game:
             self.complete_turn()
             if self.complete:
                 break
-        if self.logging:
-            self.logger.info("Game Complete")
         return self.winner
 
     def remove_defeated_players(self):

@@ -1,104 +1,82 @@
 BEGINNING OF TURN 1 MOVEMENT PHASE
 
 	Movement Round 1
-		Player 1 Scout 0: (3, 0) -> (3, 1)
 		Player 1 Scout 1: (3, 0) -> (3, 1)
 		Player 1 Scout 2: (3, 0) -> (3, 1)
-		Player 2 Scout 0: (3, 6) -> (3, 6)
-		Player 2 Scout 1: (3, 6) -> (3, 6)
-		Player 2 Scout 2: (3, 6) -> (3, 6)
+		Player 1 Scout 3: (3, 0) -> (3, 1)
 
 	Movement Round 2
-		Player 1 Scout 0: (3, 1) -> (3, 2)
 		Player 1 Scout 1: (3, 1) -> (3, 2)
 		Player 1 Scout 2: (3, 1) -> (3, 2)
-		Player 2 Scout 0: (3, 6) -> (3, 6)
-		Player 2 Scout 1: (3, 6) -> (3, 6)
-		Player 2 Scout 2: (3, 6) -> (3, 6)
+		Player 1 Scout 3: (3, 1) -> (3, 2)
 
 	Movement Round 3
-		Player 1 Scout 0: (3, 2) -> (3, 3)
 		Player 1 Scout 1: (3, 2) -> (3, 3)
 		Player 1 Scout 2: (3, 2) -> (3, 3)
-		Player 2 Scout 0: (3, 6) -> (3, 6)
-		Player 2 Scout 1: (3, 6) -> (3, 6)
-		Player 2 Scout 2: (3, 6) -> (3, 6)
+		Player 1 Scout 3: (3, 2) -> (3, 3)
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Scout 0: (3, 3)
 		Player 1 Scout 1: (3, 3)
 		Player 1 Scout 2: (3, 3)
-		Player 1 Shipyard 0: (3, 0)
+		Player 1 Scout 3: (3, 3)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
-		Player 2 Homeworld: (3, 6)
-		Player 2 Scout 0: (3, 6)
 		Player 2 Scout 1: (3, 6)
 		Player 2 Scout 2: (3, 6)
-		Player 2 Shipyard 0: (3, 6)
+		Player 2 Scout 3: (3, 6)
 		Player 2 Shipyard 1: (3, 6)
 		Player 2 Shipyard 2: (3, 6)
 		Player 2 Shipyard 3: (3, 6)
-
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
 
 END OF TURN 1 MOVEMENT PHASE
 
 BEGINNING OF TURN 1 COMBAT PHASE
-
-	Combat Locations:
-
 
 END OF TURN 1 COMBAT PHASE
 
 BEGINNING OF TURN 2 MOVEMENT PHASE
 
 	Movement Round 1
-		Player 1 Scout 0: (3, 3) -> (3, 4)
 		Player 1 Scout 1: (3, 3) -> (3, 4)
 		Player 1 Scout 2: (3, 3) -> (3, 4)
-		Player 2 Scout 0: (3, 6) -> (3, 6)
-		Player 2 Scout 1: (3, 6) -> (3, 6)
-		Player 2 Scout 2: (3, 6) -> (3, 6)
+		Player 1 Scout 3: (3, 3) -> (3, 4)
 
 	Movement Round 2
-		Player 1 Scout 0: (3, 4) -> (3, 5)
 		Player 1 Scout 1: (3, 4) -> (3, 5)
 		Player 1 Scout 2: (3, 4) -> (3, 5)
-		Player 2 Scout 0: (3, 6) -> (3, 6)
-		Player 2 Scout 1: (3, 6) -> (3, 6)
-		Player 2 Scout 2: (3, 6) -> (3, 6)
+		Player 1 Scout 3: (3, 4) -> (3, 5)
 
 	Movement Round 3
-		Player 1 Scout 0: (3, 5) -> (3, 6)
 		Player 1 Scout 1: (3, 5) -> (3, 6)
 		Player 1 Scout 2: (3, 5) -> (3, 6)
+		Player 1 Scout 3: (3, 5) -> (3, 6)
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Scout 0: (3, 6)
 		Player 1 Scout 1: (3, 6)
 		Player 1 Scout 2: (3, 6)
-		Player 1 Shipyard 0: (3, 0)
+		Player 1 Scout 3: (3, 6)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
-		Player 2 Homeworld: (3, 6)
-		Player 2 Scout 0: (3, 6)
 		Player 2 Scout 1: (3, 6)
 		Player 2 Scout 2: (3, 6)
-		Player 2 Shipyard 0: (3, 6)
+		Player 2 Scout 3: (3, 6)
 		Player 2 Shipyard 1: (3, 6)
 		Player 2 Shipyard 2: (3, 6)
 		Player 2 Shipyard 3: (3, 6)
-
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
 
 END OF TURN 2 MOVEMENT PHASE
 
@@ -108,165 +86,87 @@ BEGINNING OF TURN 2 COMBAT PHASE
 
 		(3, 6)
 
-			 Player 2 Shipyard 0
-			 Player 2 Shipyard 1
-			 Player 2 Shipyard 2
-			 Player 2 Shipyard 3
-			 Player 2 Scout 0
-			 Player 2 Scout 1
-			 Player 2 Scout 2
-			 Player 1 Scout 0
-			 Player 1 Scout 1
-			 Player 1 Scout 2
-			 Player 2 Homeworld
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+			Player 1 Scout 1
+			Player 1 Scout 2
+			Player 1 Scout 3
 
 	Combat at (3, 6)
-
-		Attacker: Player 2 Shipyard 0
-		Defender: Player 2 Shipyard 0
-		Die Roll: 2
-		Hit!
-		Player 2 Shipyard 0 was destroyed
-
+ 
 		Attacker: Player 2 Shipyard 1
-		Defender: Player 2 Shipyard 1
-		Die Roll: 9
-		(Miss)
-
-		Attacker: Player 2 Shipyard 2
-		Defender: Player 2 Shipyard 1
-		Die Roll: 8
-		(Miss)
-
-		Attacker: Player 2 Shipyard 3
-		Defender: Player 2 Shipyard 1
-		Die Roll: 3
-		Hit!
-		Player 2 Shipyard 1 was destroyed
-
-		Attacker: Player 2 Scout 0
-		Defender: Player 2 Shipyard 2
-		Die Roll: 5
-		(Miss)
-
-		Attacker: Player 2 Scout 1
-		Defender: Player 2 Shipyard 2
-		Die Roll: 5
-		(Miss)
-
-		Attacker: Player 2 Scout 2
-		Defender: Player 2 Shipyard 2
-		Die Roll: 7
-		(Miss)
-
-		Attacker: Player 1 Scout 0
-		Defender: Player 2 Shipyard 2
-		Die Roll: 8
-		(Miss)
-
-		Attacker: Player 1 Scout 1
-		Defender: Player 2 Shipyard 2
-		Die Roll: 1
-		Hit!
-		Player 2 Shipyard 2 was destroyed
-
-		Attacker: Player 1 Scout 2
-		Defender: Player 2 Shipyard 3
-		Die Roll: 1
-		Hit!
-		Player 2 Shipyard 3 was destroyed
-
-		Attacker: Player 2 Scout 0
-		Defender: Player 2 Scout 0
-		Die Roll: 9
-		(Miss)
-
-		Attacker: Player 2 Scout 1
-		Defender: Player 2 Scout 0
-		Die Roll: 5
-		(Miss)
-
-		Attacker: Player 2 Scout 2
-		Defender: Player 2 Scout 0
-		Die Roll: 8
-		(Miss)
-
-		Attacker: Player 1 Scout 0
-		Defender: Player 2 Scout 0
-		Die Roll: 1
-		Hit!
-		Player 2 Scout 0 was destroyed
-
-		Attacker: Player 1 Scout 1
-		Defender: Player 2 Scout 1
-		Die Roll: 5
-		(Miss)
-
-		Attacker: Player 1 Scout 2
-		Defender: Player 2 Scout 1
-		Die Roll: 8
-		(Miss)
-
-		Attacker: Player 2 Scout 1
-		Defender: Player 2 Scout 1
-		Die Roll: 3
-		Hit!
-		Player 2 Scout 1 was destroyed
-
-		Attacker: Player 2 Scout 2
-		Defender: Player 2 Scout 2
-		Die Roll: 10
-		(Miss)
-
-		Attacker: Player 1 Scout 0
-		Defender: Player 2 Scout 2
-		Die Roll: 10
-		(Miss)
-
-		Attacker: Player 1 Scout 1
-		Defender: Player 2 Scout 2
-		Die Roll: 1
-		Hit!
-		Player 2 Scout 2 was destroyed
-
-		Attacker: Player 1 Scout 2
-		Defender: Player 1 Scout 0
-		Die Roll: 1
-		Hit!
-		Player 1 Scout 0 was destroyed
-
-		Attacker: Player 1 Scout 1
 		Defender: Player 1 Scout 1
-		Die Roll: 6
-		(Miss)
-
-		Attacker: Player 1 Scout 2
-		Defender: Player 1 Scout 1
-		Die Roll: 10
-		(Miss)
-
-		Attacker: Player 1 Scout 1
-		Defender: Player 1 Scout 1
-		Die Roll: 4
-		(Miss)
-
-		Attacker: Player 1 Scout 2
-		Defender: Player 1 Scout 1
-		Die Roll: 3
+		Highest Roll for Hit: 3
+		Die Roll: 2
 		Hit!
 		Player 1 Scout 1 was destroyed
 
-		Attacker: Player 1 Scout 2
+		Attacker: Player 2 Shipyard 2
 		Defender: Player 1 Scout 2
-		Die Roll: 5
+		Highest Roll for Hit: 3
+		Die Roll: 9
 		(Miss)
 
-		Attacker: Player 1 Scout 2
+		Attacker: Player 2 Shipyard 3
 		Defender: Player 1 Scout 2
-		Die Roll: 1
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 3
 		Hit!
 		Player 1 Scout 2 was destroyed
 
+		Attacker: Player 2 Scout 1
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 5
+		(Miss)
+
+		Attacker: Player 2 Scout 2
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 5
+		(Miss)
+
+		Attacker: Player 2 Scout 3
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 1 Scout 3
+		Defender: Player 2 Shipyard 1
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 3 was destroyed
+
+	Survivors:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
 
 END OF TURN 2 COMBAT PHASE
 
@@ -280,22 +180,24 @@ BEGINNING OF TURN 3 MOVEMENT PHASE
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Shipyard 0: (3, 0)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
 		Player 2 Homeworld: (3, 6)
-
 
 END OF TURN 3 MOVEMENT PHASE
 
 BEGINNING OF TURN 3 COMBAT PHASE
-
-	Combat Locations:
-
 
 END OF TURN 3 COMBAT PHASE
 
@@ -309,22 +211,24 @@ BEGINNING OF TURN 4 MOVEMENT PHASE
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Shipyard 0: (3, 0)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
 		Player 2 Homeworld: (3, 6)
-
 
 END OF TURN 4 MOVEMENT PHASE
 
 BEGINNING OF TURN 4 COMBAT PHASE
-
-	Combat Locations:
-
 
 END OF TURN 4 COMBAT PHASE
 
@@ -338,26 +242,218 @@ BEGINNING OF TURN 5 MOVEMENT PHASE
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Shipyard 0: (3, 0)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
 		Player 2 Homeworld: (3, 6)
-
 
 END OF TURN 5 MOVEMENT PHASE
 
 BEGINNING OF TURN 5 COMBAT PHASE
 
-	Combat Locations:
-
-
 END OF TURN 5 COMBAT PHASE
 
-BEGINNING OF TURN 6 MOVEMENT PHASE
+BEGINNING OF TURN 1 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 0) -> (3, 1)
+		Player 1 Scout 2: (3, 0) -> (3, 1)
+		Player 1 Scout 3: (3, 0) -> (3, 1)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 1) -> (3, 2)
+		Player 1 Scout 2: (3, 1) -> (3, 2)
+		Player 1 Scout 3: (3, 1) -> (3, 2)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 2) -> (3, 3)
+		Player 1 Scout 2: (3, 2) -> (3, 3)
+		Player 1 Scout 3: (3, 2) -> (3, 3)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 3)
+		Player 1 Scout 2: (3, 3)
+		Player 1 Scout 3: (3, 3)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 1 MOVEMENT PHASE
+
+BEGINNING OF TURN 1 COMBAT PHASE
+
+END OF TURN 1 COMBAT PHASE
+
+BEGINNING OF TURN 2 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 3) -> (3, 4)
+		Player 1 Scout 2: (3, 3) -> (3, 4)
+		Player 1 Scout 3: (3, 3) -> (3, 4)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 4) -> (3, 5)
+		Player 1 Scout 2: (3, 4) -> (3, 5)
+		Player 1 Scout 3: (3, 4) -> (3, 5)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 5) -> (3, 6)
+		Player 1 Scout 2: (3, 5) -> (3, 6)
+		Player 1 Scout 3: (3, 5) -> (3, 6)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 6)
+		Player 1 Scout 2: (3, 6)
+		Player 1 Scout 3: (3, 6)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 2 MOVEMENT PHASE
+
+BEGINNING OF TURN 2 COMBAT PHASE
+
+	Combat Locations:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+			Player 1 Scout 1
+			Player 1 Scout 2
+			Player 1 Scout 3
+
+	Combat at (3, 6)
+ 
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 1 was destroyed
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 2 was destroyed
+
+		Attacker: Player 2 Scout 1
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 9
+		(Miss)
+
+		Attacker: Player 2 Scout 2
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Scout 3
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 1 Scout 3
+		Defender: Player 2 Shipyard 1
+		Highest Roll for Hit: 3
+		Die Roll: 4
+		(Miss)
+
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 6
+		(Miss)
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 2
+		Hit!
+		Player 1 Scout 3 was destroyed
+
+	Survivors:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+
+END OF TURN 2 COMBAT PHASE
+
+BEGINNING OF TURN 3 MOVEMENT PHASE
 
 	Movement Round 1
 
@@ -367,23 +463,869 @@ BEGINNING OF TURN 6 MOVEMENT PHASE
 
 	Ending Unit Locations
 
-		Player 1 Homeworld: (3, 0)
-		Player 1 Shipyard 0: (3, 0)
 		Player 1 Shipyard 1: (3, 0)
 		Player 1 Shipyard 2: (3, 0)
 		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
 
-
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
 		Player 2 Homeworld: (3, 6)
 
+END OF TURN 3 MOVEMENT PHASE
 
-END OF TURN 6 MOVEMENT PHASE
+BEGINNING OF TURN 3 COMBAT PHASE
 
-BEGINNING OF TURN 6 COMBAT PHASE
+END OF TURN 3 COMBAT PHASE
+
+BEGINNING OF TURN 4 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 4 MOVEMENT PHASE
+
+BEGINNING OF TURN 4 COMBAT PHASE
+
+END OF TURN 4 COMBAT PHASE
+
+BEGINNING OF TURN 5 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 5 MOVEMENT PHASE
+
+BEGINNING OF TURN 5 COMBAT PHASE
+
+END OF TURN 5 COMBAT PHASE
+
+BEGINNING OF TURN 1 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 0) -> (3, 1)
+		Player 1 Scout 2: (3, 0) -> (3, 1)
+		Player 1 Scout 3: (3, 0) -> (3, 1)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 1) -> (3, 2)
+		Player 1 Scout 2: (3, 1) -> (3, 2)
+		Player 1 Scout 3: (3, 1) -> (3, 2)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 2) -> (3, 3)
+		Player 1 Scout 2: (3, 2) -> (3, 3)
+		Player 1 Scout 3: (3, 2) -> (3, 3)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 3)
+		Player 1 Scout 2: (3, 3)
+		Player 1 Scout 3: (3, 3)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 1 MOVEMENT PHASE
+
+BEGINNING OF TURN 1 COMBAT PHASE
+
+END OF TURN 1 COMBAT PHASE
+
+BEGINNING OF TURN 2 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 3) -> (3, 4)
+		Player 1 Scout 2: (3, 3) -> (3, 4)
+		Player 1 Scout 3: (3, 3) -> (3, 4)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 4) -> (3, 5)
+		Player 1 Scout 2: (3, 4) -> (3, 5)
+		Player 1 Scout 3: (3, 4) -> (3, 5)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 5) -> (3, 6)
+		Player 1 Scout 2: (3, 5) -> (3, 6)
+		Player 1 Scout 3: (3, 5) -> (3, 6)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 6)
+		Player 1 Scout 2: (3, 6)
+		Player 1 Scout 3: (3, 6)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 2 MOVEMENT PHASE
+
+BEGINNING OF TURN 2 COMBAT PHASE
 
 	Combat Locations:
 
+		(3, 6)
 
-END OF TURN 6 COMBAT PHASE
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+			Player 1 Scout 1
+			Player 1 Scout 2
+			Player 1 Scout 3
 
-Game Complete
+	Combat at (3, 6)
+ 
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 3
+		Hit!
+		Player 1 Scout 1 was destroyed
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 6
+		(Miss)
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 4
+		(Miss)
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Scout 1
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Scout 2
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 2 was destroyed
+
+		Attacker: Player 2 Scout 3
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 3 was destroyed
+
+	Survivors:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+
+END OF TURN 2 COMBAT PHASE
+
+BEGINNING OF TURN 3 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 3 MOVEMENT PHASE
+
+BEGINNING OF TURN 3 COMBAT PHASE
+
+END OF TURN 3 COMBAT PHASE
+
+BEGINNING OF TURN 4 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 4 MOVEMENT PHASE
+
+BEGINNING OF TURN 4 COMBAT PHASE
+
+END OF TURN 4 COMBAT PHASE
+
+BEGINNING OF TURN 5 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 5 MOVEMENT PHASE
+
+BEGINNING OF TURN 5 COMBAT PHASE
+
+END OF TURN 5 COMBAT PHASE
+
+BEGINNING OF TURN 1 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 0) -> (3, 1)
+		Player 1 Scout 2: (3, 0) -> (3, 1)
+		Player 1 Scout 3: (3, 0) -> (3, 1)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 1) -> (3, 2)
+		Player 1 Scout 2: (3, 1) -> (3, 2)
+		Player 1 Scout 3: (3, 1) -> (3, 2)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 2) -> (3, 3)
+		Player 1 Scout 2: (3, 2) -> (3, 3)
+		Player 1 Scout 3: (3, 2) -> (3, 3)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 3)
+		Player 1 Scout 2: (3, 3)
+		Player 1 Scout 3: (3, 3)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 1 MOVEMENT PHASE
+
+BEGINNING OF TURN 1 COMBAT PHASE
+
+END OF TURN 1 COMBAT PHASE
+
+BEGINNING OF TURN 2 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 3) -> (3, 4)
+		Player 1 Scout 2: (3, 3) -> (3, 4)
+		Player 1 Scout 3: (3, 3) -> (3, 4)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 4) -> (3, 5)
+		Player 1 Scout 2: (3, 4) -> (3, 5)
+		Player 1 Scout 3: (3, 4) -> (3, 5)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 5) -> (3, 6)
+		Player 1 Scout 2: (3, 5) -> (3, 6)
+		Player 1 Scout 3: (3, 5) -> (3, 6)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 6)
+		Player 1 Scout 2: (3, 6)
+		Player 1 Scout 3: (3, 6)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 2 MOVEMENT PHASE
+
+BEGINNING OF TURN 2 COMBAT PHASE
+
+	Combat Locations:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+			Player 1 Scout 1
+			Player 1 Scout 2
+			Player 1 Scout 3
+
+	Combat at (3, 6)
+ 
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 3
+		Hit!
+		Player 1 Scout 1 was destroyed
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 2
+		Hit!
+		Player 1 Scout 2 was destroyed
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 4
+		(Miss)
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 2
+		Hit!
+		Player 1 Scout 3 was destroyed
+
+	Survivors:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+
+END OF TURN 2 COMBAT PHASE
+
+BEGINNING OF TURN 3 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 3 MOVEMENT PHASE
+
+BEGINNING OF TURN 3 COMBAT PHASE
+
+END OF TURN 3 COMBAT PHASE
+
+BEGINNING OF TURN 4 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 4 MOVEMENT PHASE
+
+BEGINNING OF TURN 4 COMBAT PHASE
+
+END OF TURN 4 COMBAT PHASE
+
+BEGINNING OF TURN 5 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 5 MOVEMENT PHASE
+
+BEGINNING OF TURN 5 COMBAT PHASE
+
+END OF TURN 5 COMBAT PHASE
+
+BEGINNING OF TURN 1 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 0) -> (3, 1)
+		Player 1 Scout 2: (3, 0) -> (3, 1)
+		Player 1 Scout 3: (3, 0) -> (3, 1)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 1) -> (3, 2)
+		Player 1 Scout 2: (3, 1) -> (3, 2)
+		Player 1 Scout 3: (3, 1) -> (3, 2)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 2) -> (3, 3)
+		Player 1 Scout 2: (3, 2) -> (3, 3)
+		Player 1 Scout 3: (3, 2) -> (3, 3)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 3)
+		Player 1 Scout 2: (3, 3)
+		Player 1 Scout 3: (3, 3)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 1 MOVEMENT PHASE
+
+BEGINNING OF TURN 1 COMBAT PHASE
+
+END OF TURN 1 COMBAT PHASE
+
+BEGINNING OF TURN 2 MOVEMENT PHASE
+
+	Movement Round 1
+		Player 1 Scout 1: (3, 3) -> (3, 4)
+		Player 1 Scout 2: (3, 3) -> (3, 4)
+		Player 1 Scout 3: (3, 3) -> (3, 4)
+
+	Movement Round 2
+		Player 1 Scout 1: (3, 4) -> (3, 5)
+		Player 1 Scout 2: (3, 4) -> (3, 5)
+		Player 1 Scout 3: (3, 4) -> (3, 5)
+
+	Movement Round 3
+		Player 1 Scout 1: (3, 5) -> (3, 6)
+		Player 1 Scout 2: (3, 5) -> (3, 6)
+		Player 1 Scout 3: (3, 5) -> (3, 6)
+
+	Ending Unit Locations
+
+		Player 1 Scout 1: (3, 6)
+		Player 1 Scout 2: (3, 6)
+		Player 1 Scout 3: (3, 6)
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 2 MOVEMENT PHASE
+
+BEGINNING OF TURN 2 COMBAT PHASE
+
+	Combat Locations:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+			Player 1 Scout 1
+			Player 1 Scout 2
+			Player 1 Scout 3
+
+	Combat at (3, 6)
+ 
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Scout 1
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 8
+		(Miss)
+
+		Attacker: Player 2 Scout 2
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Scout 3
+		Defender: Player 1 Scout 1
+		Highest Roll for Hit: 3
+		Die Roll: 1
+		Hit!
+		Player 1 Scout 1 was destroyed
+
+		Attacker: Player 1 Scout 2
+		Defender: Player 2 Shipyard 1
+		Highest Roll for Hit: 3
+		Die Roll: 5
+		(Miss)
+
+		Attacker: Player 1 Scout 3
+		Defender: Player 2 Shipyard 1
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Shipyard 1
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 7
+		(Miss)
+
+		Attacker: Player 2 Shipyard 2
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 10
+		(Miss)
+
+		Attacker: Player 2 Shipyard 3
+		Defender: Player 1 Scout 2
+		Highest Roll for Hit: 3
+		Die Roll: 2
+		Hit!
+		Player 1 Scout 2 was destroyed
+
+		Attacker: Player 2 Shipyard 4
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 5
+		(Miss)
+
+		Attacker: Player 2 Scout 1
+		Defender: Player 1 Scout 3
+		Highest Roll for Hit: 3
+		Die Roll: 3
+		Hit!
+		Player 1 Scout 3 was destroyed
+
+	Survivors:
+
+		(3, 6)
+
+			Player 2 Shipyard 1
+			Player 2 Shipyard 2
+			Player 2 Shipyard 3
+			Player 2 Shipyard 4
+			Player 2 Scout 1
+			Player 2 Scout 2
+			Player 2 Scout 3
+
+END OF TURN 2 COMBAT PHASE
+
+BEGINNING OF TURN 3 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 3 MOVEMENT PHASE
+
+BEGINNING OF TURN 3 COMBAT PHASE
+
+END OF TURN 3 COMBAT PHASE
+
+BEGINNING OF TURN 4 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 4 MOVEMENT PHASE
+
+BEGINNING OF TURN 4 COMBAT PHASE
+
+END OF TURN 4 COMBAT PHASE
+
+BEGINNING OF TURN 5 MOVEMENT PHASE
+
+	Movement Round 1
+
+	Movement Round 2
+
+	Movement Round 3
+
+	Ending Unit Locations
+
+		Player 1 Shipyard 1: (3, 0)
+		Player 1 Shipyard 2: (3, 0)
+		Player 1 Shipyard 3: (3, 0)
+		Player 1 Shipyard 4: (3, 0)
+		Player 1 Homeworld: (3, 0)
+
+		Player 2 Scout 1: (3, 6)
+		Player 2 Scout 2: (3, 6)
+		Player 2 Scout 3: (3, 6)
+		Player 2 Shipyard 1: (3, 6)
+		Player 2 Shipyard 2: (3, 6)
+		Player 2 Shipyard 3: (3, 6)
+		Player 2 Shipyard 4: (3, 6)
+		Player 2 Homeworld: (3, 6)
+
+END OF TURN 5 MOVEMENT PHASE
+
+BEGINNING OF TURN 5 COMBAT PHASE
+
+END OF TURN 5 COMBAT PHASE
+
