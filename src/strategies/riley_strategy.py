@@ -47,7 +47,7 @@ class RileyStrategy:
         cp = game_state['players'][self.player_index]['cp']
         ship_size_tech = game_state['players'][self.player_index]['technology']['shipsize']
 
-        if 'Base' not in [unit['type'] for unit in self.game_state['players'][player_index]['units']]:
+        if 'Base' not in [unit['type'] for unit in self.game_state['players'][self.player_index]['units']]:
             ship_choice = ['Base', 12]
         ship_choice = self.decide_purchase(self, cp, ship_size_tech)
 
