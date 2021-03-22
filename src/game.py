@@ -4,6 +4,9 @@ logging.basicConfig(filename="notes/level3_logs.log",
                     format='%(message)s', 
                     filemode='w') 
 from players.player import Player
+from units.scout import Scout
+from units.ship_yard import Shipyard
+from units.colony import Colony
 from board import Board
 from movement_engine import MovementEngine
 from economic_engine import EconomicEngine
@@ -60,7 +63,7 @@ class Game:
         game_state['round'] = self.movement_engine.movement_phase
         game_state['player_whose_turn'] = self.current_player
         game_state['winner'] = self.winner
-        game_state['players'] = [player.player_state(state_type) for player in self.players]
+        game_state['players'] = {player.player_num +1:player.player_state(state_type) for player in self.players}
         if state_type == 'regular':
             game_state['planets'] = [planet.location for coord in self.board.game_data for planet in self.board.game_data[coord] if planet.unit_type == 'Planet']
         game_state['unit_data'] = self.unit_data
@@ -71,6 +74,31 @@ class Game:
         'movement': [0, 20, 30, 40, 40, 40],
         'shipyard': [0, 20, 30]}
         return game_state
+
+    def set_game_state(self,game_state,strategy):
+        self.board_size = game_state['board_size']
+        self.num_turns = game_state['turn']
+        self.phase = game_state["phase"]
+        self.round = game_state["round"]
+        self.current_player = game_state["current_player"]
+        for player in game_state['players']:
+            self.add_player(strategy, game_state['players'][player]['homeworld']['coords'])
+        for player in self.players:
+            player.cp = game_state['players'][player.player_num+1]['cp']
+            player.technology = game_state['players'][player.player_num+1]['technology']
+            player.units = []
+            home = self.unit_from_state(game_state['players'][player.player_num +1]['homeworld'])
+            player.home_planet = home
+            player.units.append(home)
+            for unit in game_state['players'][player.player_num+1]['units']:
+                player.units.append(self.unit_from_state(unit,player))
+            
+
+    def unit_from_state(self,unit_state,player):
+        units = {'Scout':Scout, 'Shipyard':Shipyard,'Colony':Colony}
+        unit = units[unit_state['type']](unit_state['coords'],unit_state['num'],player,unit_state['technology'],self,unit_state['turn_created'])
+        return unit
+        
 
     def add_player(self, strategy, home_coords):
         new_player = Player(strategy, len(self.players), home_coords, self)
